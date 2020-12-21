@@ -1,0 +1,139 @@
+﻿Scarpe Di Moda
+Definizione e analisi dei requisiti
+Fantastici 4: Aurora,Gaetano,Irene,Nicy
+
+
+
+
+
+
+Glossario
+Proprietà del sistema
+Casi d’uso
+Attori del sistema
+Lista dettagliata dei casi d’uso
+CdU: Registrazione utenti
+
+
+
+
+________________
+Glossario
+* Classe SCARPA[a]
+* ATTRIBUTI
+      * ID int auto increment
+      * MODELLO (ciabatte,mocassini,sport,stivali,sneaker,decolletè)
+      * GENERE (uomo,donna,bambino,bambina)
+      * DESCRIZIONE
+      * COLORE
+      * NUMERO
+      * BRAND
+      * COSTO
+* METODI
+      * ToString
+      * getter/setter
+      * Costruttore(modello,genere,descrizione,colore,numero,brand,costo)
+* Classe ORDINE (creo una nuova istanza ad acquisto effettuato)
+   * ATTRiBUTI
+      * ID int auto increment
+* LIST <SCARPA>
+* ID UTENTE
+* COSTO TOTALE ?
+   * METODI
+      * ToString()
+      * getter/setter ()
+
+
+* Classe UTENTE
+   * ATTRIBUTI
+      * ID int auto increment
+      * NOME
+      * COGNOME
+      * EMAIL
+      * INDIRIZZO
+      * PASSWORD
+      * List<Ordine>
+   * METODI
+      * getter/setter
+      * Costruttore{ new carrello[b]}
+      * update(email,indirizzo,password)
+      * aggiungiAlCarrello(idScarpa,int quantita){
+carrello.getistanz.add(scarpa,quantita)
+}
+      * getListOrdini()
+      * acquista(){
+               * Crea un nuovo ordine
+               * Ordine o1 = new Ordine (Negozio.getScarpa(id),this.ID)
+               * svuotacarrello()
+               * Aggiungi al carrello(Ordine)
+* Classe NEGOZIO
+* ATTRIBUTI
+                     * NOME
+                     * P.IVA
+                     * INTESTATARIO
+                     * INDIRIZZO
+                     * METODI
+                     * aggiungi(Scarpa)
+                     * elimina(Scarpa)
+                     * getScarpa(Scarpa)
+
+
+* Classe CARRELLO        
+   * ATTRIBUTI
+      * HashMap<Scarpa,quantita>()
+   * METODI
+
+
+      * svuotaCarrello()
+
+
+
+
+Account
+
+
+
+
+LOGIN
+EMAIL
+PASSWORD
+REGISTRAZIONE
+Fare un controllo se email gia esiste
+Fare controllo se è stata inserita due volte la stessa password
+________________
+Proprietà del sistema
+Sicurezza
+[...]
+________________
+Casi d’uso
+[Intro alla sezione dei casi d’uso]
+
+
+Attori del sistema
+[Intro]
+Cliente
+[...]
+
+
+Lista dettagliata dei casi d’uso
+
+
+CdU: Registrazione utenti
+	Descrizione: La piattaforma deve consentire la registrazione di persone fisiche e soggetti giuridici.
+	ID: 1
+	Attori primari: Cliente
+	Attore secondario: Amministratore
+	Precondizioni: Una persona fisica o soggetto giuridico vuole registrarsi alla piattaforma con un ruolo per poter...
+	Sequenza degli eventi:
+1. La persona fisica/Il soggetto giuridico inserisce i dati richiesti per la registrazione.
+2. Il sistema richiede una verifica dell’identità (tramite Trusted Authority).
+3. Un amministratore deve approvare la richiesta di registrazione e autorizzare l’operatività dell’account.
+4. Il sistema assegna una reputazione iniziale all’utente.
+	Postcondizioni:  Un nuovo account è stato creato.
+	Requisiti non funzionali: Le informazioni minime da specificare per la registrazione dipendono dal fatto che il richiedente sia una persona o un soggetto giuridico. In caso sia una persona sono: nome e cognome della persona, tipologia di utente, recapiti telefonici ed email. Se l’utente è un’azienda sono richiesti anche ragione sociale, partita IVA/codice fiscale, sede dell’impresa, nome e cognome del rappresentante legale.
+	
+
+
+
+[a]fare dei menu a tendina su modello,genere,colore,numero,brand
+[b]il carrello deve essere un singleton
