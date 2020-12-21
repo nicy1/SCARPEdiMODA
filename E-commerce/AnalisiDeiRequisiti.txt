@@ -19,8 +19,11 @@ CdU: Registrazione utenti
 
 ________________
 Glossario
-* Classe SCARPA[a]
-* ATTRIBUTI
+
+* Classe SCARPA
+
+	-->ATTRIBUTI
+	
       * ID int auto increment
       * MODELLO (ciabatte,mocassini,sport,stivali,sneaker,decolletè)
       * GENERE (uomo,donna,bambino,bambina)
@@ -29,19 +32,28 @@ Glossario
       * NUMERO
       * BRAND
       * COSTO
-* METODI
+      
+	-->METODI
+	
       * ToString
       * getter/setter
       * Costruttore(modello,genere,descrizione,colore,numero,brand,costo)
-* Classe ORDINE (creo una nuova istanza ad acquisto effettuato)
-   * ATTRiBUTI
-      * ID int auto increment
-* LIST <SCARPA>
-* ID UTENTE
-* COSTO TOTALE ?
-   * METODI
+      
+      
+      
+* Classe ORDINE (creo una nuova istanza ad ogni acquisto effettuato)
+   -->ATTRIBUTI
+       * ID int auto increment
+	   * MAP <SCARPA,quantita> = New HashMap<>();
+	   * ID UTENTE
+	   
+   -->METODI
       * ToString()
       * getter/setter ()
+      * calcolaPrezzoOrdine(){
+      		prezzo=Scarpa.costo*quantita;
+      		return prezzo;
+      	}
 
 
 * Classe UTENTE
