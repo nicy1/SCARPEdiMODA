@@ -20,16 +20,15 @@ CdU: Registrazione utenti
 ________________
 Glossario
 
-* Classe SCARPA
+* Classe astratta SCARPA
 
 	-->ATTRIBUTI
 	
       * ID int auto increment
-      * MODELLO (ciabatte,mocassini,sport,stivali,sneaker,decolletè)
-      * GENERE (uomo,donna,bambino,bambina)
+      * enum GENERE {uomo,donna,bambino,bambina}
       * DESCRIZIONE
-      * COLORE
-      * NUMERO
+      * enum COLORE {bianco,nero,blu,marrone,rosso}
+      * NUMERO 
       * BRAND
       * COSTO
       
@@ -37,20 +36,36 @@ Glossario
 	
       * ToString
       * getter/setter
-      * Costruttore(modello,genere,descrizione,colore,numero,brand,costo)
+      * Costruttore(genere,descrizione,colore,numero,brand,costo)
+	* abstract getTacco(){
+			
+       stampa”la misura del tacco è..”}
+	---
       
+
+Classi figlie di Scarpa (ciabatte,mocassini,sport,stivali,sneaker,decolletè)
+ 
       
-      
-* Classe ORDINE (creo una nuova istanza ad ogni acquisto effettuato)
+* Classe ORDINE 
+Nel carrello ci sarà un bottone con scritto acquista
+Per ogni acquisto si crea un nuovo ordine e si svuota il carrello
+
    -->ATTRIBUTI
-       * ID int auto increment
-	   * MAP <SCARPA,quantita> = New HashMap<>();
-	   * ID UTENTE
+         * ID int auto increment
+
+	   L’ordine deve prendersi dal carrello:
+		-mappa scarpe, quantità
+		-id utente
+		
 	   
+
+
    -->METODI
       * ToString()
+
       * getter/setter ()
       * calcolaPrezzoOrdine(){
+			Uso il foreach per il calcolo
       		prezzo=Scarpa.costo*quantita;
       		return prezzo;
       	}
@@ -62,41 +77,45 @@ Glossario
       * NOME
       * COGNOME
       * EMAIL
-      * INDIRIZZO
       * PASSWORD
-      * List<Ordine>
+      * INDIRIZZO
    * METODI
       * getter/setter
       * Costruttore{ new carrello[b]}
       * update(email,indirizzo,password)
-      * aggiungiAlCarrello(idScarpa,int quantita){
+      * aggiungiAlCarrello[ic1][ic2](idScarpa,int quantita){
 carrello.getistanz.add(scarpa,quantita)
-}
+       }
       * getListOrdini()
-      * acquista(){
-               * Crea un nuovo ordine
-               * Ordine o1 = new Ordine (Negozio.getScarpa(id),this.ID)
-               * svuotacarrello()
-               * Aggiungi al carrello(Ordine)
-* Classe NEGOZIO
-* ATTRIBUTI
-                     * NOME
-                     * P.IVA
-                     * INTESTATARIO
-                     * INDIRIZZO
-                     * METODI
-                     * aggiungi(Scarpa)
-                     * elimina(Scarpa)
-                     * getScarpa(Scarpa)
+      
+
+
+classe NEGOZIO[ic3] Factory
+     *costruttore vuoto
+	*metodo getScarpa() →per inserire delle nuove scarpe nel negozio               
 
 
 * Classe CARRELLO        
    * ATTRIBUTI
       * HashMap<Scarpa,quantita>()
    * METODI
+       * acquista(){
+               * Crea un nuovo ordine
+               * Ordine o1 = new Ordine ()
+               * svuotacarrello()
+               }
 
 
-      * svuotaCarrello()
+      
+
+
+SCHEMA NEGOZIO
+	TABELLA scarpe (ID,GENERE, DESCRIZIONE, COLORE, NUMERO,BRAND,COSTO)
+	TABELLA utenti	(id,nome,cognome,email,password,indirizzo)
+	TABELLI ordini (id, id_utente,prezzo)
+
+
+
 
 
 
@@ -149,3 +168,31 @@ CdU: Registrazione utenti
 
 [a]fare dei menu a tendina su modello,genere,colore,numero,brand
 [b]il carrello deve essere un singleton
+[ic1]public class Singleton {
+
+	    private static Singleton istanza;
+	    String rif;
+	    
+	    private Singleton() {
+	    }
+	    
+	    public static Singleton getInstance() {
+	        if (istanza==null) {
+	        	istanza = new Singleton();
+	        	
+	        }
+	        return istanza;
+	    }
+[ic2]È un metodo dell’utente o della scarpa?
+[ic3]public Scarpa getScarpa (String tipo){
+        Scarpa ritorno = null;
+        switch (tipo){
+            case "stivale":
+                ritorno = new Stivale();
+                break;
+            case "mocassino":
+                ritorno = new Mocassino();
+                break;
+        }
+        return ritorno;
+    }
