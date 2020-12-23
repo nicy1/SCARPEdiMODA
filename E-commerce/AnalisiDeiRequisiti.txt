@@ -43,7 +43,7 @@ Glossario
 	---
       
 
-Classi figlie di Scarpa (ciabatte,mocassini,sport,stivali,sneaker,decolletè)
+Classi figlie di Scarpa (ciabatta,mocassino,sport,stivale,sneaker,decolletè)
  
       
 * Classe ORDINE 
