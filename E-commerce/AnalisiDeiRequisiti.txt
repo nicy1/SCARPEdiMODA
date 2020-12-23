@@ -43,7 +43,7 @@ Glossario
 	---
       
 
-Classi figlie di Scarpa (ciabatte,mocassini,sport,stivali,sneaker,decolletè)
+Classi figlie di Scarpa (ciabatta,mocassino,sport,stivale,sneaker,decolletè)
  
       
 * Classe ORDINE 
@@ -81,9 +81,9 @@ Per ogni acquisto si crea un nuovo ordine e si svuota il carrello
       * INDIRIZZO
    * METODI
       * getter/setter
-      * Costruttore{ new carrello[b]}
+      * Costruttore{ new carrello}
       * update(email,indirizzo,password)
-      * aggiungiAlCarrello[ic1][ic2](idScarpa,int quantita){
+      * aggiungiAlCarrello(idScarpa,int quantita){
 carrello.getistanz.add(scarpa,quantita)
        }
       * getListOrdini()
