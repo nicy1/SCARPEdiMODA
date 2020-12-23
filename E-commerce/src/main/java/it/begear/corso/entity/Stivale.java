@@ -15,7 +15,7 @@ public class Stivale extends Scarpa {
 
 	@Override
 	public void getTacco() {
-		System.out.println("questo stivale ha tacco"+tacco);
+		System.out.println("Questo stivale ha tacco da "+tacco);
 		
 	}
 
