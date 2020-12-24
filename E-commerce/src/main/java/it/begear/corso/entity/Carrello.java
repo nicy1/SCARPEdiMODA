@@ -18,8 +18,7 @@ public class Carrello {
 	}
 
 	public void	acquista(){
-		//Crea un nuovo ordine
-		// Ordine o1 = new Ordine ()
+		Ordine o = new Ordine(this.getCarrello(),idUtente);
 		//svuotacarrello()
 	}
 
