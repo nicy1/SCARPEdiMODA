@@ -32,25 +32,20 @@ public class Utente {
       
       
       
-	public Utente(int id, String nome, String cognome, String email, String password, String indirizzo) {
+	public Utente( String nome, String cognome, String email, String password, String indirizzo) {
 		super();
-		this.id = id;
-		this.nome = nome;
-		this.cognome = cognome;
-		this.email = email;
-		this.password = password;
-		this.indirizzo = indirizzo;
+		
+		setNome(nome);
+		setCognome(cognome);
+		setEmail(email);
+		setPassword(password);
+		setIndirizzo(indirizzo);
 		Carrello c = Carrello.getIstance();
 		
 	}
 	
 	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+	
 	public String getNome() {
 		return nome;
 	}
