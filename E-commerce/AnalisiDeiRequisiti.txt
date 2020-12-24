@@ -1,0 +1,198 @@
+﻿Scarpe Di Moda
+Definizione e analisi dei requisiti
+Fantastici 4: Aurora,Gaetano,Irene,Nicy
+
+
+
+
+
+
+Glossario
+Proprietà del sistema
+Casi d’uso
+Attori del sistema
+Lista dettagliata dei casi d’uso
+CdU: Registrazione utenti
+
+
+
+
+________________
+Glossario
+
+* Classe astratta SCARPA
+
+	-->ATTRIBUTI
+	
+      * ID int auto increment
+      * enum GENERE {uomo,donna,bambino,bambina}
+      * DESCRIZIONE
+      * enum COLORE {bianco,nero,blu,marrone,rosso}
+      * NUMERO 
+      * BRAND
+      * COSTO
+      
+	-->METODI
+	
+      * ToString
+      * getter/setter
+      * Costruttore(genere,descrizione,colore,numero,brand,costo)
+	* abstract getTacco(){
+			
+       stampa”la misura del tacco è..”}
+	---
+      
+
+Classi figlie di Scarpa (ciabatta,mocassino,sport,stivale,sneaker,decolletè)
+ 
+      
+* Classe ORDINE 
+Nel carrello ci sarà un bottone con scritto acquista
+Per ogni acquisto si crea un nuovo ordine e si svuota il carrello
+
+   -->ATTRIBUTI
+         * ID int auto increment
+
+	   L’ordine deve prendersi dal carrello:
+		-mappa scarpe, quantità
+		-id utente
+		
+	   
+
+
+   -->METODI
+      * ToString()
+
+      * getter/setter ()
+      * calcolaPrezzoOrdine(){
+			Uso il foreach per il calcolo
+      		prezzo=Scarpa.costo*quantita;
+      		return prezzo;
+      	}
+
+
+* Classe UTENTE
+   * ATTRIBUTI
+      * ID int auto increment
+      * NOME
+      * COGNOME
+      * EMAIL
+      * PASSWORD
+      * INDIRIZZO
+   * METODI
+      * getter/setter
+      * Costruttore{ new carrello}
+      * update(email,indirizzo,password)
+      * aggiungiAlCarrello(idScarpa,int quantita){
+carrello.getistanz.add(scarpa,quantita)
+       }
+      * getListOrdini()
+      
+
+
+classe NEGOZIO[ic3] Factory
+     *costruttore vuoto
+	*metodo getScarpa() →per inserire delle nuove scarpe nel negozio               
+
+
+* Classe CARRELLO        
+   * ATTRIBUTI
+      * HashMap<Scarpa,quantita>()
+   * METODI
+       * acquista(){
+               * Crea un nuovo ordine
+               * Ordine o1 = new Ordine ()
+               * svuotacarrello()
+               }
+
+
+      
+
+
+SCHEMA NEGOZIO
+	TABELLA scarpe (ID,GENERE, DESCRIZIONE, COLORE, NUMERO,BRAND,COSTO)
+	TABELLA utenti	(id,nome,cognome,email,password,indirizzo)
+	TABELLI ordini (id, id_utente,prezzo)
+
+
+
+
+
+
+
+Account
+
+
+
+
+LOGIN
+EMAIL
+PASSWORD
+REGISTRAZIONE
+Fare un controllo se email gia esiste
+Fare controllo se è stata inserita due volte la stessa password
+________________
+Proprietà del sistema
+Sicurezza
+[...]
+________________
+Casi d’uso
+[Intro alla sezione dei casi d’uso]
+
+
+Attori del sistema
+[Intro]
+Cliente
+[...]
+
+
+Lista dettagliata dei casi d’uso
+
+
+CdU: Registrazione utenti
+	Descrizione: La piattaforma deve consentire la registrazione di persone fisiche e soggetti giuridici.
+	ID: 1
+	Attori primari: Cliente
+	Attore secondario: Amministratore
+	Precondizioni: Una persona fisica o soggetto giuridico vuole registrarsi alla piattaforma con un ruolo per poter...
+	Sequenza degli eventi:
+1. La persona fisica/Il soggetto giuridico inserisce i dati richiesti per la registrazione.
+2. Il sistema richiede una verifica dell’identità (tramite Trusted Authority).
+3. Un amministratore deve approvare la richiesta di registrazione e autorizzare l’operatività dell’account.
+4. Il sistema assegna una reputazione iniziale all’utente.
+	Postcondizioni:  Un nuovo account è stato creato.
+	Requisiti non funzionali: Le informazioni minime da specificare per la registrazione dipendono dal fatto che il richiedente sia una persona o un soggetto giuridico. In caso sia una persona sono: nome e cognome della persona, tipologia di utente, recapiti telefonici ed email. Se l’utente è un’azienda sono richiesti anche ragione sociale, partita IVA/codice fiscale, sede dell’impresa, nome e cognome del rappresentante legale.
+	
+
+
+
+[a]fare dei menu a tendina su modello,genere,colore,numero,brand
+[b]il carrello deve essere un singleton
+[ic1]public class Singleton {
+
+	    private static Singleton istanza;
+	    String rif;
+	    
+	    private Singleton() {
+	    }
+	    
+	    public static Singleton getInstance() {
+	        if (istanza==null) {
+	        	istanza = new Singleton();
+	        	
+	        }
+	        return istanza;
+	    }
+[ic2]È un metodo dell’utente o della scarpa?
+[ic3]public Scarpa getScarpa (String tipo){
+        Scarpa ritorno = null;
+        switch (tipo){
+            case "stivale":
+                ritorno = new Stivale();
+                break;
+            case "mocassino":
+                ritorno = new Mocassino();
+                break;
+        }
+        return ritorno;
+    }
