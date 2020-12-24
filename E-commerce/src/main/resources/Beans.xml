@@ -18,17 +18,18 @@
 		
 		<!-- DA SOSTITUIRE CON IL NOME DEL NOSTRO SCHEMA
         <property name="url" value="jdbc:mysql://localhost:3306/e-commerce?serverTimezone=UTC" />
-        -->
-        
 		<property name="username" value="root" />
 		<property name="password" value="Emmanuel1@" />
+		-->
    </bean>
    
-   <!-- DA SOSTITUIRE
-   <bean name="daoEmployeeImpl" class="it.begear.corso.dao.DAOEmployeeImpl">
+   
+   <bean name="DAOscarpaImpl" class="it.begear.corso.dao.DAOscarpaImpl">
         <property name="sessionFactory" ref="hibernateAnnotatedSessionFactory" />
    </bean>
-   -->
+    <bean name="DAOutenteImpl" class="it.begear.corso.dao.DAOutenteImpl">
+        <property name="sessionFactory" ref="hibernateAnnotatedSessionFactory" />
+   </bean>
    
    
    <!-- Hibernate Annotation SessionFactory Bean -->
@@ -36,9 +37,10 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="annotatedClasses">
 			<list>
-			    <!-- DA SOSTITUIRE
-				<value>it.begear.corso.entity.Employee</value>			
-				-->
+			    
+				<value>it.begear.corso.entity.Scarpa</value>
+				<value>it.begear.corso.entity.Utente</value>			
+				
 			</list>
 		</property>
 		<property name="hibernateProperties">
