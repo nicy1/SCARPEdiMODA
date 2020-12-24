@@ -18,6 +18,8 @@ public class Utente {
 		this.email = email;
 		this.password = password;
 		this.indirizzo = indirizzo;
+		Carrello c = Carrello.getIstance();
+		
 	}
 	
 	
