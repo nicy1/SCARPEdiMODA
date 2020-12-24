@@ -1,12 +1,36 @@
 package it.begear.corso.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "scarpe")
 public abstract class Scarpa {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_scarpe")
 	private int id;
+	
+	@Column(name = "genere")
     private Genere gender;
+	
+	@Column(name = "descrizione")
     private String descrizione;
+	
+	@Column(name = "colore")
     private Colore color;
+	
+	@Column(name = "numero")
     private Misura numero; 
+	
+	@Column(name = "brand")
     private String brand;
+	
+	@Column(name = "costo")
     private double costo;
     
     public Scarpa() {}

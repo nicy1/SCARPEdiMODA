@@ -1,11 +1,33 @@
 package it.begear.corso.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "utenti")
 public class Utente {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_utenti")
 	  private int id;
+	
+	@Column(name = "nome")
       private String nome;
+	
+	@Column(name = "cognome")
       private String cognome;
+	
+	@Column(name = "email")
       private String email;
+	
+	@Column(name = "password")
       private String password;
+	
+	@Column(name = "indirizzo")
       private String indirizzo;
       
       
