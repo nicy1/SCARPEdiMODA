@@ -7,7 +7,7 @@ import java.util.Map;
 public class Carrello {
 	private Map<Scarpa, Integer> carrello  = new HashMap<Scarpa, Integer>();
 	private static Carrello istanza;
-	private Carrello() {}
+	public Carrello() {}
 
 	public Map<Scarpa, Integer> getCarrello() {
 		return carrello;
@@ -18,7 +18,7 @@ public class Carrello {
 	}
 
 	public void	acquista(){
-		Ordine o = new Ordine(this.getCarrello(),idUtente);
+		//Ordine o = new Ordine(this.getCarrello(),idUtente);
 		//svuotacarrello()
 	}
 
@@ -27,6 +27,11 @@ public class Carrello {
 			istanza= new Carrello();
 		}
 		return istanza;
+	}
+
+	public void addItem(String id, Integer quantity) {
+		// TODO Auto-generated method stub
+		
 	}
 
 
