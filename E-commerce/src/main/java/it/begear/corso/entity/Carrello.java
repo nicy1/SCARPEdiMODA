@@ -18,11 +18,11 @@ public class Carrello {
 		this.carrello = carrello;
 	}
 
-	public void	acquista(){
+	public Ordine acquista(){
 
 		Ordine o = new Ordine(this.getCarrello(),this.getIdUtente());
 		istanza.getCarrello().clear();//per svuotare il carrello
-		
+		return o;
 	}
 
 	public static Carrello getIstance() {
@@ -34,6 +34,7 @@ public class Carrello {
 
 
 	public int getIdUtente() {
+		System.out.println(idUtente);
 		return idUtente;
 	}
 
