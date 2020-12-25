@@ -41,7 +41,7 @@ public class Utente {
 		setPassword(password);
 		setIndirizzo(indirizzo);
 		Carrello c = Carrello.getIstance();
-		
+		c.setIdUtente(getId());
 	}
 	
 	
