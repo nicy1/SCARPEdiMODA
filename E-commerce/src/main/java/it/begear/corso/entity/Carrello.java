@@ -5,6 +5,7 @@ import java.util.Map;
 
 
 public class Carrello {
+	private int idUtente;
 	private Map<Scarpa, Integer> carrello  = new HashMap<Scarpa, Integer>();
 	private static Carrello istanza;
 	private Carrello() {}
@@ -18,9 +19,9 @@ public class Carrello {
 	}
 
 	public void	acquista(){
-		Ordine o = new Ordine(this.getCarrello(),idUtente);
-		//svuotacarrello()
-		//risolvere la situazione id
+		Ordine o = new Ordine(this.getCarrello(),this.getIdUtente());
+		istanza.getCarrello().clear();//per svuotare il carrello
+		
 	}
 
 	public static Carrello getIstance() {
@@ -30,7 +31,15 @@ public class Carrello {
 		return istanza;
 	}
 
+	public int getIdUtente() {
+		return idUtente;
+	}
 
+	public void setIdUtente(int idUtente) {
+		this.idUtente = idUtente;
+	}
+
+	
 
 
 
