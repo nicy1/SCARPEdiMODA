@@ -20,6 +20,7 @@ public class Carrello {
 	public void	acquista(){
 		//Ordine o = new Ordine(this.getCarrello(),idUtente);
 		//svuotacarrello()
+		//risolvere la situazione id
 	}
 
 	public static Carrello getIstance() {
