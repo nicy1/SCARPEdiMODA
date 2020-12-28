@@ -6,7 +6,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 @Entity
 @Table(name = "utenti")
 
@@ -34,6 +33,7 @@ public class Utente {
       
       private Carrello c;
       
+
 	public Utente( String nome, String cognome, String email, String password, String indirizzo) {
 		super();
 		
