@@ -4,10 +4,15 @@ public class Stivale extends Scarpa {
 	private int tacco;
 	public Stivale() {}
 	
-	public Stivale(int id, Genere gender, String descrizione, Colore color, Misura numero, String brand, double costo) {
-		super(id, gender, descrizione, color, numero, brand, costo);
+	
+
+	public Stivale(int id, String codice, Genere gender, String descrizione, Colore color, Misura numero, String brand,
+			double costo, int disponibilita) {
+		super(id, codice, gender, descrizione, color, numero, brand, costo, disponibilita);
 		// TODO Auto-generated constructor stub
 	}
+
+
 
 	public void setTacco(int tacco) {
 		this.tacco = tacco;
