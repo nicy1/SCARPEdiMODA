@@ -14,36 +14,44 @@ public abstract class Scarpa {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_scarpe")
 	private int id;
-	
+
+	@Column(name = "codice")
+	private String codice;
+
 	@Column(name = "genere")
-    private Genere gender;
-	
+	private Genere gender;
+
 	@Column(name = "descrizione")
-    private String descrizione;
-	
+	private String descrizione;
+
 	@Column(name = "colore")
-    private Colore color;
-	
+	private Colore colore;
+
 	@Column(name = "numero")
-    private Misura numero; 
-	
+	private Misura numero; 
+
 	@Column(name = "brand")
-    private String brand;
-	
+	private String brand;
+
 	@Column(name = "costo")
-    private double costo;
-    
-    public Scarpa() {}
-    
-	public Scarpa(int id, Genere gender, String descrizione, Colore color, Misura numero, String brand, double costo) {
+	private double costo;
+
+	@Column(name = "disponibilita")
+	private int disponibilita;
+
+	public Scarpa() {}
+
+	public Scarpa(int id,String codice, Genere gender, String descrizione, Colore color, Misura numero, String brand, double costo, int disponibilita) {
 		super();
-		this.id = id;
-		this.gender = gender;
-		this.descrizione = descrizione;
-		this.color = color;
-		this.numero = numero;
-		this.brand = brand;
-		this.costo = costo;
+		setId(id);
+		setCodice(codice);
+		setGender(gender);
+		setDescrizione(descrizione);
+		setColor(color);
+		setNumero(numero);
+		setBrand(brand);
+		setCosto(costo);
+		setDisponibilita(disponibilita);
 	}
 
 
@@ -71,13 +79,13 @@ public abstract class Scarpa {
 
 
 	public Colore getColor() {
-		return color;
+		return colore;
 	}
 
 
 
 	public void setColor(Colore color) {
-		this.color = color;
+		this.colore = color;
 	}
 
 
@@ -126,9 +134,25 @@ public abstract class Scarpa {
 
 
 
+	public String getCodice() {
+		return codice;
+	}
+
+	public void setCodice(String codice) {
+		this.codice = codice;
+	}
+
+	public int getDisponibilita() {
+		return disponibilita;
+	}
+
+	public void setDisponibilita(int disponibilita) {
+		this.disponibilita = disponibilita;
+	}
+
 	@Override
 	public String toString() {
-		return "Scarpa [id=" + id + ", gender=" + gender + ", descrizione=" + descrizione + ", color=" + color
+		return "Scarpa [id=" + id + ", gender=" + gender + ", descrizione=" + descrizione + ", color=" + colore
 				+ ", numero=" + numero + ", brand=" + brand + ", costo=" + costo + "]";
 	}
 
