@@ -31,7 +31,7 @@ ddsmoothmenu.init({
     	<div id="site_title"><h1><a href="index.jsp">Negozio di scarpe online</a></h1></div>
         <div id="header_right">
         	<p>
-	        <a href="AccountServlet">Il mio account</a> | <a href="shoppingcart.jsp">Carrello</a> | <a href="loginRegister.html">Accedi</a></p>       
+	        <a href="AccountServlet">Il mio account</a> | <a href="shoppingcart.jsp">Carrello</a> | <a href="loginRegister.jsp">Accedi</a></p>       
 		</div>
         <div class="cleaner"></div>
     </div> <!-- END of templatemo_header -->
@@ -68,8 +68,10 @@ ddsmoothmenu.init({
             	<h3>Categorie</h3>   
                 <div class="content"> 
                 	<ul class="sidebar_list">
-                        <li class="first"><a href="manProducts.html">Uomo</a></li>
-                        <li class="last"><a href="womanProducts.html">Donna</a></li> 
+                        <li class="first"><a href="uomoProducts.html">Uomo</a></li>
+                        <li class="first"><a href="donnaProducts.html">Donna</a></li> 
+                        <li class="first"><a href="bambinoProducts.html">Bambino</a></li>
+                        <li class="first"><a href="bambinaProducts.html">Bambina</a></li>
                         <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
                         <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
                     </ul>
