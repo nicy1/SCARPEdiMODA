@@ -3,7 +3,6 @@
 
  <head>
    <meta charset="ISO-8859-1">
-   <!--  commento  -->
    <title>Login page</title>
    <link rel="stylesheet" type="text/css" href="CSS/loginRegister.css">
 </head>
