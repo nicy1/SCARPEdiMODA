@@ -136,7 +136,7 @@ ddsmoothmenu.init({
         <div id="content" class="float_r">
         	<h1>Dettagli </h1>
             <div class="content_half float_l">
-        	<img src=" <%= "IMAGES/scarpe/" + codice + ".jpg"; %> " alt="image" />
+        	<img src=" <%= "IMAGES/scarpe/" + codice + ".jpg" %> " alt="image" />
             </div>
             <div class="content_half float_r">
                 <table>
