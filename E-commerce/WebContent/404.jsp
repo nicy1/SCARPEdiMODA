@@ -4,6 +4,7 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <title>404 page</title>
 <link href="CSS/404.css" rel="stylesheet" type="text/css" />
+<!--  commento  -->
 </head>
 <body>
 
