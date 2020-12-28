@@ -70,6 +70,8 @@ ddsmoothmenu.init({
                 	<ul class="sidebar_list">
                         <li class="first"><a href="manProducts.html">Uomo</a></li>
                         <li class="last"><a href="womanProducts.html">Donna</a></li> 
+                        <li class="first"><a href="bambinoProducts.html">Bambino</a></li>
+                        <li class="first"><a href="bambinaProducts.html">Bambina</a></li>
                         <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
                         <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
                     </ul>
