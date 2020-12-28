@@ -29,8 +29,18 @@ public class Utente {
 	@Column(name = "indirizzo")
       private String indirizzo;
       
+      private Carrello c;
       
-      
+	public Carrello getC() {
+		return c;
+	}
+
+
+	public void setC(Carrello c) {
+		this.c = c;
+	}
+
+
 	public Utente( String nome, String cognome, String email, String password, String indirizzo) {
 		super();
 		
