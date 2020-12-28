@@ -8,7 +8,7 @@ public class Carrello {
 	private int idUtente;
 	private Map<Scarpa, Integer> carrello  = new HashMap<Scarpa, Integer>();
 	private static Carrello istanza;
-	private Carrello() {}
+	public Carrello() {}
 
 	public Map<Scarpa, Integer> getCarrello() {
 		return carrello;
@@ -18,10 +18,11 @@ public class Carrello {
 		this.carrello = carrello;
 	}
 
-	public void	acquista(){
+	public Ordine acquista(){
+
 		Ordine o = new Ordine(this.getCarrello(),this.getIdUtente());
 		istanza.getCarrello().clear();//per svuotare il carrello
-		
+		return o;
 	}
 
 	public static Carrello getIstance() {
@@ -31,9 +32,12 @@ public class Carrello {
 		return istanza;
 	}
 
+
 	public int getIdUtente() {
+		System.out.println(idUtente);
 		return idUtente;
 	}
+
 
 	public void setIdUtente(int idUtente) {
 		this.idUtente = idUtente;

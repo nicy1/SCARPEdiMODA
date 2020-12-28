@@ -31,15 +31,6 @@ public class Utente {
       
       private Carrello c;
       
-	public Carrello getC() {
-		return c;
-	}
-
-
-	public void setC(Carrello c) {
-		this.c = c;
-	}
-
 
 	public Utente( String nome, String cognome, String email, String password, String indirizzo) {
 		super();
@@ -49,7 +40,7 @@ public class Utente {
 		setEmail(email);
 		setPassword(password);
 		setIndirizzo(indirizzo);
-		Carrello c = Carrello.getIstance();
+		c = Carrello.getIstance();
 		c.setIdUtente(getId());
 	}
 	
@@ -86,6 +77,16 @@ public class Utente {
 	}
 	public void setIndirizzo(String indirizzo) {
 		this.indirizzo = indirizzo;
+	}
+
+
+	public Carrello getC() {
+		return c;
+	}
+
+
+	public void setC(Carrello c) {
+		this.c = c;
 	}
       
 }
