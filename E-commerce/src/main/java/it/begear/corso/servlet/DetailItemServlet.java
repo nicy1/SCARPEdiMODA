@@ -20,20 +20,20 @@ public class DetailItemServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
-		DAOscarpaImpl daoscarpa = context.getBean(DAOscarpaImpl.class);
-		
-		String scarpacode = (String) request.getParameter("codice");
-		if (scarpacode != null) {
-			Scarpa scarpa = daoscarpa.findByCode(scarpacode);
-			String parameters = "codice=" + scarpacode + "&prezzo=" + scarpa.getCosto() + "&dispo="
-                              + scarpa.getDisponibile() + "&modelo=" + scarpa.getBrand();        // dettagli della scarpa
-			response.sendRedirect("shoppingcart.jsp?"+parameters);   
-		} else {
-			response.sendRedirect("404.html?foundProduct=NO");  // not found page and product (scarpa)
-		}     	
-	}
+//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+//		DAOscarpaImpl daoscarpa = context.getBean(DAOscarpaImpl.class);
+//		
+//		String scarpacode = (String) request.getParameter("codice");
+//		if (scarpacode != null) {
+////			Scarpa scarpa = daoscarpa.findByCode(scarpacode);
+////			String parameters = "codice=" + scarpacode + "&prezzo=" + scarpa.getCosto() + "&dispo="
+////                              + scarpa.getDisponibile() + "&modelo=" + scarpa.getBrand();        // dettagli della scarpa
+//			response.sendRedirect("shoppingcart.jsp?"+parameters);   
+//		} else {
+//			response.sendRedirect("404.html?foundProduct=NO");  // not found page and product (scarpa)
+//		}     	
+//	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

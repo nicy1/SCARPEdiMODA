@@ -50,9 +50,9 @@
 					   <label for="cognome" class="label">Cognome</label>
 					   <input id="cognome" type="text" class="input" name="cognome" required>
 				   </div>
-				    <div>
-					   <label for="pass" class="label">Email</label>
-					   <input id="pass" type="email" class="input" name="email" required>
+				    <div class="group">
+					   <label for="email" class="label">Email</label>
+					   <input id="email" type="email" class="input" name="email" required>
 				   </div>
 				   <div class="group">
 					   <label for="pass" class="label">Password</label>
