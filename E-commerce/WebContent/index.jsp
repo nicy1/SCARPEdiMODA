@@ -80,7 +80,7 @@ ddsmoothmenu.init({
             </div>
             
             <div class="sidebar_box"><span class="bottom"></span>
-            	<h3>Il piu venduto </h3>   
+            	<h3>I più venduti </h3>   
                 <div class="content"> 
                     <div class="bs_box">
                     	<a href="#"><img src="IMAGES/piuVenduti/b06.jpg" alt="image" /></a>
