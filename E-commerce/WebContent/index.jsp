@@ -41,10 +41,12 @@ ddsmoothmenu.init({
     	<div id="top_nav" class="ddsmoothmenu">
             <ul>
                 <li><a href="index.jsp" class="selected">Home</a></li>
-                <li><a href="products.html">Prodotti</a>
+                <li><a href="#">Prodotti</a>
                     <ul>
-                        <li><a href="manProducts.html">Uomo</a></li>
-                        <li><a href="womanProducts.html">Donna</a></li>             
+                        <li><a href="uomoProducts.html">Uomo</a></li>
+                        <li><a href="donnaProducts.html">Donna</a></li> 
+                        <li><a href="bambinoProducts.html">Bambino</a></li>
+                        <li><a href="bambinaProducts.html">Bambina</a></li>             
                    </ul>
                 </li>
                 <li><a href="CheckoutServlet">Checkout</a></li>
@@ -56,7 +58,7 @@ ddsmoothmenu.init({
             <br style="clear: left" />
         </div> <!-- end of ddsmoothmenu -->
         <div id="templatemo_search">
-            <form action="#" method="get">
+            <form action="SearchServlet" method="get">
               <input type="text" value=" " name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
               <input type="submit" name="Search" value=" " alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
             </form>
@@ -121,6 +123,7 @@ ddsmoothmenu.init({
                 </div>
             </div>
         </div>
+        
         <div id="content" class="float_r">
         	<div id="slider-wrapper">
                 <div id="slider" class="nivoSlider">
@@ -140,7 +143,7 @@ ddsmoothmenu.init({
         	<h1>Nuovi Prodotti</h1>
             <div class="product_box">
 	            <h3>Sneaker sn03</h3>
-            	<a href="productdetail.html"><img src="IMAGES/nuoviProdotti/n01.jpg" alt="Shoes 1" /></a>
+            	<a href="#"><img src="IMAGES/nuoviProdotti/n01.jpg" alt="Shoes 1" /></a>
                 <p>Prodotto in Italia con materiali orignali.</p>
                 <p class="product_price">60 €</p>
                 <a href="AddItemCartServlet?codice=sneak03&amp;quantita=1" class="addtocart"></a>
@@ -148,7 +151,7 @@ ddsmoothmenu.init({
             </div>        	
             <div class="product_box">
             	<h3>Stivale stiv03</h3>
-            	<a href="productdetail.html"><img src="IMAGES/nuoviProdotti/n02.jpg" alt="Shoes 2" /></a>
+            	<a href="#"><img src="IMAGES/nuoviProdotti/n02.jpg" alt="Shoes 2" /></a>
                 <p>Prodotto in Italia con materiali orignali.</p>
               <p class="product_price">80 €</p>
                 <a href="AddItemCartServlet?codice=stiv03&amp;quantita=1" class="addtocart"></a>
@@ -156,7 +159,7 @@ ddsmoothmenu.init({
             </div>        	
             <div class="product_box no_margin_right">
             	<h3>Ciabatta c03</h3>
-            	<a href="productdetail.html"><img src="IMAGES/nuoviProdotti/n03.jpg" alt="Shoes 3" /></a>
+            	<a href="#"><img src="IMAGES/nuoviProdotti/n03.jpg" alt="Shoes 3" /></a>
                 <p>Ciabatta in vera pelle (Made in Italia).</p>
               <p class="product_price">20 €</p>
                 <a href="AddItemCartServlet?codice=c03&amp;quantita=1" class="addtocart"></a>
@@ -167,7 +170,7 @@ ddsmoothmenu.init({
                  	
             <div class="product_box">
             	<h3>Mocassino m02</h3>
-           	    <a href="productdetail.html"><img src="IMAGES/nuoviProdotti/n04.jpg" alt="Shoes 4" /></a>
+           	    <a href="#"><img src="IMAGES/nuoviProdotti/n04.jpg" alt="Shoes 4" /></a>
                 <p>Alta qualita (Made in Italia).</p>
               <p class="product_price">40 €</p>
                 <a href="AddItemCartServlet?codice=m02&amp;quantita=1" class="addtocart"></a>
@@ -175,7 +178,7 @@ ddsmoothmenu.init({
             </div>        	
             <div class="product_box">
 	            <h3>Ciabatta c02</h3>
-            	<a href="productdetail.html"><img src="IMAGES/nuoviProdotti/n05.jpg" alt="Shoes 5" /></a>
+            	<a href="#"><img src="IMAGES/nuoviProdotti/n05.jpg" alt="Shoes 5" /></a>
                 <p>Fabricata con materiali sintetici.</p>
               <p class="product_price">15 €</p>
                 <a href="AddItemCartServlet?codice=c02&amp;quantita=1" class="addtocart"></a>
@@ -183,7 +186,7 @@ ddsmoothmenu.init({
             </div>        	
             <div class="product_box no_margin_right">
             	<h3>Ciabatta c01</h3>
-            	<a href="productdetail.html"><img src="IMAGES/nuoviProdotti/n06.jpg" alt="Shoes 6" /></a>
+            	<a href="#"><img src="IMAGES/nuoviProdotti/n06.jpg" alt="Shoes 6" /></a>
                 <p>Ciabatta per l'estate.</p>
                 <p class="product_price">10 €</p>
                 <a href="AddItemCartServlet?codice=c01&amp;quantita=1" class="addtocart"></a>
@@ -194,7 +197,7 @@ ddsmoothmenu.init({
     </div> <!-- END of templatemo_main -->
     
     <div id="templatemo_footer">
-    	<p><a href="index.jsp">Home</a> | <a href="products.html">Prodotti</a> | <a href="about.html">About</a> | <a href="faqs.html">FAQs</a> | <a href="subscribe.html">Iscriviti</a> | <a href="contact.html">Contattici</a>
+    	<p><a href="index.jsp">Home</a> | <a href="about.html">About</a> | <a href="faqs.html">FAQs</a> | <a href="subscribe.html">Iscriviti</a> | <a href="contact.html">Contattici</a>
 		</p>
 
     	Copyright © 2021 <a href="#">ScarpeDiModa</a> </div> <!-- END of templatemo_footer -->

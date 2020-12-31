@@ -9,5 +9,6 @@ public interface DAOscarpa {
 	public void update(Scarpa a, int id);
 	public void delete(Integer id);
 	public Scarpa findByID(Integer id);
-	
+	public Scarpa findByCode(String code);
+	public List<Scarpa> findByKeyword(String keyword);
 } 

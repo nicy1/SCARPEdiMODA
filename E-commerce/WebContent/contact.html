@@ -7,26 +7,16 @@ http://www.templatemo.com/preview/templatemo_367_shoes
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Shoes Store - Contact Page</title>
+<title>ScarpeDiModa - Contact Page</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
+
 <link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="CSS/ddsmoothmenu.css" />
 
-<link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
-
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/ddsmoothmenu.js">
-
-/***********************************************
-* Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
-* This notice MUST stay intact for legal use
-* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
-***********************************************/
-
-</script>
-
-<script type="text/javascript">
-
+<script type="text/javascript" src="JAVASCRIPT/jquery.min.js"></script>
+<script type="text/javascript" src="JAVASCRIPT/ddsmoothmenu.js"></script>
+<script type="text/javascript">  
 ddsmoothmenu.init({
 	mainmenuid: "top_nav", //menu DIV id
 	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
@@ -34,24 +24,18 @@ ddsmoothmenu.init({
 	//customtheme: ["#1c5a80", "#18374a"],
 	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
 })
-
 </script>
-
 </head>
 
 <body>
-
 <div id="templatemo_body_wrapper">
 <div id="templatemo_wrapper">
 
 	<div id="templatemo_header">
-    	<div id="site_title"><h1><a href="#">Online Shoes Store</a></h1></div>
+    	<div id="site_title"><h1><a href="index.jsp">Negozio di scarpe online</a></h1></div>
         <div id="header_right">
         	<p>
-	        <a href="#">My Account</a> | <a href="#">My Wishlist</a> | <a href="#">My Cart</a> | <a href="#">Checkout</a> | <a href="#">Log In</a></p>
-            <p>
-            	Shopping Cart: <strong>3 items</strong> ( <a href="shoppingcart.html">Show Cart</a> )
-			</p>
+	        <a href="AccountServlet">Il mio account</a> | <a href="shoppingcart.jsp">Carrello</a> | <a href="loginRegister.jsp">Accedi</a></p>       
 		</div>
         <div class="cleaner"></div>
     </div> <!-- END of templatemo_header -->
@@ -59,31 +43,25 @@ ddsmoothmenu.init({
     <div id="templatemo_menubar">
     	<div id="top_nav" class="ddsmoothmenu">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="products.html">Products</a>
+                <li><a href="index.jsp" class="selected">Home</a></li>
+                <li><a href="#">Prodotti</a>
                     <ul>
-                        <li><a href="#submenu1">Sub menu 1</a></li>
-                        <li><a href="#submenu2">Sub menu 2</a></li>
-                        <li><a href="#submenu3">Sub menu 3</a></li>
-                        <li><a href="#submenu4">Sub menu 4</a></li>
-                        <li><a href="#submenu5">Sub menu 5</a></li>
-                  </ul>
+                        <li><a href="uomoProducts.html">Uomo</a></li>
+                        <li><a href="donnaProducts.html">Donna</a></li> 
+                        <li><a href="bambinoProducts.html">Bambino</a></li>
+                        <li><a href="bambinaProducts.html">Bambina</a></li>             
+                   </ul>
                 </li>
-                <li><a href="about.html">About</a>
-                    <ul>
-                        <li><a href="#submenu1">Sub menu 1</a></li>
-                        <li><a href="#submenu2">Sub menu 2</a></li>
-                        <li><a href="#submenu3">Sub menu 3</a></li>
-                  </ul>
-                </li>
+                <li><a href="CheckoutServlet">Checkout</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="faqs.html">FAQs</a></li>
-                <li><a href="checkout.html">Checkout</a></li>
-                <li><a href="contact.html" class="selected">Contact Us</a></li>
+                <li><a href="subscribe.html">Iscriviti</a></li>
+                <li><a href="contact.html">Contattaci</a></li>
             </ul>
             <br style="clear: left" />
         </div> <!-- end of ddsmoothmenu -->
         <div id="templatemo_search">
-            <form action="#" method="get">
+            <form action="SearchServlet" method="get">
               <input type="text" value=" " name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
               <input type="submit" name="Search" value=" " alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
             </form>
@@ -93,73 +71,78 @@ ddsmoothmenu.init({
     <div id="templatemo_main">
     	<div id="sidebar" class="float_l">
         	<div class="sidebar_box"><span class="bottom"></span>
-            	<h3>Categories</h3>   
+            	<h3>Categorie</h3>   
                 <div class="content"> 
                 	<ul class="sidebar_list">
-                    	<li class="first"><a href="#">Sed eget purus</a></li>
-                        <li><a href="#">Vestibulum eleifend</a></li>
-                        <li><a href="#">Nulla odio ipsum</a></li>
-                        <li><a href="#">Suspendisse posuere</a></li>
-                        <li><a href="#">Nunc a dui sed</a></li>
-                        <li><a href="#">Curabitur ac mauris</a></li>
-                        <li><a href="#">Mauris nulla tortor</a></li>
-                        <li><a href="#">Nullam ultrices</a></li>
-                        <li><a href="#">Nulla odio ipsum</a></li>
-                        <li><a href="#">Suspendisse posuere</a></li>
-                        <li><a href="#">Nunc a dui sed</a></li>
-                        <li><a href="#">Curabitur ac mauris</a></li>
-                        <li><a href="#">Mauris nulla tortor</a></li>
-                        <li><a href="#">Nullam ultrices</a></li>
-                        <li class="last"><a href="#">Sed eget purus</a></li>
+                        <li class="first"><a href="uomoProducts.html">Uomo</a></li>
+                        <li class="first"><a href="donnaProducts.html">Donna</a></li> 
+                        <li class="first"><a href="bambinoProducts.html">Bambino</a></li>
+                        <li class="first"><a href="bambinaProducts.html">Bambina</a></li>
+                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
                     </ul>
                 </div>
             </div>
+            
             <div class="sidebar_box"><span class="bottom"></span>
-            	<h3>Bestsellers </h3>   
+            	<h3>I più venduti </h3>   
                 <div class="content"> 
-                	<div class="bs_box">
-                    	<a href="#"><img src="images/templatemo_image_01.jpg" alt="image" /></a>
-                        <h4><a href="#">Donec nunc nisl</a></h4>
-                        <p class="price">$10</p>
+                    <div class="bs_box">
+                    	<a href="#"><img src="IMAGES/piuVenduti/b06.jpg" alt="image" /></a>
+                        <h4><a href="#">Décolleté gold d03</a></h4>
+                        <p class="price">45€</p>
                         <div class="cleaner"></div>
                     </div>
                     <div class="bs_box">
-                    	<a href="#"><img src="images/templatemo_image_01.jpg" alt="image" /></a>
-                        <h4><a href="#">Lorem ipsum dolor sit</a></h4>
-                        <p class="price">$12</p>
+                    	<a href="#"><img src="IMAGES/piuVenduti/b04.jpg" alt="image" /></a>
+                        <h4><a href="#">Sneaker nike s04</a></h4>
+                        <p class="price">70€</p>
                         <div class="cleaner"></div>
                     </div>
                     <div class="bs_box">
-                    	<a href="#"><img src="images/templatemo_image_01.jpg" alt="image" /></a>
-                        <h4><a href="#">Phasellus ut dui</a></h4>
-                        <p class="price">$20</p>
+                    	<a href="#"><img src="IMAGES/piuVenduti/b03.jpg" alt="image" /></a>
+                        <h4><a href="#">Tennis red t03</a></h4>
+                        <p class="price">40€</p>
                         <div class="cleaner"></div>
                     </div>
                     <div class="bs_box">
-                    	<a href="#"><img src="images/templatemo_image_01.jpg" alt="image" /></a>
-                        <h4><a href="#">Vestibulum ante</a></h4>
-                        <p class="price">$8</p>
+                    	<a href="#"><img src="IMAGES/piuVenduti/b02.jpg" alt="image" /></a>
+                        <h4><a href="#">Tennis black-white t02</a></h4>
+                        <p class="price">50€</p>
+                        <div class="cleaner"></div>
+                    </div>
+                    <div class="bs_box">
+                    	<a href="#"><img src="IMAGES/piuVenduti/b05.jpg" alt="image" /></a>
+                        <h4><a href="#">Décolleté d02</a></h4>
+                        <p class="price">70€</p>
+                        <div class="cleaner"></div>
+                    </div>
+                    <div class="bs_box">
+                    	<a href="#"><img src="IMAGES/piuVenduti/b01.jpg" alt="image" /></a>
+                        <h4><a href="#">Tennis nike t01</a></h4>
+                        <p class="price">40€</p>
                         <div class="cleaner"></div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
+        
         <div id="content" class="float_r">
-        	<h1>Contact Us</h1>
+        	<h1>Contattici</h1>
             <div class="content_half float_l">
-                <p>Etiam eget leo nisl. Morbi magna enim, lobortis vitae condimentum eu, ultrices a lacus.</p>
+                <p>Per contattare il nostro Customer Care è necessario compilare i campi sottostanti.</p>
                 <div id="contact_form">
                    <form method="post" name="contact" action="#">
                         
-                        <label for="author">Name:</label> <input type="text" id="author" name="author" class="required input_field" />
+                        <label for="author">Nome:</label> <input type="text" id="author" name="author" class="required input_field" />
                         <div class="cleaner h10"></div>
                         <label for="email">Email:</label> <input type="text" id="email" name="email" class="validate-email required input_field" />
                         <div class="cleaner h10"></div>
                         
-                        <label for="phone">Phone:</label> <input type="text" name="phone" id="phone" class="input_field" />
+                        <label for="phone">Telefono:</label> <input type="text" name="phone" id="phone" class="input_field" />
                         <div class="cleaner h10"></div>
         
-                        <label for="text">Message:</label> <textarea id="text" name="text" rows="0" cols="0" class="required"></textarea>
+                        <label for="text">Messaggio:</label> <textarea id="text" name="text" rows="0" cols="0" class="required"></textarea>
                         <div class="cleaner h10"></div>
                         
                         <input type="submit" class="submit_btn" name="submit" id="submit" value="Send" />
@@ -167,26 +150,14 @@ ddsmoothmenu.init({
                     </form>
                 </div>
             </div>
-        <div class="content_half float_r">
-        	<h5>Primary Office</h5>
-			660-110 Quisque diam at ligula, <br />
-			Etiam dictum lectus quis, 11220<br />
-			Sed mattis mi at sapien<br /><br />
-						
-			Phone: 010-010-6600<br />
-			Email: <a href="mailto:info@yourcompany.com">info@yourcompany.com</a><br/>
-			
+        <div class="content_half float_r">		
             <div class="cleaner h40"></div>
-			
-            <h5>Secondary Office</h5>
-			120-360 Cras ac nunc laoreet,<br />
-			Nulla vitae leo ac dui, 10680<br />
-			Cras id sem nulla<br /><br />
-			
-			Phone: 030-030-0220<br />
-			Email: <a href="mailto:contact@yourcompany.com">contact@yourcompany.com</a><br/>
+			<br/>
+			Email: <a href="mailto:auroragoto01@gmail.com">aurora-goto@ScarpeDiModa.com</a><br/>
+			      <dd><a href="mailto:coloniairenerosaria@gmail.com">irene-rosaria@ScarpeDiModa.com</a><br/>
+			      <dd><a href="mailto:gaetanoracioppa@gmail.com">gaetano-racioppa@ScarpeDiModa.com</a><br/>
+			      <dd><a href="mailto:malandanicy@gmail.com">nicy-malanda@ScarpeDiModa.com</a><br/>
 			<br />
-            Validate <a href="http://validator.w3.org/check?uri=referer" rel="nofollow">XHTML</a> &amp; <a href="http://jigsaw.w3.org/css-validator/check/referer" rel="nofollow">CSS</a>
         </div>
         
         <div class="cleaner h40"></div>
@@ -198,10 +169,10 @@ ddsmoothmenu.init({
     </div> <!-- END of templatemo_main -->
     
     <div id="templatemo_footer">
-    	<p><a href="#">Home</a> | <a href="#">Products</a> | <a href="#">About</a> | <a href="#">FAQs</a> | <a href="#">Checkout</a> | <a href="#">Contact Us</a>
+    	<p><a href="index.jsp">Home</a> | <a href="about.html">About</a> | <a href="faqs.html">FAQs</a> | <a href="subscribe.html">Iscriviti</a> | <a href="contact.html">Contattici</a>
 		</p>
 
-		Copyright © 2072 <a href="#">Your Company Name</a> <!-- Credit: www.templatemo.com -->
+    	Copyright © 2021 <a href="#">ScarpeDiModa</a> </div> <!-- END of templatemo_footer -->
     	
     </div> <!-- END of templatemo_footer -->
     

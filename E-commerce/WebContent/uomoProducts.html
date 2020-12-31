@@ -58,12 +58,12 @@ ddsmoothmenu.init({
     	<div id="top_nav" class="ddsmoothmenu">
             <ul>
                 <li><a href="index.jsp" class="selected">Home</a></li>
-                <li><a href="products.html">Prodotti</a>
+                <li><a href="#">Prodotti</a>
                     <ul>
-                        <li><a href="manProducts.html">Uomo</a></li>
-                        <li><a href="womanProducts.html">Donna</a></li> 
-                        <li><a href="manProducts.html">Bambino</a></li>
-                        <li><a href="womanProducts.html">Bambina</a></li>            
+                        <li><a href="uomoProducts.html">Uomo</a></li>
+                        <li><a href="donnaProducts.html">Donna</a></li> 
+                        <li><a href="bambinoProducts.html">Bambino</a></li>
+                        <li><a href="bambinaProducts.html">Bambina</a></li>            
                    </ul>
                 </li>
                 <li><a href="CheckoutServlet">Checkout</a></li>
@@ -75,7 +75,7 @@ ddsmoothmenu.init({
             <br style="clear: left" />
         </div> <!-- end of ddsmoothmenu -->
         <div id="templatemo_search">
-            <form action="#" method="get">
+            <form action="SearchServlet" method="get">
               <input type="text" value=" " name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
               <input type="submit" name="Search" value=" " alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
             </form>
@@ -385,12 +385,11 @@ ddsmoothmenu.init({
     		</div> <!-- END of templatemo_main -->
     
     <div id="templatemo_footer">
-    	<p><a href="#">Home</a> | <a href="#">Products</a> | <a href="#">About</a> | <a href="#">FAQs</a> | <a href="#">Checkout</a> | <a href="#">Contact Us</a>
+    	<p><a href="index.jsp">Home</a> | <a href="about.html">About</a> | <a href="faqs.html">FAQs</a> | <a href="subscribe.html">Iscriviti</a> | <a href="contact.html">Contattici</a>
 		</p>
 
-
-    	Copyright © 2021 <a href="#">ScarpeDiModa</a> 
-    </div> <!-- END of templatemo_footer -->
+    	Copyright © 2021 <a href="#">ScarpeDiModa</a> </div> <!-- END of templatemo_footer -->
+    
     
 </div> <!-- END of templatemo_wrapper -->
 </div> <!-- END of templatemo_body_wrapper -->
