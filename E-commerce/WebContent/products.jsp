@@ -137,7 +137,7 @@ ddsmoothmenu.init({
     </div> <!-- END of templatemo_main -->
     
     <div id="templatemo_footer">
-    	<p><a href="index.jsp">Home</a> | <a href="about.html">About</a> | <a href="faqs.html">FAQs</a> | <a href="subscribe.html">Iscriviti</a> | <a href="contact.html">Contattici</a>
+    	<p><a href="index.jsp">Home</a> | <a href="about.html">Chi siamo</a> | <a href="faqs.html">FAQs</a> | <a href="subscribe.html">Iscriviti</a> | <a href="contact.html">Contattici</a>
 		</p>
 
     	Copyright © 2021 <a href="#">ScarpeDiModa</a> </div> <!-- END of templatemo_footer -->
