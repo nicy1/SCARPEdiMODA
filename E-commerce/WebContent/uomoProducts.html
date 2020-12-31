@@ -58,12 +58,12 @@ ddsmoothmenu.init({
     	<div id="top_nav" class="ddsmoothmenu">
             <ul>
                 <li><a href="index.jsp" class="selected">Home</a></li>
-                <li><a href="#">Prodotti</a>
+                <li><a href="products.html">Prodotti</a>
                     <ul>
-                        <li><a href="uomoProducts.html">Uomo</a></li>
-                        <li><a href="donnaProducts.html">Donna</a></li> 
-                        <li><a href="bambinoProducts.html">Bambino</a></li>
-                        <li><a href="bambinaProducts.html">Bambina</a></li>            
+                        <li><a href="manProducts.html">Uomo</a></li>
+                        <li><a href="womanProducts.html">Donna</a></li> 
+                        <li><a href="manProducts.html">Bambino</a></li>
+                        <li><a href="womanProducts.html">Bambina</a></li>            
                    </ul>
                 </li>
                 <li><a href="CheckoutServlet">Checkout</a></li>
@@ -75,7 +75,7 @@ ddsmoothmenu.init({
             <br style="clear: left" />
         </div> <!-- end of ddsmoothmenu -->
         <div id="templatemo_search">
-            <form action="SearchServlet" method="get">
+            <form action="#" method="get">
               <input type="text" value=" " name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
               <input type="submit" name="Search" value=" " alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
             </form>
@@ -148,236 +148,211 @@ ddsmoothmenu.init({
         </div>
         
         <div id="content" class="float_r">
-        	<h1> Prodotti</h1>
+        	<h1> Scarpe da Uomo</h1>
             <div class="product_box">
-	            <h3>Ut eu feugiat</h3>
+	            <h3>Ciabatta01</h3>
             	<a href="productdetail.html"><img src="IMAGES/scarpe/c01.jpg" alt="Shoes 1" /></a>
-                <p> Fusce in dui et neque malesuada tincidunt nec at urna. Validate <a href="http://validator.w3.org/check?uri=referer" rel="nofollow">XHTML</a> &amp; <a href="http://jigsaw.w3.org/css-validator/check/referer" rel="nofollow">CSS</a>.</p>
-              <p class="product_price">$ 100</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
+              <p class="product_price">€ 100</p>
+                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
             </div>        	
             <div class="product_box">
-            	<h3>Curabitur et turpis</h3>
+            	<h3>Ciabatta02</h3>
             	<a href="productdetail.html"><img src="IMAGES/scarpe/c02.jpg" alt="Shoes 2" /></a>
-                <p>Etiam et sapien ut nunc blandit euismod. Sed dui libero, semper a volutpat sed, placerat eu lectus.</p>
-            <p class="product_price">$ 80</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
+            <p class="product_price">€ 80</p>
+               <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
             </div>        	
             <div class="product_box no_margin_right">
-            	<h3>Mauris consectetur</h3>
-            	<a href="productdetail.html"><img src="IMAGES/scarpe/c03.jpg" alt="Shoes 3" /></a>
-                <p>Curabitur pellentesque ullamcorper massa ac ultricies. Maecenas porttitor erat quis leo pellentesque.</p>
-              <p class="product_price">$ 60</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
+            	<h3>Ciabatta03</h3>
+            	<a href="productdetail.html"><img src="IMAGES/scarpe/c03.jpg" alt="Shoes 3" /></a>  
+              <p class="product_price">€ 60</p>
+                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
             </div>     
             
             <div class="cleaner"></div>
                	
             <div class="product_box">
-            	<h3>Proin volutpat</h3>
+            	<h3>Ciabatta04</h3>
             	<a href="productdetail.html"><img src="IMAGES/scarpe/c04.jpg" alt="Shoes 4" /></a>
-                <p>Morbi non risus vitae est vestibulum tincidunt ac eget metus. Sed congue, erat id congue vehicula.</p>
-              <p class="product_price">$ 260</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
+              <p class="product_price">€ 260</p>
+                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
             </div>        	
             <div class="product_box">
-	            <h3>Aenean tempus</h3>
-            	<a href="productdetail.html"><img src="IMAGES/scarpe/c05.jpg" alt="Shoes 5" /></a>
-                <p>Aenean eu elit arcu. Quisque eget blandit erat. Integer molestie malesuada augue vitae mollis.</p>
-            <p class="product_price">$ 80</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
+	            <h3>Ciabatta05</h3>
+            	<a href="productdetail.html"><img src="IMAGES/scarpe/c05.jpg" alt="Shoes 5" /></a> 
+            <p class="product_price">€ 80</p>
+              <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
             </div>        	
             <div class="product_box no_margin_right">
-            	<h3>Nulla luctus urna</h3>
+            	<h3>Mocassino01</h3>
             	<a href="productdetail.html"><img src="IMAGES/scarpe/m01.jpg" alt="Shoes 6" /></a>
-                <p>Nunc nisl nisi, aliquet eu gravida vitae, porta vel ante. Pellentesque faucibus risus et sem volutpat.</p>
-              <p class="product_price">$ 190</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
+              <p class="product_price">€ 190</p>
+               <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
             </div>   
             
             <div class="cleaner"></div>
                  	
             <div class="product_box">
-            	<h3>Pellentesque egestas</h3>
+            	<h3>Mocassino02</h3>
             	<a href="productdetail.html"><img src="IMAGES/scarpe/m02.jpg" alt="Shoes 7" /></a>
-				<p>Aenean eu elit arcu. Quisque eget blandit erat. Integer molestie malesuada augue vitae mollis.</p>
-              <p class="product_price">$ 30</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
+              <p class="product_price">€ 30</p>
+                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
             </div>        	
             <div class="product_box">
-            	<h3>Suspendisse porttitor</h3>
+            	<h3>Mocassino03</h3>
             	<a href="productdetail.html"><img src="IMAGES/scarpe/m03.jpg" alt="Shoes 8" /></a>
-                <p>Nulla rutrum neque vitae erat condimentum eget malesuada neque molestie. Nunc a leo tellus.</p>
-            <p class="product_price">$ 220</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
+            <p class="product_price">€ 220</p>
+                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
             </div>        	
             <div class="product_box no_margin_right">
-            	 <h3>Nam vehicula</h3>
+            	 <h3>Mocassino04</h3>
             	<a href="productdetail.html"><img src="IMAGES/scarpe/m04.jpg" alt="Shoes 9" /></a>
-               	<p>Vivamus accumsan luctus interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <p class="product_price">$ 65</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
+              <p class="product_price">€ 65</p>
+              <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
             </div>  
         </div> 
         <div class="cleaner"></div>
         
       	<div id="content" class="float_r">
         <div class="product_box">
-	            <h3>Ut eu feugiat</h3>
+	            <h3>Mocassino05</h3>
             	<a href="productdetail.html"><img src="IMAGES/scarpe/m05.jpg" alt="Shoes 1" /></a>
-                <p> Fusce in dui et neque malesuada tincidunt nec at urna. Validate <a href="http://validator.w3.org/check?uri=referer" rel="nofollow">XHTML</a> &amp; <a href="http://jigsaw.w3.org/css-validator/check/referer" rel="nofollow">CSS</a>.</p>
-              <p class="product_price">$ 100</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
+              <p class="product_price">€ 100</p>
+                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
             </div>        	
             <div class="product_box">
-            	<h3>Curabitur et turpis</h3>
+            	<h3>Sneaker01</h3>
             	<a href="productdetail.html"><img src="IMAGES/scarpe/sneak01.jpg" alt="Shoes 2" /></a>
-                <p>Etiam et sapien ut nunc blandit euismod. Sed dui libero, semper a volutpat sed, placerat eu lectus.</p>
-            <p class="product_price">$ 80</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
+            <p class="product_price">€ 80</p>
+                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
             </div>        	
             <div class="product_box no_margin_right">
-            	<h3>Mauris consectetur</h3>
+            	<h3>Sneaker02</h3>
             	<a href="productdetail.html"><img src="IMAGES/scarpe/sneak02.jpg" alt="Shoes 3" /></a>
-                <p>Curabitur pellentesque ullamcorper massa ac ultricies. Maecenas porttitor erat quis leo pellentesque.</p>
-              <p class="product_price">$ 60</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
+              <p class="product_price">€ 60</p>
+                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
             </div>     
             </div>
             <div class="cleaner"></div>
     
     		<div id="content" class="float_r">
     		<div class="product_box">
-	            <h3>Ut eu feugiat</h3>
+	            <h3>Sneaker03</h3>
             	<a href="productdetail.html"><img src="IMAGES/scarpe/sneak03.jpg" alt="Shoes 1" /></a>
-                <p> Fusce in dui et neque malesuada tincidunt nec at urna. Validate <a href="http://validator.w3.org/check?uri=referer" rel="nofollow">XHTML</a> &amp; <a href="http://jigsaw.w3.org/css-validator/check/referer" rel="nofollow">CSS</a>.</p>
-              <p class="product_price">$ 100</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
+              <p class="product_price">€ 100</p>
+                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
             </div>        	
             <div class="product_box">
-            	<h3>Curabitur et turpis</h3>
+            	<h3>Sneaker04</h3>
             	<a href="productdetail.html"><img src="IMAGES/scarpe/sneak04.jpg" alt="Shoes 2" /></a>
-                <p>Etiam et sapien ut nunc blandit euismod. Sed dui libero, semper a volutpat sed, placerat eu lectus.</p>
-            <p class="product_price">$ 80</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
+            <p class="product_price">€ 80</p>
+                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
             </div>        	
             <div class="product_box no_margin_right">
-            	<h3>Mauris consectetur</h3>
+            	<h3>Sneaker05</h3>
             	<a href="productdetail.html"><img src="IMAGES/scarpe/sneak05.jpg" alt="Shoes 3" /></a>
-                <p>Curabitur pellentesque ullamcorper massa ac ultricies. Maecenas porttitor erat quis leo pellentesque.</p>
-              <p class="product_price">$ 60</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
+              <p class="product_price">€ 60</p>
+                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
             </div>     
             </div>
             <div class="cleaner"></div>
     
     <div id="content" class="float_r">
     <div class="product_box">
-	            <h3>Ut eu feugiat</h3>
+	            <h3>Stivali01</h3>
             	<a href="productdetail.html"><img src="IMAGES/scarpe/stiv01.jpg" alt="Shoes 1" /></a>
-                <p> Fusce in dui et neque malesuada tincidunt nec at urna. Validate <a href="http://validator.w3.org/check?uri=referer" rel="nofollow">XHTML</a> &amp; <a href="http://jigsaw.w3.org/css-validator/check/referer" rel="nofollow">CSS</a>.</p>
-              <p class="product_price">$ 100</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
+              <p class="product_price">€ 100</p>
+                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
             </div>        	
             <div class="product_box">
-            	<h3>Curabitur et turpis</h3>
+            	<h3>Stivali02</h3>
             	<a href="productdetail.html"><img src="IMAGES/scarpe/stiv02.jpg" alt="Shoes 2" /></a>
-                <p>Etiam et sapien ut nunc blandit euismod. Sed dui libero, semper a volutpat sed, placerat eu lectus.</p>
-            <p class="product_price">$ 80</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
+            <p class="product_price">€ 80</p>
+                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
             </div>        	
             <div class="product_box no_margin_right">
-            	<h3>Mauris consectetur</h3>
+            	<h3>Stivali03</h3>
             	<a href="productdetail.html"><img src="IMAGES/scarpe/stiv03.jpg" alt="Shoes 3" /></a>
-                <p>Curabitur pellentesque ullamcorper massa ac ultricies. Maecenas porttitor erat quis leo pellentesque.</p>
-              <p class="product_price">$ 60</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
+              <p class="product_price">€ 60</p>
+                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
             </div>     
             </div>
             <div class="cleaner"></div>
     
     <div id="content" class="float_r">
     <div class="product_box">
-	            <h3>Ut eu feugiat</h3>
+	            <h3>Stivali04</h3>
             	<a href="productdetail.html"><img src="IMAGES/scarpe/stiv04.jpg" alt="Shoes 1" /></a>
-                <p> Fusce in dui et neque malesuada tincidunt nec at urna. Validate <a href="http://validator.w3.org/check?uri=referer" rel="nofollow">XHTML</a> &amp; <a href="http://jigsaw.w3.org/css-validator/check/referer" rel="nofollow">CSS</a>.</p>
-              <p class="product_price">$ 100</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
+              <p class="product_price">€ 100</p>
+                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
             </div>        	
             <div class="product_box">
-            	<h3>Curabitur et turpis</h3>
+            	<h3>Stivali05</h3>
             	<a href="productdetail.html"><img src="IMAGES/scarpe/stiv05.jpg" alt="Shoes 2" /></a>
-                <p>Etiam et sapien ut nunc blandit euismod. Sed dui libero, semper a volutpat sed, placerat eu lectus.</p>
-            <p class="product_price">$ 80</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
+            <p class="product_price">€ 80</p>
+                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
             </div>        	
             <div class="product_box no_margin_right">
-            	<h3>Mauris consectetur</h3>
+            	<h3>Tennis01</h3>
             	<a href="productdetail.html"><img src="IMAGES/scarpe/ten01.jpg" alt="Shoes 3" /></a>
-                <p>Curabitur pellentesque ullamcorper massa ac ultricies. Maecenas porttitor erat quis leo pellentesque.</p>
-              <p class="product_price">$ 60</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
+              <p class="product_price">€ 60</p>
+                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
             </div>     
             </div>
             <div class="cleaner"></div>
             
             <div id="content" class="float_r">
             <div class="product_box">
-	            <h3>Ut eu feugiat</h3>
+	            <h3>Tennis02</h3>
             	<a href="productdetail.html"><img src="IMAGES/scarpe/ten02.jpg" alt="Shoes 1" /></a>
-                <p> Fusce in dui et neque malesuada tincidunt nec at urna. Validate <a href="http://validator.w3.org/check?uri=referer" rel="nofollow">XHTML</a> &amp; <a href="http://jigsaw.w3.org/css-validator/check/referer" rel="nofollow">CSS</a>.</p>
-              <p class="product_price">$ 100</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
+              <p class="product_price">€ 100</p>
+                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
             </div>        	
             <div class="product_box">
-            	<h3>Curabitur et turpis</h3>
+            	<h3>Tennis03</h3>
             	<a href="productdetail.html"><img src="IMAGES/scarpe/ten03.jpg" alt="Shoes 2" /></a>
-                <p>Etiam et sapien ut nunc blandit euismod. Sed dui libero, semper a volutpat sed, placerat eu lectus.</p>
-            <p class="product_price">$ 80</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
+            <p class="product_price">€ 80</p>
+                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
             </div>        	
             <div class="product_box no_margin_right">
-            	<h3>Mauris consectetur</h3>
+            	<h3>Tennis04</h3>
             	<a href="productdetail.html"><img src="IMAGES/scarpe/ten04.jpg" alt="Shoes 3" /></a>
-                <p>Curabitur pellentesque ullamcorper massa ac ultricies. Maecenas porttitor erat quis leo pellentesque.</p>
-              <p class="product_price">$ 60</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
+              <p class="product_price">€ 60</p>
+                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
             </div>     
             </div>
             <div class="cleaner"></div>
             
             <div id="content" class="float_r">
             <div class="product_box">
-	            <h3>Ut eu feugiat</h3>
+	            <h3>Tennis05</h3>
             	<a href="productdetail.html"><img src="IMAGES/scarpe/ten05.jpg" alt="Shoes 1" /></a>
-                <p> Fusce in dui et neque malesuada tincidunt nec at urna. Validate <a href="http://validator.w3.org/check?uri=referer" rel="nofollow">XHTML</a> &amp; <a href="http://jigsaw.w3.org/css-validator/check/referer" rel="nofollow">CSS</a>.</p>
-              <p class="product_price">$ 100</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
+              <p class="product_price">€ 100</p>
+                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
             </div>    
             </div>    	
 			<div class="cleaner"></div>
@@ -385,11 +360,12 @@ ddsmoothmenu.init({
     		</div> <!-- END of templatemo_main -->
     
     <div id="templatemo_footer">
-    	<p><a href="index.jsp">Home</a> | <a href="about.html">Chi siamo</a> | <a href="faqs.html">FAQs</a> | <a href="subscribe.html">Iscriviti</a> | <a href="contact.html">Contattici</a>
+    	<p><a href="#">Home</a> | <a href="#">Prodotti</a> | <a href="#">Chi siamo</a> | <a href="#">FAQs</a> | <a href="#">Checkout</a> | <a href="#">Contattaci</a>
 		</p>
 
-    	Copyright © 2021 <a href="#">ScarpeDiModa</a> </div> <!-- END of templatemo_footer -->
-    
+
+    	Copyright © 2021 <a href="#">ScarpeDiModa</a> 
+    </div> <!-- END of templatemo_footer -->
     
 </div> <!-- END of templatemo_wrapper -->
 </div> <!-- END of templatemo_body_wrapper -->

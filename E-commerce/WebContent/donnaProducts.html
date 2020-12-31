@@ -6,8 +6,9 @@ http://www.templatemo.com/preview/templatemo_367_shoes
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<!--  commento  -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Shoes Store - Products</title>
+<title>Scarpe uomo</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 
@@ -15,8 +16,18 @@ http://www.templatemo.com/preview/templatemo_367_shoes
 <link rel="stylesheet" type="text/css" href="CSS/ddsmoothmenu.css" />
 
 <script type="text/javascript" src="JAVASCRIPT/jquery.min.js"></script>
-<script type="text/javascript" src="JAVASCRIPT/ddsmoothmenu.js"></script>
-<script type="text/javascript">  
+<script type="text/javascript" src="JAVASCRIPT/ddsmoothmenu.js">
+
+/***********************************************
+* Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+</script>
+
+<script type="text/javascript">
+
 ddsmoothmenu.init({
 	mainmenuid: "top_nav", //menu DIV id
 	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
@@ -24,10 +35,13 @@ ddsmoothmenu.init({
 	//customtheme: ["#1c5a80", "#18374a"],
 	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
 })
+
 </script>
+
 </head>
 
 <body>
+
 <div id="templatemo_body_wrapper">
 <div id="templatemo_wrapper">
 
@@ -44,12 +58,12 @@ ddsmoothmenu.init({
     	<div id="top_nav" class="ddsmoothmenu">
             <ul>
                 <li><a href="index.jsp" class="selected">Home</a></li>
-                <li><a href="#">Prodotti</a>
+                <li><a href="products.html">Prodotti</a>
                     <ul>
-                        <li><a href="uomoProducts.html">Uomo</a></li>
-                        <li><a href="donnaProducts.html">Donna</a></li> 
-                        <li><a href="bambinoProducts.html">Bambino</a></li>
-                        <li><a href="bambinaProducts.html">Bambina</a></li>             
+                        <li><a href="manProducts.html">Uomo</a></li>
+                        <li><a href="womanProducts.html">Donna</a></li> 
+                        <li><a href="manProducts.html">Bambino</a></li>
+                        <li><a href="womanProducts.html">Bambina</a></li>            
                    </ul>
                 </li>
                 <li><a href="CheckoutServlet">Checkout</a></li>
@@ -61,12 +75,14 @@ ddsmoothmenu.init({
             <br style="clear: left" />
         </div> <!-- end of ddsmoothmenu -->
         <div id="templatemo_search">
-            <form action="SearchServlet" method="get">
+            <form action="#" method="get">
               <input type="text" value=" " name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
               <input type="submit" name="Search" value=" " alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
             </form>
         </div>
     </div> <!-- END of templatemo_menubar -->
+    
+    
     
     <div id="templatemo_main">
     	<div id="sidebar" class="float_l">
@@ -85,7 +101,7 @@ ddsmoothmenu.init({
             </div>
             
             <div class="sidebar_box"><span class="bottom"></span>
-            	<h3>I più venduti </h3>   
+            	<h3>I più venduti</h3>   
                 <div class="content"> 
                     <div class="bs_box">
                     	<a href="#"><img src="IMAGES/piuVenduti/b06.jpg" alt="image" /></a>
@@ -123,33 +139,34 @@ ddsmoothmenu.init({
                         <p class="price">40€</p>
                         <div class="cleaner"></div>
                     </div>
+                    <div class="bs_box">
+                        <div class="cleaner"></div>
+                        <div class="paddingSidebar"></div>
+                    </div>
                 </div>
             </div>
         </div>
         
         <div id="content" class="float_r">
-        	<h1> Prodotti</h1>
+        	<h1> Scarpe da Donna</h1>
             <div class="product_box">
-	            <h3>Ut eu feugiat</h3>
-            	<a href="productdetail.html"><img src="images/product/01.jpg" alt="Shoes 1" /></a>
-                <p> Fusce in dui et neque malesuada tincidunt nec at urna. Validate <a href="http://validator.w3.org/check?uri=referer" rel="nofollow">XHTML</a> &amp; <a href="http://jigsaw.w3.org/css-validator/check/referer" rel="nofollow">CSS</a>.</p>
-              <p class="product_price">$ 100</p>
+	            <h3>Tacco01</h3>
+            	<a href="productdetail.html"><img src="IMAGES/scarpe/tac01.jpg" alt="Shoes 1" /></a>
+              <p class="product_price">€ 100</p>
                 <a href="shoppingcart.html" class="addtocart"></a>
                 <a href="productdetail.html" class="detail"></a>
             </div>        	
             <div class="product_box">
-            	<h3>Curabitur et turpis</h3>
-            	<a href="productdetail.html"><img src="images/product/02.jpg" alt="Shoes 2" /></a>
-                <p>Etiam et sapien ut nunc blandit euismod. Sed dui libero, semper a volutpat sed, placerat eu lectus.</p>
-            <p class="product_price">$ 80</p>
+            	<h3>Tacco02</h3>
+            	<a href="productdetail.html"><img src="IMAGES/scarpe/tac02.jpg" alt="Shoes 2" /></a>
+            <p class="product_price">€ 80</p>
                 <a href="shoppingcart.html" class="addtocart"></a>
                 <a href="productdetail.html" class="detail"></a>
             </div>        	
             <div class="product_box no_margin_right">
-            	<h3>Mauris consectetur</h3>
-            	<a href="productdetail.html"><img src="images/product/03.jpg" alt="Shoes 3" /></a>
-                <p>Curabitur pellentesque ullamcorper massa ac ultricies. Maecenas porttitor erat quis leo pellentesque.</p>
-              <p class="product_price">$ 60</p>
+            	<h3>Tacco03</h3>
+            	<a href="productdetail.html"><img src="IMAGES/scarpe/tac03.jpg" alt="Shoes 3" /></a>
+              <p class="product_price">€ 60</p>
                 <a href="shoppingcart.html" class="addtocart"></a>
                 <a href="productdetail.html" class="detail"></a>
             </div>     
@@ -157,65 +174,38 @@ ddsmoothmenu.init({
             <div class="cleaner"></div>
                	
             <div class="product_box">
-            	<h3>Proin volutpat</h3>
-            	<a href="productdetail.html"><img src="images/product/04.jpg" alt="Shoes 4" /></a>
-                <p>Morbi non risus vitae est vestibulum tincidunt ac eget metus. Sed congue, erat id congue vehicula.</p>
-              <p class="product_price">$ 260</p>
+            	<h3>Tacco04</h3>
+            	<a href="productdetail.html"><img src="IMAGES/scarpe/tac04.jpg" alt="Shoes 4" /></a>
+              <p class="product_price">€ 260</p>
                 <a href="shoppingcart.html" class="addtocart"></a>
                 <a href="productdetail.html" class="detail"></a>
             </div>        	
             <div class="product_box">
-	            <h3>Aenean tempus</h3>
-            	<a href="productdetail.html"><img src="images/product/05.jpg" alt="Shoes 5" /></a>
-                <p>Aenean eu elit arcu. Quisque eget blandit erat. Integer molestie malesuada augue vitae mollis.</p>
-            <p class="product_price">$ 80</p>
+	            <h3>Tacco05</h3>
+            	<a href="productdetail.html"><img src="IMAGES/scarpe/tac05.jpg" alt="Shoes 5" /></a>
+            <p class="product_price">€ 80</p>
                 <a href="shoppingcart.html" class="addtocart"></a>
                 <a href="productdetail.html" class="detail"></a>
             </div>        	
             <div class="product_box no_margin_right">
-            	<h3>Nulla luctus urna</h3>
-            	<a href="productdetail.html"><img src="images/product/06.jpg" alt="Shoes 6" /></a>
-                <p>Nunc nisl nisi, aliquet eu gravida vitae, porta vel ante. Pellentesque faucibus risus et sem volutpat.</p>
-              <p class="product_price">$ 190</p>
+            	<h3>Tacco01</h3>
+            	<a href="productdetail.html"><img src="IMAGES/scarpe/tac01.jpg" alt="Shoes 6" /></a>
+              <p class="product_price">€ 190</p>
                 <a href="shoppingcart.html" class="addtocart"></a>
                 <a href="productdetail.html" class="detail"></a>
             </div>   
             
             <div class="cleaner"></div>
-                 	
-            <div class="product_box">
-            	<h3>Pellentesque egestas</h3>
-            	<a href="productdetail.html"><img src="images/product/07.jpg" alt="Shoes 7" /></a>
-				<p>Aenean eu elit arcu. Quisque eget blandit erat. Integer molestie malesuada augue vitae mollis.</p>
-              <p class="product_price">$ 30</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
-            </div>        	
-            <div class="product_box">
-            	<h3>Suspendisse porttitor</h3>
-            	<a href="productdetail.html"><img src="images/product/08.jpg" alt="Shoes 8" /></a>
-                <p>Nulla rutrum neque vitae erat condimentum eget malesuada neque molestie. Nunc a leo tellus.</p>
-            <p class="product_price">$ 220</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
-            </div>        	
-            <div class="product_box no_margin_right">
-            	 <h3>Nam vehicula</h3>
-            	<a href="productdetail.html"><img src="images/product/09.jpg" alt="Shoes 9" /></a>
-               	<p>Vivamus accumsan luctus interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <p class="product_price">$ 65</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="productdetail.html" class="detail"></a>
-            </div>  
-        </div> 
-        <div class="cleaner"></div>
-    </div> <!-- END of templatemo_main -->
+    
+    		</div> <!-- END of templatemo_main -->
     
     <div id="templatemo_footer">
-    	<p><a href="index.jsp">Home</a> | <a href="about.html">About</a> | <a href="faqs.html">FAQs</a> | <a href="subscribe.html">Iscriviti</a> | <a href="contact.html">Contattici</a>
+    	<p><a href="#">Home</a> | <a href="#">Prodotti</a> | <a href="#">Chi siamo</a> | <a href="#">FAQs</a> | <a href="#">Checkout</a> | <a href="#">Contattaci</a>
 		</p>
 
-    	Copyright © 2021 <a href="#">ScarpeDiModa</a> </div> <!-- END of templatemo_footer -->
+
+    	Copyright © 2021 <a href="#">ScarpeDiModa</a> 
+    </div> <!-- END of templatemo_footer -->
     
 </div> <!-- END of templatemo_wrapper -->
 </div> <!-- END of templatemo_body_wrapper -->
