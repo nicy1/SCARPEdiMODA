@@ -6,15 +6,13 @@
 <title>ScarpeDiModa - Product Detail</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
+
 <link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="CSS/ddsmoothmenu.css" />
 
-<link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
-
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/ddsmoothmenu.js"></script>
-
-<script type="text/javascript">
-
+<script type="text/javascript" src="JAVASCRIPT/jquery.min.js"></script>
+<script type="text/javascript" src="JAVASCRIPT/ddsmoothmenu.js"></script>
+<script type="text/javascript">  
 ddsmoothmenu.init({
 	mainmenuid: "top_nav", //menu DIV id
 	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
@@ -22,18 +20,10 @@ ddsmoothmenu.init({
 	//customtheme: ["#1c5a80", "#18374a"],
 	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
 })
-
 </script>
-
-<script type="text/javascript" src="js/jquery-1-4-2.min.js"></script> 
-<link rel="stylesheet" href="css/slimbox2.css" type="text/css" media="screen" /> 
-<script type="text/JavaScript" src="js/slimbox2.js"></script> 
-
-
 </head>
 
 <body>
-
 <div id="templatemo_body_wrapper">
 <div id="templatemo_wrapper">
 
@@ -41,7 +31,7 @@ ddsmoothmenu.init({
     	<div id="site_title"><h1><a href="index.jsp">Negozio di scarpe online</a></h1></div>
         <div id="header_right">
         	<p>
-	        <a href="AccountServlet">Il mio account</a> | <a href="shoppingcart.jsp">Carrello</a> | <a href="loginRegister.html">Accedi</a></p>       
+	        <a href="AccountServlet">Il mio account</a> | <a href="shoppingcart.jsp">Carrello</a> | <a href="loginRegister.jsp">Accedi</a></p>       
 		</div>
         <div class="cleaner"></div>
     </div> <!-- END of templatemo_header -->
@@ -50,10 +40,12 @@ ddsmoothmenu.init({
     	<div id="top_nav" class="ddsmoothmenu">
             <ul>
                 <li><a href="index.jsp" class="selected">Home</a></li>
-                <li><a href="products.html">Prodotti</a>
+                <li><a href="#">Prodotti</a>
                     <ul>
-                        <li><a href="manProducts.html">Uomo</a></li>
-                        <li><a href="womanProducts.html">Donna</a></li>             
+                        <li><a href="uomoProducts.html">Uomo</a></li>
+                        <li><a href="donnaProducts.html">Donna</a></li> 
+                        <li><a href="bambinoProducts.html">Bambino</a></li>
+                        <li><a href="bambinaProducts.html">Bambina</a></li>             
                    </ul>
                 </li>
                 <li><a href="CheckoutServlet">Checkout</a></li>
@@ -65,7 +57,7 @@ ddsmoothmenu.init({
             <br style="clear: left" />
         </div> <!-- end of ddsmoothmenu -->
         <div id="templatemo_search">
-            <form action="#" method="get">
+            <form action="SearchServlet" method="get">
               <input type="text" value=" " name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
               <input type="submit" name="Search" value=" " alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
             </form>
@@ -78,8 +70,8 @@ ddsmoothmenu.init({
             	<h3>Categorie</h3>   
                 <div class="content"> 
                 	<ul class="sidebar_list">
-                        <li class="first"><a href="manProducts.html">Uomo</a></li>
-                        <li class="last"><a href="womanProducts.html">Donna</a></li> 
+                        <li class="first"><a href="uomoProducts.html">Uomo</a></li>
+                        <li class="first"><a href="donnaProducts.html">Donna</a></li> 
                         <li class="first"><a href="bambinoProducts.html">Bambino</a></li>
                         <li class="first"><a href="bambinaProducts.html">Bambina</a></li>
                         <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
@@ -89,7 +81,7 @@ ddsmoothmenu.init({
             </div>
             
             <div class="sidebar_box"><span class="bottom"></span>
-            	<h3>Il piu venduto </h3>   
+            	<h3>I più venduti </h3>   
                 <div class="content"> 
                     <div class="bs_box">
                     	<a href="#"><img src="IMAGES/piuVenduti/b06.jpg" alt="image" /></a>
@@ -131,10 +123,14 @@ ddsmoothmenu.init({
             </div>
         </div>
         
-        <% String codice = request.getParameter("codice");
-           String prezzo = request.getParameter("prezzo"); 
-           String disp   = request.getParameter("dispo"); 
-           String modelo = request.getParameter("modelo"); 
+        <% String codice = request.getParameter("codice");   // codice, genere,descrizione,colore, numero, brand, disponilita
+           String costo = request.getParameter("costo"); 
+           String dispo   = request.getParameter("dispo"); 
+           String brand = request.getParameter("brand"); 
+           String colore = request.getParameter("colore"); 
+           String genere   = request.getParameter("genere"); 
+           String numero = request.getParameter("numero");
+           String descr = request.getParameter("descrizione");
         %>
         <div id="content" class="float_r">
         	<h1>Dettagli </h1>
@@ -144,16 +140,36 @@ ddsmoothmenu.init({
             <div class="content_half float_r">
                 <table>
                     <tr>
+                        <td width="160">Codice:</td>
+                        <td> <%= codice %> </td>
+                    </tr>
+                    <tr>
+                        <td>Genere:</td>
+                        <td> <%= genere %> </td>
+                    </tr>
+                    <tr>
+                        <td>Descrizione:</td>
+                        <td> <%= descr %> </td>
+                    </tr>
+                    <tr>
+                        <td>Colore:</td>
+                        <td> <%= colore %> </td>
+                    </tr>
+                    <tr>
+                        <td>Misura:</td>
+                        <td> <%= numero %> </td>
+                    </tr>
+                    <tr>
+                        <td>Modello:</td>
+                        <td> <%= brand %> </td>
+                    </tr>
+                    <tr>
                         <td width="160">Prezzo:</td>
-                        <td> <%= prezzo + "€" %> </td>
+                        <td> <%= costo + "€" %> </td>
                     </tr>
                     <tr>
                         <td>Disponibilita:</td>
-                        <td> <%= disp %> </td>
-                    </tr>
-                    <tr>
-                        <td>Modelo:</td>
-                        <td> <%= modelo %> </td>
+                        <td> <%= dispo %> </td>
                     </tr>
                     <tr>
                     	<td>Quantita</td>
@@ -169,21 +185,21 @@ ddsmoothmenu.init({
             
             <h3>Prodotti Correlati</h3>
         	<div class="product_box">
-            	<a href="productdetail.html"><img src="IMAGES/scarpe/c05.jpg" alt="" /></a>
+            	<a href="#"><img src="IMAGES/scarpe/c05.jpg" alt="" /></a>
                 <h3>Ciabatta c05</h3>
                 <p class="product_price">10 €</p>
                 <a href="AddItemCartServlet?codice=c05&amp;quantita=1" class="addtocart"></a>
                 <a href="DetailItemServlet?codice=c05" class="detail"></a>
             </div>        	
             <div class="product_box">
-            	<a href="productdetail.html"><img src="IMAGES/scarpe/m01.jpg" alt="" /></a>
+            	<a href="#"><img src="IMAGES/scarpe/m01.jpg" alt="" /></a>
                 <h3>Mocassiono m01</h3>
                 <p class="product_price">35 €</p>
                 <a href="AddItemCartServlet?codice=m01&amp;quantita=1" class="addtocart"></a>
                 <a href="DetailItemServlet?codice=m01" class="detail"></a>
             </div>        	
             <div class="product_box no_margin_right">
-            	<a href="productdetail.html"><img src="IMAGES/scarpe/sneak05.jpg" alt="" /></a>
+            	<a href="#"><img src="IMAGES/scarpe/sneak05.jpg" alt="" /></a>
                 <h3>Sneaker sn05</h3>
                 <p class="product_price">80 €</p>
                 <a href="AddItemCartServlet?codice=sneak05&amp;quantita=1" class="addtocart"></a>
@@ -194,11 +210,10 @@ ddsmoothmenu.init({
     </div> <!-- END of templatemo_main -->
     
     <div id="templatemo_footer">
-    	<p><a href="index.jsp">Home</a> | <a href="products.html">Prodotti</a> | <a href="about.html">About</a> | <a href="faqs.html">FAQs</a> | <a href="subscribe.html">Iscriviti</a> | <a href="contact.html">Contattici</a>
+    	<p><a href="index.jsp">Home</a> | <a href="about.html">About</a> | <a href="faqs.html">FAQs</a> | <a href="subscribe.html">Iscriviti</a> | <a href="contact.html">Contattici</a>
 		</p>
 
     	Copyright © 2021 <a href="#">ScarpeDiModa</a> </div> <!-- END of templatemo_footer -->
-    
 </div> <!-- END of templatemo_wrapper -->
 </div> <!-- END of templatemo_body_wrapper -->
 

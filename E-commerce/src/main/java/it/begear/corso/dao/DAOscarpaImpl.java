@@ -76,5 +76,31 @@ public class DAOscarpaImpl implements DAOscarpa {
 		System.out.println("Scarpa trovata!");
 		return scarpa;
 	}
+	
+	
+	@Override
+	public Scarpa findByCode(String code) {
+		Scarpa scarpa = null;
+		List<Scarpa> scarpaList = read();
+		for(Scarpa sc : scarpaList) {
+			if(sc.getCodice().equals(code)) {
+			   scarpa = sc;
+			}
+		}
+		return scarpa;
+	}
+	
+	
+	@Override
+	public List<Scarpa> findByKeyword(String keyword) {
+		List<Scarpa> scarpe = null;
+		List<Scarpa> scarpaList = read();
+		for(Scarpa scarpa : scarpaList) {
+			if(scarpa.getCodice().contains(keyword)) {
+			   scarpe.add(scarpa);
+			}
+		}
+		return scarpe;
+	}
 
 }

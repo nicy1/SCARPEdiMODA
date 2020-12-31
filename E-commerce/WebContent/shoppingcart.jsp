@@ -3,17 +3,18 @@
 <head>
 <!--  commento  -->
 <%@ page contentType="text/html; charset=UTF-8" %>
-<title>ScarpeDiModa - Shopping Cart</title>
+<title>ScarpeDiModa - Carrello</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<link href="templatemo_style.css" rel="stylesheet" type="text/css" />
 
+<link href="templatemo_style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="CSS/ddsmoothmenu.css" />
 
 <script type="text/javascript" src="JAVASCRIPT/jquery.min.js"></script>
 <script type="text/javascript" src="JAVASCRIPT/ddsmoothmenu.js"></script>
 
 <script type="text/javascript">
+
 ddsmoothmenu.init({
 	mainmenuid: "top_nav", //menu DIV id
 	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
@@ -29,10 +30,10 @@ ddsmoothmenu.init({
 <div id="templatemo_wrapper">
 
 	<div id="templatemo_header">
-    	<div id="site_title"><h1><a href="index.html">Negozio di scarpe online</a></h1></div>
+    	<div id="site_title"><h1><a href="index.jsp">Negozio di scarpe online</a></h1></div>
         <div id="header_right">
         	<p>
-	        <a href="AccountServlet">Il mio account</a> | <a href="ViewCartServlet">Carrello</a> | <a href="loginRegister.html">Accedi</a></p>       
+	        <a href="AccountServlet">Il mio account</a> | <a href="shoppingcart.jsp">Carrello</a> | <a href="loginRegister.jsp">Accedi</a></p>       
 		</div>
         <div class="cleaner"></div>
     </div> <!-- END of templatemo_header -->
@@ -40,11 +41,13 @@ ddsmoothmenu.init({
     <div id="templatemo_menubar">
     	<div id="top_nav" class="ddsmoothmenu">
             <ul>
-                <li><a href="index.html" class="selected">Home</a></li>
-                <li><a href="products.html">Prodotti</a>
+                <li><a href="index.jsp" class="selected">Home</a></li>
+                <li><a href="#">Prodotti</a>
                     <ul>
-                        <li><a href="manProducts.html">Uomo</a></li>
-                        <li><a href="womanProducts.html">Donna</a></li>             
+                        <li><a href="uomoProducts.html">Uomo</a></li>
+                        <li><a href="donnaProducts.html">Donna</a></li> 
+                        <li><a href="bambinoProducts.html">Bambino</a></li>
+                        <li><a href="bambinaProducts.html">Bambina</a></li>             
                    </ul>
                 </li>
                 <li><a href="CheckoutServlet">Checkout</a></li>
@@ -56,7 +59,7 @@ ddsmoothmenu.init({
             <br style="clear: left" />
         </div> <!-- end of ddsmoothmenu -->
         <div id="templatemo_search">
-            <form action="#" method="get">
+            <form action="SearchServlet" method="get">
               <input type="text" value=" " name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
               <input type="submit" name="Search" value=" " alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
             </form>
@@ -69,8 +72,8 @@ ddsmoothmenu.init({
             	<h3>Categorie</h3>   
                 <div class="content"> 
                 	<ul class="sidebar_list">
-                        <li class="first"><a href="manProducts.html">Uomo</a></li>
-                        <li class="last"><a href="womanProducts.html">Donna</a></li> 
+                        <li class="first"><a href="uomoProducts.html">Uomo</a></li>
+                        <li class="first"><a href="donnaProducts.html">Donna</a></li> 
                         <li class="first"><a href="bambinoProducts.html">Bambino</a></li>
                         <li class="first"><a href="bambinaProducts.html">Bambina</a></li>
                         <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
@@ -132,12 +135,10 @@ ddsmoothmenu.init({
     </div> <!-- END of templatemo_main -->
     
     <div id="templatemo_footer">
-    	<p><a href="#">Home</a> | <a href="#">Products</a> | <a href="#">About</a> | <a href="#">FAQs</a> | <a href="#">Checkout</a> | <a href="#">Contact Us</a>
+    	<p><a href="index.jsp">Home</a> | <a href="about.html">About</a> | <a href="faqs.html">FAQs</a> | <a href="subscribe.html">Iscriviti</a> | <a href="contact.html">Contattici</a>
 		</p>
 
-		Copyright Â© 2072 <a href="#">Your Company Name</a> <!-- Credit: www.templatemo.com -->
-    	
-    </div> <!-- END of templatemo_footer -->
+    	Copyright © 2021 <a href="#">ScarpeDiModa</a> </div> <!-- END of templatemo_footer -->
     
 </div> <!-- END of templatemo_wrapper -->
 </div> <!-- END of templatemo_body_wrapper -->
