@@ -51,7 +51,7 @@ ddsmoothmenu.init({
                    </ul>
                 </li>
                 <li><a href="CheckoutServlet">Checkout</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="about.html">Chi siamo</a></li>
                 <li><a href="faqs.html">FAQs</a></li>
                 <li><a href="subscribe.html">Iscriviti</a></li>
                 <li><a href="contact.html">Contattaci</a></li>
@@ -75,9 +75,7 @@ ddsmoothmenu.init({
                         <li class="first"><a href="uomoProducts.html">Uomo</a></li>
                         <li class="first"><a href="donnaProducts.html">Donna</a></li> 
                         <li class="first"><a href="bambinoProducts.html">Bambino</a></li>
-                        <li class="first"><a href="bambinaProducts.html">Bambina</a></li>
-                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
-                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+                        <li class="last"><a href="bambinaProducts.html">Bambina</a></li>
                     </ul>
                 </div>
             </div>
