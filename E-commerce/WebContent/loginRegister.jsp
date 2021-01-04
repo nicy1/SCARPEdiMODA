@@ -15,7 +15,7 @@
 		   
 		   <div class="login-form">
 		   
-		     <form action="LoginServlet" method="get">
+		     <form action="LoginServlet" method="post">
 			   <div class="sign-in-htm">
 				   <div class="group">
 					   <label for="user" class="label">Email</label>
@@ -28,6 +28,9 @@
 				   <div class="group">
 					   <input id="check" type="checkbox" class="check" checked>
 					   <label for="check"><span class="icon"></span> Resta connesso</label>
+				   </div>
+				   <div class="group">
+				       <font color="red">${message}</font><br>
 				   </div>
 				   <div class="group">
 					   <input type="submit" class="button" value="Accedi">
