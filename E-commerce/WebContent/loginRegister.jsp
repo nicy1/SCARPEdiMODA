@@ -76,7 +76,7 @@
 				   </div>
 				   <div class="hr"></div>
 				   <div class="foot-lnk">
-					   <label for="tab-1">Già iscritto?</a>
+					   <a href="#registred">Già iscritto?</a>
 				   </div>
 			   </div>
 			 </form>
