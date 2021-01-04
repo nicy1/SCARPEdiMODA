@@ -103,7 +103,7 @@ h6 { font-size: 12px; margin: 0 0 5px; padding: 0; }
 #menu_second_bar { padding: 5px 10px; }
 #top_shopping_cart { float: left; padding: 5px 0; font-size: 11px; }
 
-#templatemo_search { float: right; margin: 10px 30px 0; width: 220px; height: 34px; background: url(IMAGES/templatemo_search_bg.png) }
+#templatemo_search { float: right; margin: -30px 30px 0; width: 220px; height: 34px; background: url(IMAGES/templatemo_search_bg.png) }
 #templatemo_search form {
 	margin: 0;
 	padding: 0;
