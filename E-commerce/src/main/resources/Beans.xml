@@ -19,7 +19,7 @@
 		<!-- DA SOSTITUIRE CON IL NOME DEL NOSTRO SCHEMA
         <property name="url" value="jdbc:mysql://localhost:3306/e-commerce?serverTimezone=UTC" />
 		<property name="username" value="root" />
-		<property name="password" value="Emmanuel1@" />
+		<property name="password" value="root" />
 		-->
    </bean>
    
@@ -28,6 +28,9 @@
         <property name="sessionFactory" ref="hibernateAnnotatedSessionFactory" />
    </bean>
     <bean name="DAOutenteImpl" class="it.begear.corso.dao.DAOutenteImpl">
+        <property name="sessionFactory" ref="hibernateAnnotatedSessionFactory" />
+   </bean>
+   <bean name="DAOordineImpl" class="it.begear.corso.dao.DAOordineImpl">
         <property name="sessionFactory" ref="hibernateAnnotatedSessionFactory" />
    </bean>
    
@@ -39,7 +42,8 @@
 			<list>
 			    
 				<value>it.begear.corso.entity.Scarpa</value>
-				<value>it.begear.corso.entity.Utente</value>			
+				<value>it.begear.corso.entity.Utente</value>
+				<value>it.begear.corso.entity.Ordine</value>		
 				
 			</list>
 		</property>
