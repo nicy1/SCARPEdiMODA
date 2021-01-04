@@ -29,8 +29,9 @@ ddsmoothmenu.init({
 <div id="templatemo_wrapper">
 
 	<div id="templatemo_header">
-    	<div id="site_title"><h1><a href="index.jsp">Negozio di scarpe online</a></h1></div>
+    	<div id="site_title"><h1><a href="index.jsp"></a></h1></div>
         <div id="header_right">
+        	
         	<p>
 	        <a href="account.jsp">Il mio account</a> | <a href="shoppingcart.jsp">Carrello</a> | <a href="loginRegister.jsp">Accedi</a></p>       
 		</div>
