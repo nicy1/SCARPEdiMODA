@@ -7,6 +7,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import it.begear.corso.entity.Scarpa;
 import it.begear.corso.entity.Utente;
 
 public class DAOutenteImpl implements DAOutente {
@@ -71,8 +72,20 @@ public class DAOutenteImpl implements DAOutente {
 		Session session = getSessionFactory().openSession();
 		Utente user = (Utente) session.load(Utente.class, id);
 		session.close();
-		System.out.println("Scarpa trovata!");
+		System.out.println("Utente trovato!");
 		return user;
+	}
+
+	@Override
+	public Utente findByCredentials(String email, String password) {
+		Utente utente = null;
+		List<Utente> utenteList = read();
+		for(Utente ut : utenteList) {
+			if(ut.getEmail().equals(email) && ut.getPassword().equals(password)) {
+			   utente = ut;
+			}
+		}
+		return utente;
 	}
 
 }
