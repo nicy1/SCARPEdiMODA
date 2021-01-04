@@ -10,4 +10,5 @@ public interface DAOutente {
 	public void update(Utente a, int id);
 	public void delete(Utente a,int id);
 	public Utente findByID(Integer id);
+	public Utente findByCredentials(String email, String password);
 }
