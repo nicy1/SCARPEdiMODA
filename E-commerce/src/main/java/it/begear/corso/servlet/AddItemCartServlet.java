@@ -1,6 +1,8 @@
 package it.begear.corso.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,51 +25,38 @@ public class AddItemCartServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request, response);	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
+		String scarpacode = request.getParameter("codice");
+		Integer quantita = Integer.parseInt(request.getParameter("quantita"));
+		
+		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+		DAOscarpaImpl daoscarpa = context.getBean(DAOscarpaImpl.class);
+		
+		Scarpa scarpa = daoscarpa.findByCode("codice");
+		if(scarpa == null) {
+			// Non c'e scarpa con "codice" nel DB
+			response.sendRedirect("404.html?foundProduct=NO");  // not found page and product (scarpa)
+		}
+		else {
+			
+			int dispo = scarpa.getDisponibilita();
+			if(dispo >= quantita) {                   // qta disponibile
+				scarpa.setDisponibilita(dispo - quantita);        // update della disponibilita
+				daoscarpa.update(scarpa, scarpa.getId());
+				HttpSession session = request.getSession(false); // get la sessione esistente
+				Utente utente = (Utente) session.getAttribute("loggedIn");
+				utente.getCarrello().addScarpa(scarpa.getId(), quantita);
+				session.setAttribute("loggedIn", utente);
+			}
+			else {                                     // qta non disponibile  
+				String referer = request.getHeader("referer");
+				String[] stringhe = referer.split("/");
+				String paginaDiRiferimento = stringhe[stringhe.length-1];
+				response.sendRedirect(paginaDiRiferimento+"?disponibile=NO");    	
+			}
+			
+		}
+		
 	}
-
-	
-
-//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
-//		String scarpacode = request.getParameter("codice");
-//		Integer quantita = Integer.parseInt(request.getParameter("quantita"));
-		
-//		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
-//		DAOscarpaImpl daoscarpa = context.getBean(DAOscarpaImpl.class);
-		
-//		Scarpa scarpa = daoscarpa.findByCode("codice");
-//		if(scarpa == null) {
-//			// Non c'e scarpa con "codice" nel DB
-//			response.sendRedirect("404.html?foundProduct=NO");  // not found page and product (scarpa)
-//		}
-//		else {
-//			Carrello cart = Carrello.getIstance();
-//			int dispo = scarpa.getDisponibile();
-//			if(dispo > quantita) {                   // qta disponibile
-//				scarpa.setDisponibile(dispo - quantita);        // update della disponobilita
-//				daoscarpa.update(scarpa, scarpa.getId());
-//				cart.getCarrello().put(scarpa, quantita); 
-//			}
-//			else {                                     // qta non disponibile
-//				
-//			}
-//			
-//		}
-//		
-//	}
-	
-	
-//	private Employee buildEmployee(HttpServletRequest request) {
-//		Employee employee = new Employee();
-//		employee.setFirstname(request.getParameter("firstname"));
-//		employee.setFamilyname(request.getParameter("familyname"));
-//		employee.setAge(Integer.parseInt(request.getParameter("age")));
-//		employee.setSex(request.getParameter("sex"));
-//		employee.setEmail(request.getParameter("email"));
-//		employee.setPassword(request.getParameter("password"));
-//		employee.setRole(request.getParameter("role"));
-//		return employee;
-//	}
 	
 }

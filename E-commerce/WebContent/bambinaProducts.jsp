@@ -6,9 +6,8 @@ http://www.templatemo.com/preview/templatemo_367_shoes
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<!--  commento  -->
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Scarpe donna</title>
+<%@ page contentType="text/html; charset=UTF-8" %>
+<title>Scarpe bambine</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 
@@ -16,18 +15,8 @@ http://www.templatemo.com/preview/templatemo_367_shoes
 <link rel="stylesheet" type="text/css" href="CSS/ddsmoothmenu.css" />
 
 <script type="text/javascript" src="JAVASCRIPT/jquery.min.js"></script>
-<script type="text/javascript" src="JAVASCRIPT/ddsmoothmenu.js">
-
-/***********************************************
-* Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
-* This notice MUST stay intact for legal use
-* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
-***********************************************/
-
-</script>
-
-<script type="text/javascript">
-
+<script type="text/javascript" src="JAVASCRIPT/ddsmoothmenu.js"></script>
+<script type="text/javascript">  
 ddsmoothmenu.init({
 	mainmenuid: "top_nav", //menu DIV id
 	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
@@ -35,18 +24,15 @@ ddsmoothmenu.init({
 	//customtheme: ["#1c5a80", "#18374a"],
 	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
 })
-
 </script>
-
 </head>
 
 <body>
-
 <div id="templatemo_body_wrapper">
 <div id="templatemo_wrapper">
 
 	<div id="templatemo_header">
-    	<div id="site_title"><h1><a href="index.jsp">Negozio di scarpe online</a></h1></div>
+    	<div id="site_title"><h1><a href="index.jsp"></a></h1></div>
         <div id="header_right">
         	<p>
 	        <a href="account.jsp">Il mio account</a> | <a href="shoppingcart.jsp">Carrello</a> | <a href="loginRegister.jsp">Accedi</a></p>       
@@ -58,12 +44,12 @@ ddsmoothmenu.init({
     	<div id="top_nav" class="ddsmoothmenu">
             <ul>
                 <li><a href="index.jsp" class="selected">Home</a></li>
-                <li><a href="products.html">Prodotti</a>
+                <li><a href="#">Prodotti</a>
                     <ul>
-                        <li><a href="manProducts.html">Uomo</a></li>
-                        <li><a href="womanProducts.html">Donna</a></li> 
-                        <li><a href="manProducts.html">Bambino</a></li>
-                        <li><a href="womanProducts.html">Bambina</a></li>            
+                        <li><a href="uomoProducts.html">Uomo</a></li>
+                        <li><a href="donnaProducts.html">Donna</a></li> 
+                        <li><a href="bambinaProducts.html">Bambino</a></li>
+                        <li><a href="bambinaProducts.html">Bambina</a></li>             
                    </ul>
                 </li>
                 <li><a href="checkout.jsp">Checkout</a></li>
@@ -82,8 +68,6 @@ ddsmoothmenu.init({
         </div>
     </div> <!-- END of templatemo_menubar -->
     
-    
-    
     <div id="templatemo_main">
     	<div id="sidebar" class="float_l">
         	<div class="sidebar_box"><span class="bottom"></span>
@@ -99,114 +83,138 @@ ddsmoothmenu.init({
             </div>
             
             <div class="sidebar_box"><span class="bottom"></span>
-            	<h3>I più venduti</h3>   
+            	<h3>I piÃ¹ venduti </h3>   
                 <div class="content"> 
                     <div class="bs_box">
                     	<a href="#"><img src="IMAGES/piuVenduti/b06.jpg" alt="image" /></a>
-                        <h4><a href="#">Décolleté gold d03</a></h4>
-                        <p class="price">45€</p>
+                        <h4><a href="#">DÃ©colletÃ© gold d03</a></h4>
+                        <p class="price">45â¬</p>
                         <div class="cleaner"></div>
                     </div>
                     <div class="bs_box">
                     	<a href="#"><img src="IMAGES/piuVenduti/b04.jpg" alt="image" /></a>
                         <h4><a href="#">Sneaker nike s04</a></h4>
-                        <p class="price">70€</p>
+                        <p class="price">70â¬</p>
                         <div class="cleaner"></div>
                     </div>
                     <div class="bs_box">
                     	<a href="#"><img src="IMAGES/piuVenduti/b03.jpg" alt="image" /></a>
                         <h4><a href="#">Tennis red t03</a></h4>
-                        <p class="price">40€</p>
+                        <p class="price">40â¬</p>
                         <div class="cleaner"></div>
                     </div>
                     <div class="bs_box">
                     	<a href="#"><img src="IMAGES/piuVenduti/b02.jpg" alt="image" /></a>
                         <h4><a href="#">Tennis black-white t02</a></h4>
-                        <p class="price">50€</p>
+                        <p class="price">50â¬</p>
                         <div class="cleaner"></div>
                     </div>
                     <div class="bs_box">
                     	<a href="#"><img src="IMAGES/piuVenduti/b05.jpg" alt="image" /></a>
-                        <h4><a href="#">Décolleté d02</a></h4>
-                        <p class="price">70€</p>
+                        <h4><a href="#">DÃ©colletÃ© d02</a></h4>
+                        <p class="price">70â¬</p>
                         <div class="cleaner"></div>
                     </div>
                     <div class="bs_box">
                     	<a href="#"><img src="IMAGES/piuVenduti/b01.jpg" alt="image" /></a>
                         <h4><a href="#">Tennis nike t01</a></h4>
-                        <p class="price">40€</p>
+                        <p class="price">40â¬</p>
                         <div class="cleaner"></div>
-                    </div>
-                    <div class="bs_box">
-                        <div class="cleaner"></div>
-                        <div class="paddingSidebar"></div>
                     </div>
                 </div>
             </div>
         </div>
         
         <div id="content" class="float_r">
-        	<h1> Scarpe da Donna</h1>
+        	<h1> Scarpe da Bambina</h1>
             <div class="product_box">
-	            <h3>Tacco01</h3>
-            	<a href="#"><img src="IMAGES/scarpe/tac01.jpg" alt="Shoes 1" /></a>
-              <p class="product_price">€ 100</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="#" class="detail"></a>
+	            <h3>bambina01</h3>
+            	<a href="#"><img src="IMAGES/scarpe/bambina01.jpg" alt="Shoes 1" /></a>
+              <p class="product_price">100â¬</p>
+                <a href="AddItemCartServlet?codice=bambina01&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina01" class="detail"></a>
             </div>        	
             <div class="product_box">
-            	<h3>Tacco02</h3>
-            	<a href="#"><img src="IMAGES/scarpe/tac02.jpg" alt="Shoes 2" /></a>
-            <p class="product_price">€ 80</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="#" class="detail"></a>
+            	<h3>bambina02</h3>
+            	<a href="#"><img src="IMAGES/scarpe/bambina02.jpg" alt="Shoes 2" /></a>
+            <p class="product_price">80â¬</p>
+                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
             </div>        	
             <div class="product_box no_margin_right">
-            	<h3>Tacco03</h3>
-            	<a href="#"><img src="IMAGES/scarpe/tac03.jpg" alt="Shoes 3" /></a>
-              <p class="product_price">€ 60</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="#" class="detail"></a>
+            	<h3>bambina03</h3>
+            	<a href="#"><img src="IMAGES/scarpe/bambina03.jpg" alt="Shoes 3" /></a>
+              <p class="product_price">60â¬</p>
+                <a href="AddItemCartServlet?codice=bambina03&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina03" class="detail"></a>
             </div>     
             
             <div class="cleaner"></div>
                	
             <div class="product_box">
-            	<h3>Tacco04</h3>
-            	<a href="#"><img src="IMAGES/scarpe/tac04.jpg" alt="Shoes 4" /></a>
-              <p class="product_price">€ 260</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="#" class="detail"></a>
+            	<h3>bambina04</h3>
+            	<a href="#"><img src="IMAGES/scarpe/bambina04.jpg" alt="Shoes 4" /></a>
+              <p class="product_price">260â¬</p>
+                <a href="AddItemCartServlet?codice=bambina04&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina04" class="detail"></a>
             </div>        	
             <div class="product_box">
-	            <h3>Tacco05</h3>
-            	<a href="#"><img src="IMAGES/scarpe/tac05.jpg" alt="Shoes 5" /></a>
-            <p class="product_price">€ 80</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="#" class="detail"></a>
+	            <h3>bambina05</h3>
+            	<a href="#"><img src="IMAGES/scarpe/bambina05.jpg" alt="Shoes 5" /></a>
+            <p class="product_price">80â¬</p>
+                <a href="AddItemCartServlet?codice=bambina05&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina05" class="detail"></a>
             </div>        	
             <div class="product_box no_margin_right">
-            	<h3>Tacco01</h3>
-            	<a href="#"><img src="IMAGES/scarpe/tac01.jpg" alt="Shoes 6" /></a>
-              <p class="product_price">€ 190</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
-                <a href="#" class="detail"></a>
+            	<h3>bambina06</h3>
+            	<a href="#"><img src="IMAGES/scarpe/bambina06.jpg" alt="Shoes 6" /></a>
+              <p class="product_price">190â¬</p>
+                <a href="AddItemCartServlet?codice=bambina06&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina06" class="detail"></a>
             </div>   
-            </div>  
+            
             <div class="cleaner"></div>
-    
-    		</div> <!-- END of templatemo_main -->
+                 	
+            <div class="product_box">
+            	<h3>bambina07</h3>
+            	<a href="#"><img src="IMAGES/scarpe/bambina07.jpg" alt="Shoes 7" /></a>
+              <p class="product_price">30â¬</p>
+                <a href="AddItemCartServlet?codice=bambina07&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina07" class="detail"></a>
+            </div>        	
+            <div class="product_box">
+            	<h3>bambina08</h3>
+            	<a href="#"><img src="IMAGES/scarpe/bambina08.jpg" alt="Shoes 8" /></a>
+            <p class="product_price">220â¬</p>
+                <a href="AddItemCartServlet?codice=bambina08&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina08" class="detail"></a>
+            </div>        	
+            <div class="product_box no_margin_right">
+            	 <h3>bambina09</h3>
+            	<a href="#"><img src="IMAGES/scarpe/bambina09.jpg" alt="Shoes 9" /></a>
+              <p class="product_price">65â¬</p>
+                <a href="AddItemCartServlet?codice=bambina09&amp;quantita=1" class="addtocart"></a>
+                <a href="DetailItemServlet?codice=bambina09" class="detail"></a>
+            </div>  
+        </div> 
+        <div class="cleaner"></div>
+    </div> <!-- END of templatemo_main -->
     
     <div id="templatemo_footer">
-    	<p><a href="#">Home</a> | <a href="#">Prodotti</a> | <a href="#">Chi siamo</a> | <a href="#">FAQs</a> | <a href="#">Checkout</a> | <a href="#">Contattaci</a>
+    	<p><a href="index.jsp">Home</a> | <a href="about.html">Chi siamo</a> | <a href="faqs.html">FAQs</a> | <a href="subscribe.html">Iscriviti</a> | <a href="contact.html">Contattici</a>
 		</p>
 
-
-    	Copyright © 2021 <a href="#">ScarpeDiModa</a> 
-    </div> <!-- END of templatemo_footer -->
+    	Copyright Â© 2021 <a href="#">ScarpeDiModa</a> </div> <!-- END of templatemo_footer -->
     
 </div> <!-- END of templatemo_wrapper -->
 </div> <!-- END of templatemo_body_wrapper -->
 
+
+<% String disp = request.getParameter("disponibile"); 
+   if (disp != null && disp.equals("NO")) { %>
+       <script type='text/javascript'>
+          alert('Non disponibile!')
+       </script> 
+<% } %>
 </body>
 </html>

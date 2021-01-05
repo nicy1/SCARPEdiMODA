@@ -32,7 +32,7 @@ ddsmoothmenu.init({
 <div id="templatemo_wrapper">
 
 	<div id="templatemo_header">
-    	<div id="site_title"><h1><a href="index.jsp">Negozio di scarpe online</a></h1></div>
+    	<div id="site_title"><h1><a href="index.jsp"></a></h1></div>
         <div id="header_right">
         	<p>
 	        <a href="account.jsp">Il mio account</a> | <a href="shoppingcart.jsp">Carrello</a> | <a href="loginRegister.jsp">Accedi</a></p>       
@@ -127,32 +127,32 @@ ddsmoothmenu.init({
         <div id="content" class="float_r">
         	<h1> Il mio account</h1>
             <div class="product_box">
-	            <h3>I miei ordini</h3>
+	            <h3>I MIEI ORDINI</h3>
             	<a href="UserOrdersServlet?idutente=<%= idutente %>"><img src="IMAGES/Ilmioaccount/I miei ordini.png" alt="Shoes 1" /></a>
             </div>        	
             <div class="product_box">
-            	<h3>Impostazioni di sicurezza</h3>
+            	<h3>IMPOSTAZIONI DI SICUREZZA</h3>
             	<a href="#"><img src="IMAGES/Ilmioaccount/impostazion di sicurezza.jpg" alt="Shoes 2" /></a>
             </div>        	
             <div class="product_box no_margin_right">
-            	<h3>Indirizzi</h3>
+            	<h3>INDIRIZZI</h3>
             	<a href="#"><img src="IMAGES/Ilmioaccount/indirizzi.jpg" alt="Shoes 3" /></a>
             </div>   
               
             <div class="cleaner"></div>
                	
             <div class="product_box">
-            	<h3>I tuoi pagamenti</h3>
+            	<h3>I TUOI PAGAMENTI</h3>
             	<a href="#"><img src="IMAGES/Ilmioaccount/I tuoi pagamenti.jpg" alt="Shoes 4" /></a>
 
             </div>        	
             <div class="product_box">
-	            <h3>Centro comunicazioni</h3>
+	            <h3>CENTRO COMUNICAZIONI</h3>
             	<a href="contact.html"><img src="IMAGES/Ilmioaccount/centro_comunicazioni.jpg" alt="Shoes 5" /></a>
 
             </div>        	
             <div class="product_box no_margin_right">
-            	<h3>Aiuto</h3>
+            	<h3>AIUTO</h3>
             	<a href="faqs.html"><img src="IMAGES/Ilmioaccount/aiuto.jpg" alt="Shoes 6" /></a>
             </div>   
 		</div>

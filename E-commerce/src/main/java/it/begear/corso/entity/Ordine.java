@@ -2,16 +2,43 @@ package it.begear.corso.entity;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import it.begear.corso.dao.DAOscarpaImpl;
+
+@Entity
+@Table(name = "ordini")
 public class Ordine {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_ordini")
 	private int id;
-	private Map<Scarpa, Integer> lista;
+	
+	@Column(name = "id_utenti")
 	private int idUtente;
 	
-	public Ordine(Map<Scarpa, Integer> map,int id_Utente) {
-		setLista(map);
-		setIdUtente(id_Utente);
-		
+	@Column(name = "id_scarpa")
+	private double id_scarpa;
+	
+	@Column(name = "prezzo")
+	private double prezzo;
+
+	private Map<Integer, Integer> scarpaList;
+	
+	
+	public Ordine(Map<Integer, Integer> carrello, int id_Utente) {
+		setLista(carrello);
+		setIdUtente(id_Utente);	
 	}
 
 
@@ -27,22 +54,34 @@ public class Ordine {
 	public void setIdUtente(int idUtente) {
 		this.idUtente = idUtente;
 	}
-
-
-	public Map<Scarpa, Integer> getLista() {
-		return lista;
+	
+	public double getPrezzo() {
+		return prezzo;
 	}
 
-	public void setLista(Map<Scarpa, Integer> lista) {
-		this.lista = lista;
+
+	public void setPrezzo() {
+		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+		DAOscarpaImpl daoscarpa = context.getBean(DAOscarpaImpl.class);
+		for(Entry<Integer, Integer> entry : scarpaList.entrySet()) {
+			Scarpa scarpa = daoscarpa.findByID(entry.getKey());
+			prezzo += scarpa.getCosto() * entry.getValue();
+		}
+	}
+
+
+	public Map<Integer, Integer> getScarpaList() {
+		return scarpaList;
+	}
+
+	public void setLista(Map<Integer, Integer> carrello) {
+		this.scarpaList = carrello;
 	}
 
 
 	@Override
 	public String toString() {
-		return "Ordine [id=" + id + ", lista=" + lista + ", idUtente=" + idUtente + "]";
+		return "Ordine [id=" + id + ", idUtente=" + idUtente + ", id_scarpa=" + id_scarpa + ", prezzo=" + prezzo + "]";
 	}
-
-	
 	
 }
