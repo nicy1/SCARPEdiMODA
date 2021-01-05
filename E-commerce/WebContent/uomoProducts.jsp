@@ -7,7 +7,7 @@ http://www.templatemo.com/preview/templatemo_367_shoes
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <!--  commento  -->
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<%@ page contentType="text/html; charset=UTF-8" %>
 <title>Scarpe uomo</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
@@ -367,6 +367,13 @@ ddsmoothmenu.init({
     
 </div> <!-- END of templatemo_wrapper -->
 </div> <!-- END of templatemo_body_wrapper -->
+
+<% String disp = request.getParameter("disponibile"); 
+   if (disp != null && disp.equals("NO")) { %>
+       <script type='text/javascript'>
+          alert('Non disponibile!')
+       </script> 
+<% } %>
 
 </body>
 </html>

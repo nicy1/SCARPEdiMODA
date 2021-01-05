@@ -215,5 +215,12 @@ ddsmoothmenu.init({
 </div> <!-- END of templatemo_wrapper -->
 </div> <!-- END of templatemo_body_wrapper -->
 
+<% String disp = request.getParameter("disponibile"); 
+   if (disp != null && disp.equals("NO")) { %>
+       <script type='text/javascript'>
+          alert('Non disponibile!')
+       </script> 
+<% } %>
+
 </body>
 </html>

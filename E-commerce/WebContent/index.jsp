@@ -211,5 +211,12 @@ ddsmoothmenu.init({
        </script> 
 <% } %>
 
+<% String disp = request.getParameter("disponibile"); 
+   if (disp != null && disp.equals("NO")) { %>
+       <script type='text/javascript'>
+          alert('Non disponibile!')
+       </script> 
+<% } %>
+
 </body>
 </html>

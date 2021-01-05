@@ -353,7 +353,7 @@ anime({
 <% String access = request.getParameter("foundProduct"); 
    if (access != null && access.equals("NO")) { %>
        <script type='text/javascript'>
-          alert('Scarpa non esiste!')
+          alert('La scarpa non esiste!')
        </script> 
 <% } %>
 
