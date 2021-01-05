@@ -31,19 +31,16 @@ public class Utente {
 	@Column(name = "indirizzo")
       private String indirizzo;
       
-      private Carrello c;
-      
+      private Carrello carrello;
 
 	public Utente( String nome, String cognome, String email, String password, String indirizzo) {
-		super();
-		
+		super();	
 		setNome(nome);
 		setCognome(cognome);
 		setEmail(email);
 		setPassword(password);
 		setIndirizzo(indirizzo);
-		c = Carrello.getIstance();
-		c.setIdUtente(getId());
+		carrello = new Carrello(id);
 	}
 	
 	
@@ -81,14 +78,12 @@ public class Utente {
 		this.indirizzo = indirizzo;
 	}
 
-
-	public Carrello getC() {
-		return c;
+	public Carrello getCarrello() {
+		return carrello;
 	}
 
-
-	public void setC(Carrello c) {
-		this.c = c;
+	public void setCarrello(Carrello carrello) {
+		this.carrello = carrello;
 	}
       
 }
