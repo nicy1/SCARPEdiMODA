@@ -6,35 +6,37 @@ import java.util.Map;
 
 public class Carrello {
 	private int idUtente;
-	private Map<Scarpa, Integer> carrello  = new HashMap<Scarpa, Integer>();
-	private static Carrello istanza;
-	public Carrello() {}
+	private Map<Integer, Scarpa> carrello  = new HashMap<Integer, Scarpa>();
+	
+	public Carrello(int idUtente) {
+		this.idUtente = idUtente;
+	}
 
-	public Map<Scarpa, Integer> getCarrello() {
+	public Map<Integer, Scarpa> getCarrello() {
 		return carrello;
 	}
 
-	public void setCarrello(Map<Scarpa, Integer> carrello) {
+	public void setCarrello(Map<Integer, Scarpa> carrello) {
 		this.carrello = carrello;
 	}
 
 	public Ordine acquista(){
-
-		Ordine o = new Ordine(this.getCarrello(),this.getIdUtente());
-		istanza.getCarrello().clear();//per svuotare il carrello
-		return o;
+		Ordine ordine = new Ordine(carrello, idUtente);
+		carrello.clear();   //per svuotare il carrello
+		return ordine;
 	}
-
-	public static Carrello getIstance() {
-		if(istanza==null) {
-			istanza= new Carrello();
-		}
-		return istanza;
+	
+	public void addScarpa(Scarpa scarpa) {
+		carrello.put(scarpa.getId(), scarpa);
+	}
+	
+	
+	public void removeScarpa(Scarpa scarpa) {
+		carrello.remove(scarpa.getId());
 	}
 
 
 	public int getIdUtente() {
-		System.out.println(idUtente);
 		return idUtente;
 	}
 
@@ -48,3 +50,4 @@ public class Carrello {
 
 
 }
+
