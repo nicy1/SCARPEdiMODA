@@ -2,6 +2,7 @@ package it.begear.corso.entity;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +10,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import it.begear.corso.dao.DAOscarpaImpl;
 
 @Entity
 @Table(name = "ordini")
@@ -27,10 +33,10 @@ public class Ordine {
 	@Column(name = "prezzo")
 	private double prezzo;
 
-	private Map<Integer, Scarpa> scarpaList;
+	private Map<Integer, Integer> scarpaList;
 	
 	
-	public Ordine(Map<Integer, Scarpa> carrello, int id_Utente) {
+	public Ordine(Map<Integer, Integer> carrello, int id_Utente) {
 		setLista(carrello);
 		setIdUtente(id_Utente);	
 	}
@@ -55,17 +61,20 @@ public class Ordine {
 
 
 	public void setPrezzo() {
-		for(Scarpa scarpa : scarpaList.values()) {
-			prezzo += scarpa.getCosto();
+		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+		DAOscarpaImpl daoscarpa = context.getBean(DAOscarpaImpl.class);
+		for(Entry<Integer, Integer> entry : scarpaList.entrySet()) {
+			Scarpa scarpa = daoscarpa.findByID(entry.getKey());
+			prezzo += scarpa.getCosto() * entry.getValue();
 		}
 	}
 
 
-	public Map<Integer, Scarpa> getScarpaList() {
+	public Map<Integer, Integer> getScarpaList() {
 		return scarpaList;
 	}
 
-	public void setLista(Map<Integer, Scarpa> carrello) {
+	public void setLista(Map<Integer, Integer> carrello) {
 		this.scarpaList = carrello;
 	}
 
