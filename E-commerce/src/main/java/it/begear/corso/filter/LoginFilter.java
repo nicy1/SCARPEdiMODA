@@ -41,8 +41,6 @@ public class LoginFilter implements Filter {
 	     HttpSession session = request.getSession(false);           // get la sessione esistente
 
 	     if (session == null || session.getAttribute("loggedIn") == null) {
-	    	 String referrer = request.getHeader("referer");  
-	    	 System.out.println("the servlet was being called from here: " + referrer);
 	         response.sendRedirect("loginRegister.jsp");      // No logged-in user found, so redirect to login page.
 	     }
 	     else {
