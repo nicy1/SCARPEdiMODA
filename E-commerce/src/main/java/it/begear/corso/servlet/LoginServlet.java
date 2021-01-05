@@ -16,6 +16,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import it.begear.corso.dao.DAOutente;
 import it.begear.corso.dao.DAOutenteImpl;
+import it.begear.corso.entity.Carrello;
 import it.begear.corso.entity.Utente;
 
 @WebServlet("/LoginServlet")
@@ -38,6 +39,7 @@ public class LoginServlet extends HttpServlet {
 		
 		if(utente != null) {
 			HttpSession session = request.getSession();
+			utente.setCarrello(new Carrello(utente.getId()));
 			session.setAttribute("loggedIn", utente);
 			destPage = "account.jsp";
 		}
