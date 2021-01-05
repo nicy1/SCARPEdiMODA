@@ -97,10 +97,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+
 @Entity
 @Table(name = "utenti")
-
-//commento
 public class Utente {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

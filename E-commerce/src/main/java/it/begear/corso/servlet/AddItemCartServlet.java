@@ -45,7 +45,7 @@ public class AddItemCartServlet extends HttpServlet {
 				daoscarpa.update(scarpa, scarpa.getId());
 				HttpSession session = request.getSession(false); // get la sessione esistente
 				Utente utente = (Utente) session.getAttribute("loggedIn");
-				utente.getCarrello().addScarpa(scarpa);
+				utente.getCarrello().addScarpa(scarpa.getId(), quantita);
 				session.setAttribute("loggedIn", utente);
 			}
 			else {                                     // qta non disponibile  
