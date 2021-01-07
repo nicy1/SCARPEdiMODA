@@ -17,7 +17,7 @@ import it.begear.corso.entity.Scarpa;
 
 
 
-@WebServlet("/UserOrdersServlet")
+@WebServlet("/SearchServlet")
 public class SearchServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

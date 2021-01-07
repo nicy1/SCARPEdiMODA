@@ -1,12 +1,7 @@
-<!-- templatemo 367 shoes -->
-<!-- 
-Shoes Template 
-http://www.templatemo.com/preview/templatemo_367_shoes 
--->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<%@ page contentType="text/html; charset=UTF-8" %>
 <title>ScarpeDiModa - Contact Page</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
@@ -46,17 +41,17 @@ ddsmoothmenu.init({
                 <li><a href="index.jsp" class="selected">Home</a></li>
                 <li><a href="#">Prodotti</a>
                     <ul>
-                        <li><a href="uomoProducts.html">Uomo</a></li>
-                        <li><a href="donnaProducts.html">Donna</a></li> 
-                        <li><a href="bambinoProducts.html">Bambino</a></li>
-                        <li><a href="bambinaProducts.html">Bambina</a></li>             
+                        <li><a href="uomoProducts.jsp">Uomo</a></li>
+                        <li><a href="donnaProducts.jsp">Donna</a></li> 
+                        <li><a href="bambinoProducts.jsp">Bambino</a></li>
+                        <li><a href="bambinaProducts.jsp">Bambina</a></li>             
                    </ul>
                 </li>
                 <li><a href="checkout.jsp">Checkout</a></li>
                 <li><a href="about.html">Chi siamo</a></li>
                 <li><a href="faqs.html">FAQs</a></li>
                 <li><a href="subscribe.html">Iscriviti</a></li>
-                <li><a href="contact.html">Contattaci</a></li>
+                <li><a href="contact.jsp">Contattaci</a></li>
             </ul>
             <br style="clear: left" />
         </div> <!-- end of ddsmoothmenu -->
@@ -130,7 +125,7 @@ ddsmoothmenu.init({
             <div class="content_half float_l">
                 <p>Per contattare il nostro Customer Care è necessario compilare i campi sottostanti.</p>
                 <div id="contact_form">
-                   <form method="post" name="contact" action="#">
+                   <form method="post" name="contact" action="contact.jsp?sendedOK=OK">
                         
                         <label for="author">Nome:</label> <input type="text" id="author" name="author" class="required input_field" />
                         <div class="cleaner h10"></div>
@@ -151,10 +146,7 @@ ddsmoothmenu.init({
         <div class="content_half float_r">		
             <div class="cleaner h40"></div>
 			<br/>
-			Email: <a href="mailto:auroragoto01@gmail.com">aurora-goto@ScarpeDiModa.com</a><br/>
-			      <dd><a href="mailto:coloniairenerosaria@gmail.com">irene-rosaria@ScarpeDiModa.com</a><br/></dd>
-			      <dd><a href="mailto:gaetanoracioppa@gmail.com">gaetano-racioppa@ScarpeDiModa.com</a><br/></dd>
-			      <dd><a href="mailto:malandanicy@gmail.com">nicy-malanda@ScarpeDiModa.com</a><br/></dd>
+			Email: assitenza_scarpedimoda@ScarpeDiModa.com
 			<br />
         </div>
         
@@ -176,6 +168,13 @@ ddsmoothmenu.init({
     
 </div> <!-- END of templatemo_wrapper -->
 </div> <!-- END of templatemo_body_wrapper -->
+
+<% String sent = request.getParameter("sendedOK"); 
+   if (sent != null && sent.equals("OK")) { %>
+       <script type='text/javascript'>
+          alert('Email inviata correttamente!')
+       </script> 
+<% } %>
 
 </body>
 </html>
