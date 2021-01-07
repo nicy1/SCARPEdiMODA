@@ -25,17 +25,36 @@ Glossario
 	-->ATTRIBUTI
 	
       * ID int auto increment
+      * CODICE
       * enum GENERE {uomo,donna,bambino,bambina}
       * DESCRIZIONE
       * enum COLORE {bianco,nero,blu,marrone,rosso}
-      * NUMERO 
+      * enum NUMERO {A(28),B(29), C(30), D(31), E(32), F(33), G(34), H(35), I(36), L(37), M(38), N(39), O(40), P(41), Q(42), R(43), S(44)}
       * BRAND
       * COSTO
+      * DISPONIBILITà
       
 	-->METODI
 	
       * ToString
-      * getter/setter
+      * getId
+      * setId
+      * getGender
+      * setGender
+      * getColor
+      * setColor
+      * getNumero
+      * setNumero
+      * getDescrizione
+      * setDescrizione
+      * getBrand
+      * setBrand
+      * getCosto
+      * setCosto
+      * getCodice
+      * setCodice
+      * getDisponibilita
+      * setDisponibilita
       * Costruttore(genere,descrizione,colore,numero,brand,costo)
 	* abstract getTacco(){
 			
@@ -62,8 +81,11 @@ Per ogni acquisto si crea un nuovo ordine e si svuota il carrello
 
    -->METODI
       * ToString()
-
-      * getter/setter ()
+      * getId
+	  * getIdUtente
+	  * setIdUtente
+	  * getLista
+	  * setLista
       * calcolaPrezzoOrdine(){
 			Uso il foreach per il calcolo
       		prezzo=Scarpa.costo*quantita;
@@ -79,12 +101,26 @@ Per ogni acquisto si crea un nuovo ordine e si svuota il carrello
       * EMAIL
       * PASSWORD
       * INDIRIZZO
+      
+      
    * METODI
-      * getter/setter
+      * getId
+      * getNome
+      * getCognome
+      * setCognome
+      * getEmail
+      * setEmail
+      * getPassword
+      * setPassword
+      * getIndirizzo
+      * setIndirizzo
+      * getC
+      * setC
       * Costruttore{ new carrello}
+      * create
       * update(email,indirizzo,password)
-      * aggiungiAlCarrello(idScarpa,int quantita){
-carrello.getistanz.add(scarpa,quantita)
+      * delete
+      * aggiungiAlCarrello(idScarpa,int quantita){carrello.getistanz.add(scarpa,quantita)
        }
       * getListOrdini()
       
@@ -110,7 +146,7 @@ classe NEGOZIO[ic3] Factory
 
 
 SCHEMA NEGOZIO
-	TABELLA scarpe (ID,GENERE, DESCRIZIONE, COLORE, NUMERO,BRAND,COSTO)
+	TABELLA scarpe (ID, CODICE, GENERE, DESCRIZIONE, COLORE, NUMERO,BRAND,COSTO, DISPONIBILITà)
 	TABELLA utenti	(id,nome,cognome,email,password,indirizzo)
 	TABELLI ordini (id, id_utente,prezzo)
 
