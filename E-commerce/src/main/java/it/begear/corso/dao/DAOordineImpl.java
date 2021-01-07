@@ -61,5 +61,16 @@ public class DAOordineImpl implements DAOordine {
 		return ordine;
 	}
 	
+	public List<Ordine> getUserOrders(int idUtente) {
+		List<Ordine> result = null;
+		List<Ordine> ordini = read();
+		for(Ordine ordine : ordini) {
+			if (ordine.getIdUtente() == idUtente) {
+				result.add(ordine);
+			}
+		}
+		return result;
+	}
+	
 
 }

@@ -27,9 +27,6 @@ public class Ordine {
 	@Column(name = "id_utenti")
 	private int idUtente;
 	
-	@Column(name = "id_scarpa")
-	private double id_scarpa;
-	
 	@Column(name = "prezzo")
 	private double prezzo;
 
@@ -39,6 +36,7 @@ public class Ordine {
 	public Ordine(Map<Integer, Integer> carrello, int id_Utente) {
 		setLista(carrello);
 		setIdUtente(id_Utente);	
+		setPrezzo();
 	}
 
 
@@ -81,7 +79,7 @@ public class Ordine {
 
 	@Override
 	public String toString() {
-		return "Ordine [id=" + id + ", idUtente=" + idUtente + ", id_scarpa=" + id_scarpa + ", prezzo=" + prezzo + "]";
+		return "Ordine [id=" + id + ", idUtente=" + idUtente + ", prezzo=" + prezzo + "]";
 	}
 	
 }

@@ -1,12 +1,6 @@
-<!-- templatemo 367 shoes -->
-<!-- 
-Shoes Template 
-http://www.templatemo.com/preview/templatemo_367_shoes 
--->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<!--  commento  -->
 <%@ page contentType="text/html; charset=UTF-8" %>
 <title>ScarpeDiModa - Check Out</title>
 <meta name="keywords" content="" />
@@ -33,7 +27,7 @@ ddsmoothmenu.init({
 <div id="templatemo_wrapper">
 
 	<div id="templatemo_header">
-    	<div id="site_title"><h1><a href="index.jsp">Negozio di scarpe online</a></h1></div>
+    	<div id="site_title"><h1><a href="index.jsp"></a></h1></div>
         <div id="header_right">
         	<p>
 	        <a href="account.jsp">Il mio account</a> | <a href="shoppingcart.jsp">Carrello</a> | <a href="loginRegister.jsp">Accedi</a></p>       
@@ -47,17 +41,17 @@ ddsmoothmenu.init({
                 <li><a href="index.jsp" class="selected">Home</a></li>
                 <li><a href="#">Prodotti</a>
                     <ul>
-                        <li><a href="uomoProducts.html">Uomo</a></li>
-                        <li><a href="donnaProducts.html">Donna</a></li> 
-                        <li><a href="bambinoProducts.html">Bambino</a></li>
-                        <li><a href="bambinaProducts.html">Bambina</a></li>             
+                        <li><a href="uomoProducts.jsp">Uomo</a></li>
+                        <li><a href="donnaProducts.jsp">Donna</a></li> 
+                        <li><a href="bambinoProducts.jsp">Bambino</a></li>
+                        <li><a href="bambinaProducts.jsp">Bambina</a></li>             
                    </ul>
                 </li>
                 <li><a href="checkout.jsp">Checkout</a></li>
                 <li><a href="about.html">Chi siamo</a></li>
                 <li><a href="faqs.html">FAQs</a></li>
                 <li><a href="subscribe.html">Iscriviti</a></li>
-                <li><a href="contact.html">Contattaci</a></li>
+                <li><a href="contact.jsp">Contattaci</a></li>
             </ul>
             <br style="clear: left" />
         </div> <!-- end of ddsmoothmenu -->
@@ -78,7 +72,7 @@ ddsmoothmenu.init({
                         <li class="first"><a href="uomoProducts.html">Uomo</a></li>
                         <li class="first"><a href="donnaProducts.html">Donna</a></li> 
                         <li class="first"><a href="bambinoProducts.html">Bambino</a></li>
-                        <li class="first"><a href="bambinaProducts.html">Bambina</a></li>
+                        <li class="last"><a href="bambinaProducts.html">Bambina</a></li>
                     </ul>
                 </div>
             </div>
@@ -128,51 +122,53 @@ ddsmoothmenu.init({
         
         <div id="content" class="float_r">
         	<h2>Checkout</h2>
-            <h5><strong>BILLING INFORMATION</strong></h5>
+            <h5><strong>INFORMAZIONI DI SPEDIZIONE</strong></h5>
             <div class="content_half float_l checkout">
-				Full Name (must be same as on your credit card):  
-                  <input type="text"  style="width:300px;"  />
-                <br />
-                <br />
-              Address:
-				<input type="text"  style="width:300px;"  />
-                <br />
-                <br />
-              City:
+			  Nome completo (deve essere lo stesso della carta di credito):  
                 <input type="text"  style="width:300px;"  />
                 <br />
                 <br />
-                Country:
+              Indirizzo:
+				<input type="text"  style="width:300px;"  />
+                <br />
+                <br />
+              Città:
+                <input type="text"  style="width:300px;"  />
+                <br />
+                <br />
+              Paese:
                 <input type="text"  style="width:300px;"  />
             </div>
             
             <div class="content_half float_r checkout">
-            	E-MAIL
+              E-MAIL
 				<input type="text"  style="width:300px;"  />
                 <br />
                 <br />
-          PHONE<br />
-				<span style="font-size:10px">Please, specify your reachable phone number. YOU MAY BE GIVEN A CALL TO VERIFY AND COMPLETE THE ORDER.</span>
+              TELEFONO<br />
+				<span style="font-size:10px">Per favore, specifica il tuo numero di telefono raggiungibile. POTREBBE ESSERE CHIAMATA PER VERIFICARE E COMPLETARE L'ORDINE.</span>
                 <input type="text"  style="width:300px;"  />
             </div>
             
+            <% String prezzo = (String) request.getSession().getAttribute("prezzo"); %>
+            
             <div class="cleaner h50"></div>
-            <h3>SHOPPING CART</h3>
-            <h4>TOTAL AMOUNT: <strong>$240</strong></h4>
+            <h3>CARRELLO DELLA SPESA</h3>
+            <h4>IMPORTO TOTALE: <strong><%= prezzo %> €</strong></h4>
 			<p><input type="checkbox" />
-			I accept the <a href="#">terms of use</a> of this website.</p>
+			Accetto i <a href="#">termini di utilizzo</a> di questo sito web.</p>
             <table style="border:1px solid #CCCCCC;" width="100%">
                 <tr>
-                    <td height="80px"> <img src="images/paypal.gif" alt="paypal" /></td>
-                    <td width="400px;" style="padding: 0px 20px;">Recommended if you have a PayPal account. Fastest delivery time.
+                    <td height="80px"> <img src="IMAGES/paypal.gif" alt="paypal" /></td>
+                    <td width="400px;" style="padding: 0px 20px;">Consigliato se hai un account PayPal. Tempi di consegna più rapidi.
                     </td>
-                    <td><a href="#" class="more">PAYPAL</a></td>
+                    <td><a href="MakeOrderServlet" class="more">PAYPAL</a></td>
                 </tr>
                 <tr>
-                    <td  height="80px"><img src="images/2co.gif" alt="paypal" />
+                    <td  height="80px"><img src="IMAGES/2co.gif" alt="paypal" />
                     </td>
-                    <td  width="400px;" style="padding: 0px 20px;">2Checkout.com, Inc. is an authorized retailer of goods and services. 2CheckOut accepts customer orders via online checks, Visa, MasterCard, Discover, American Express, Diners, JCB and debit cards with the Visa, Mastercard logo. Validate <a href="http://validator.w3.org/check?uri=referer" rel="nofollow">XHTML</a> &amp; <a href="http://jigsaw.w3.org/css-validator/check/referer" rel="nofollow">CSS</a>.</td>
-                    <td><a href="#" class="more">2CHECKOUT</a></td>
+                    <td  width="400px;" style="padding: 0px 20px;">2Checkout.com, Inc. è un rivenditore autorizzato di beni e servizi. 2CheckOut accetta gli ordini dei clienti tramite assegni online, Visa, MasterCard, Discover, American Express, Diners, JCB e carte di debito con il logo Visa, Mastercard. </td>
+                    <td><a href="MakeOrderServlet" class="more">2CHECKOUT</a></td>
                 </tr>
             </table>
         </div> 
@@ -180,7 +176,7 @@ ddsmoothmenu.init({
     </div> <!-- END of templatemo_main -->
     
     <div id="templatemo_footer">
-    	<p><a href="index.jsp">Home</a> | <a href="about.html">Chi siamo</a> | <a href="faqs.html">FAQs</a> | <a href="subscribe.html">Iscriviti</a> | <a href="contact.html">Contattici</a>
+    	<p><a href="index.jsp">Home</a> | <a href="about.html">Chi siamo</a> | <a href="faqs.html">FAQs</a> | <a href="subscribe.html">Iscriviti</a> | <a href="contact.jsp">Contattaci</a>
 		</p>
 
     	Copyright © 2021 <a href="#">ScarpeDiModa</a>  <!-- END of templatemo_footer -->
@@ -189,6 +185,13 @@ ddsmoothmenu.init({
     
 </div> <!-- END of templatemo_wrapper -->
 </div> <!-- END of templatemo_body_wrapper -->
+
+<% String ordine = request.getParameter("ordine"); 
+   if (ordine != null && ordine.equals("OK")) { %>
+       <script type='text/javascript'>
+          alert('Abbiamo ricevuto il tuo ordine!')
+       </script> 
+<% } %>
 
 </body>
 </html>

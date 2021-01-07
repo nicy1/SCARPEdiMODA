@@ -9,4 +9,5 @@ public interface DAOordine {
    public List <Ordine> read();
    public void delete(Integer id);
    public Ordine findByID(Integer id);
+   public List<Ordine> getUserOrders(int idUtente);
 }

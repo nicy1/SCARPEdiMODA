@@ -46,17 +46,17 @@ ddsmoothmenu.init({
                 <li><a href="index.jsp" class="selected">Home</a></li>
                 <li><a href="#">Prodotti</a>
                     <ul>
-                        <li><a href="uomoProducts.html">Uomo</a></li>
-                        <li><a href="donnaProducts.html">Donna</a></li> 
-                        <li><a href="bambinoProducts.html">Bambino</a></li>
-                        <li><a href="bambinaProducts.html">Bambina</a></li>             
+                        <li><a href="uomoProducts.jsp">Uomo</a></li>
+                        <li><a href="donnaProducts.jsp">Donna</a></li> 
+                        <li><a href="bambinoProducts.jsp">Bambino</a></li>
+                        <li><a href="bambinaProducts.jsp">Bambina</a></li>             
                    </ul>
                 </li>
                 <li><a href="checkout.jsp">Checkout</a></li>
                 <li><a href="about.html">Chi siamo</a></li>
                 <li><a href="faqs.html">FAQs</a></li>
                 <li><a href="subscribe.html">Iscriviti</a></li>
-                <li><a href="contact.html">Contattaci</a></li>
+                <li><a href="contact.jsp">Contattaci</a></li>
             </ul>
             <br style="clear: left" />
         </div> <!-- end of ddsmoothmenu -->
@@ -87,38 +87,38 @@ ddsmoothmenu.init({
                 <div class="content"> 
                     <div class="bs_box">
                     	<a href="#"><img src="IMAGES/piuVenduti/b06.jpg" alt="image" /></a>
-                        <h4><a href="#">DÃ©colletÃ© gold d03</a></h4>
-                        <p class="price">45â¬</p>
+                        <h4><a href="#">Décolleté gold d03</a></h4>
+                        <p class="price">45€</p>
                         <div class="cleaner"></div>
                     </div>
                     <div class="bs_box">
                     	<a href="#"><img src="IMAGES/piuVenduti/b04.jpg" alt="image" /></a>
                         <h4><a href="#">Sneaker nike s04</a></h4>
-                        <p class="price">70â¬</p>
+                        <p class="price">70€</p>
                         <div class="cleaner"></div>
                     </div>
                     <div class="bs_box">
                     	<a href="#"><img src="IMAGES/piuVenduti/b03.jpg" alt="image" /></a>
                         <h4><a href="#">Tennis red t03</a></h4>
-                        <p class="price">40â¬</p>
+                        <p class="price">40€</p>
                         <div class="cleaner"></div>
                     </div>
                     <div class="bs_box">
                     	<a href="#"><img src="IMAGES/piuVenduti/b02.jpg" alt="image" /></a>
                         <h4><a href="#">Tennis black-white t02</a></h4>
-                        <p class="price">50â¬</p>
+                        <p class="price">50€</p>
                         <div class="cleaner"></div>
                     </div>
                     <div class="bs_box">
                     	<a href="#"><img src="IMAGES/piuVenduti/b05.jpg" alt="image" /></a>
-                        <h4><a href="#">DÃ©colletÃ© d02</a></h4>
-                        <p class="price">70â¬</p>
+                        <h4><a href="#">Décolleté d02</a></h4>
+                        <p class="price">70€</p>
                         <div class="cleaner"></div>
                     </div>
                     <div class="bs_box">
                     	<a href="#"><img src="IMAGES/piuVenduti/b01.jpg" alt="image" /></a>
                         <h4><a href="#">Tennis nike t01</a></h4>
-                        <p class="price">40â¬</p>
+                        <p class="price">40€</p>
                         <div class="cleaner"></div>
                     </div>
                 </div>
@@ -130,21 +130,21 @@ ddsmoothmenu.init({
             <div class="product_box">
 	            <h3>bambino01</h3>
             	<a href="#"><img src="IMAGES/scarpe/bambino01.jpg" alt="Shoes 1" /></a>
-              <p class="product_price">100â¬</p>
+              <p class="product_price">100€</p>
                 <a href="AddItemCartServlet?codice=bambino01&amp;quantita=1" class="addtocart"></a>
                 <a href="DetailItemServlet?codice=bambino01" class="detail"></a>
             </div>        	
             <div class="product_box">
             	<h3>bambino02</h3>
             	<a href="#"><img src="IMAGES/scarpe/bambino02.jpg" alt="Shoes 2" /></a>
-            <p class="product_price">80â¬</p>
+            <p class="product_price">80€</p>
                 <a href="AddItemCartServlet?codice=bambino02&amp;quantita=1" class="addtocart"></a>
                 <a href="DetailItemServlet?codice=bambino02" class="detail"></a>
             </div>        	
             <div class="product_box no_margin_right">
             	<h3>bambino03</h3>
             	<a href="#"><img src="IMAGES/scarpe/bambino03.jpg" alt="Shoes 3" /></a>
-              <p class="product_price">60â¬</p>
+              <p class="product_price">60€</p>
                 <a href="AddItemCartServlet?codice=bambino03&amp;quantita=1" class="addtocart"></a>
                 <a href="DetailItemServlet?codice=bambino03" class="detail"></a>
             </div>     
@@ -154,21 +154,21 @@ ddsmoothmenu.init({
             <div class="product_box">
             	<h3>bambino04</h3>
             	<a href="#"><img src="IMAGES/scarpe/bambino04.jpg" alt="Shoes 4" /></a>
-              <p class="product_price">260â¬</p>
+              <p class="product_price">260€</p>
                 <a href="AddItemCartServlet?codice=bambino04&amp;quantita=1" class="addtocart"></a>
                 <a href="DetailItemServlet?codice=bambino04" class="detail"></a>
             </div>        	
             <div class="product_box">
 	            <h3>bambino05</h3>
             	<a href="#"><img src="IMAGES/scarpe/bambino05.jpg" alt="Shoes 5" /></a>
-            <p class="product_price">80â¬</p>
+            <p class="product_price">80€</p>
                 <a href="AddItemCartServlet?codice=bambino05&amp;quantita=1" class="addtocart"></a>
                 <a href="DetailItemServlet?codice=bambino05" class="detail"></a>
             </div>        	
             <div class="product_box no_margin_right">
             	<h3>bambino06</h3>
             	<a href="#"><img src="IMAGES/scarpe/bambino06.jpg" alt="Shoes 6" /></a>
-              <p class="product_price">190â¬</p>
+              <p class="product_price">190€</p>
                 <a href="AddItemCartServlet?codice=bambino06&amp;quantita=1" class="addtocart"></a>
                 <a href="DetailItemServlet?codice=bambino06" class="detail"></a>
             </div>   
@@ -178,21 +178,21 @@ ddsmoothmenu.init({
             <div class="product_box">
             	<h3>bambino07</h3>
             	<a href="#"><img src="IMAGES/scarpe/bambino07.jpg" alt="Shoes 7" /></a>
-              <p class="product_price">30â¬</p>
+              <p class="product_price">30€</p>
                 <a href="AddItemCartServlet?codice=bambino07&amp;quantita=1" class="addtocart"></a>
                 <a href="DetailItemServlet?codice=bambino07" class="detail"></a>
             </div>        	
             <div class="product_box">
             	<h3>bambino08</h3>
             	<a href="#"><img src="IMAGES/scarpe/bambino08.jpg" alt="Shoes 8" /></a>
-            <p class="product_price">220â¬</p>
+            <p class="product_price">220€</p>
                 <a href="AddItemCartServlet?codice=bambino08&amp;quantita=1" class="addtocart"></a>
                 <a href="DetailItemServlet?codice=bambino08" class="detail"></a>
             </div>        	
             <div class="product_box no_margin_right">
             	 <h3>bambino09</h3>
             	<a href="#"><img src="IMAGES/scarpe/bambino09.jpg" alt="Shoes 9" /></a>
-              <p class="product_price">65â¬</p>
+              <p class="product_price">65€</p>
                 <a href="AddItemCartServlet?codice=bambino09&amp;quantita=1" class="addtocart"></a>
                 <a href="DetailItemServlet?codice=bambino09" class="detail"></a>
             </div>  
@@ -201,10 +201,10 @@ ddsmoothmenu.init({
     </div> <!-- END of templatemo_main -->
     
     <div id="templatemo_footer">
-    	<p><a href="index.jsp">Home</a> | <a href="about.html">Chi siamo</a> | <a href="faqs.html">FAQs</a> | <a href="subscribe.html">Iscriviti</a> | <a href="contact.html">Contattici</a>
+    	<p><a href="index.jsp">Home</a> | <a href="about.html">Chi siamo</a> | <a href="faqs.html">FAQs</a> | <a href="subscribe.html">Iscriviti</a> | <a href="contact.jsp">Contattaci</a>
 		</p>
 
-    	Copyright Â© 2021 <a href="#">ScarpeDiModa</a> </div> <!-- END of templatemo_footer -->
+    	Copyright © 2021 <a href="#">ScarpeDiModa</a> </div> <!-- END of templatemo_footer -->
     
 </div> <!-- END of templatemo_wrapper -->
 </div> <!-- END of templatemo_body_wrapper -->
