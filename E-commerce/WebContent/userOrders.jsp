@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>ScarpeDiModa - Chi siamo</title>
+<%@ page contentType="text/html; charset=UTF-8" %>
+<title>ScarpeDiModa - Cerca Scarpe </title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 
@@ -118,32 +118,32 @@ ddsmoothmenu.init({
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
         
         <div id="content" class="float_r">
-        	<h1>Chi siamo</h1>
-        	<h2>ScarpeDiModa</h2>
-        <ul class="tmo_list">
-        	<li>Siamo un’azienda italiana creata dal gruppo "I FANTASTICI4" (Aurora, Gaetano, Irene e Nicy).</li>
-            <li>Un brand da sempre attento alla qualità dei prodotti e alle tendenze per rispondere alle esigenze del pubblico in maniera sempre efficace.</li>
-            <li>La varietà delle proposte, la qualità dei nostri materiali e la competitività dei prezzi che offriamo, da sempre hanno caratterizzato la nostra distribuzione.</li>
-            <li>Grazie alla nostra brand identity e all’efficacia delle strategie imprenditorial, siamo riusciti a diventare una realtà commerciale solida e vincente.</li>
-		</ul>
-        <div class="cleaner h20"></div>
+        	<h1> Ordini (${sessionScope['loggedIn_EMAIL']})</h1>	
+        	<% String ordineList = request.getParameter("ordini"); 
+        	   out.print(ordineList);
+        	%>
         </div> 
         <div class="cleaner"></div>
     </div> <!-- END of templatemo_main -->
     
     <div id="templatemo_footer">
-    	<p><a href="index.jsp">Home</a> | <a href="about.html">About</a> | <a href="faqs.html">FAQs</a> | <a href="subscribe.html">Iscriviti</a> | <a href="contact.jsp">Contattaci</a>
+    	<p><a href="index.jsp">Home</a> | <a href="about.html">Chi siamo</a> | <a href="faqs.html">FAQs</a> | <a href="subscribe.html">Iscriviti</a> | <a href="contact.jsp">Contattaci</a>
 		</p>
 
-    	Copyright © 2021 <a href="#">ScarpeDiModa</a> <!-- END of templatemo_footer -->
-        
-    </div> <!-- END of templatemo_footer -->
+    	Copyright © 2021 <a href="#">ScarpeDiModa</a> </div> <!-- END of templatemo_footer -->
     
 </div> <!-- END of templatemo_wrapper -->
 </div> <!-- END of templatemo_body_wrapper -->
+
+<% String disp = request.getParameter("disponibile"); 
+   if (disp != null && disp.equals("NO")) { %>
+       <script type='text/javascript'>
+          alert('Non disponibile!')
+       </script> 
+<% } %>
 
 </body>
 </html>

@@ -1,12 +1,8 @@
-<!-- templatemo 367 shoes -->
-<!-- 
-Shoes Template 
-http://www.templatemo.com/preview/templatemo_367_shoes 
--->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page session="true" %>
 <title>Il mio account</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
@@ -46,10 +42,10 @@ ddsmoothmenu.init({
                 <li><a href="index.jsp" class="selected">Home</a></li>
                 <li><a href="#">Prodotti</a>
                     <ul>
-                        <li><a href="uomoProducts.html">Uomo</a></li>
-                        <li><a href="donnaProducts.html">Donna</a></li> 
-                        <li><a href="bambinoProducts.html">Bambino</a></li>
-                        <li><a href="bambinaProducts.html">Bambina</a></li>             
+                        <li><a href="uomoProducts.jsp">Uomo</a></li>
+                        <li><a href="donnaProducts.jsp">Donna</a></li> 
+                        <li><a href="bambinoProducts.jsp">Bambino</a></li>
+                        <li><a href="bambinaProducts.jsp">Bambina</a></li>             
                    </ul>
                 </li>
                 <li><a href="checkout.jsp">Checkout</a></li>
@@ -68,15 +64,13 @@ ddsmoothmenu.init({
         </div>
     </div> <!-- END of templatemo_menubar -->
     
-    <% String idutente = request.getParameter("idutente");  %>
-    
     <div id="templatemo_main">
     	<div id="sidebar" class="float_l">
         	<div class="sidebar_box"><span class="bottom"></span>
             	<h3>Menù</h3>   
                 <div class="content"> 
                 	<ul class="sidebar_list">
-                        <li class="last"><a href="LogoutServlet?idutente=<%= idutente %>">Esci</a></li> 
+                        <li class="last"><a href="LogoutServlet">Esci</a></li> 
                     </ul>
                 </div>
             </div>
@@ -110,7 +104,7 @@ ddsmoothmenu.init({
                     </div>
                     <div class="bs_box">
                     	<a href="#"><img src="IMAGES/piuVenduti/b05.jpg" alt="image" /></a>
-                        <h4><a href="#">Décolleté d02</h4>
+                        <h4><a href="#">Décolleté d02</a></h4>
                         <p class="price">70€</p>
                         <div class="cleaner"></div>
                     </div>
@@ -125,10 +119,10 @@ ddsmoothmenu.init({
         </div>
         
         <div id="content" class="float_r">
-        	<h1> Il mio account</h1>
+        	<h1> Il mio account (${sessionScope['loggedIn_EMAIL']})</h1>
             <div class="product_box">
 	            <h3>I MIEI ORDINI</h3>
-            	<a href="UserOrdersServlet?idutente=<%= idutente %>"><img src="IMAGES/Ilmioaccount/I miei ordini.png" alt="Shoes 1" /></a>
+            	<a href="UserOrdersServlet"><img src="IMAGES/Ilmioaccount/I miei ordini.png" alt="Shoes 1" /></a>
             </div>        	
             <div class="product_box">
             	<h3>IMPOSTAZIONI DI SICUREZZA</h3>
@@ -160,7 +154,7 @@ ddsmoothmenu.init({
     </div> <!-- END of templatemo_main -->
    
     <div id="templatemo_footer">
-    	<p><a href="index.jsp">Home</a> | <a href="about.html">Chi siamo</a> | <a href="faqs.html">FAQs</a> | <a href="subscribe.html">Iscriviti</a> | <a href="contact.html">Contattici</a>
+    	<p><a href="index.jsp">Home</a> | <a href="about.html">Chi siamo</a> | <a href="faqs.html">FAQs</a> | <a href="subscribe.html">Iscriviti</a> | <a href="contact.jsp">Contattaci</a>
 		</p>
 
     	Copyright © 2021 <a href="#">ScarpeDiModa</a> </div> <!-- END of templatemo_footer -->

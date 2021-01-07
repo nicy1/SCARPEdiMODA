@@ -44,17 +44,17 @@ ddsmoothmenu.init({
                 <li><a href="index.jsp" class="selected">Home</a></li>
                 <li><a href="#">Prodotti</a>
                     <ul>
-                        <li><a href="uomoProducts.html">Uomo</a></li>
-                        <li><a href="donnaProducts.html">Donna</a></li> 
-                        <li><a href="bambinoProducts.html">Bambino</a></li>
-                        <li><a href="bambinaProducts.html">Bambina</a></li>             
+                        <li><a href="uomoProducts.jsp">Uomo</a></li>
+                        <li><a href="donnaProducts.jsp">Donna</a></li> 
+                        <li><a href="bambinoProducts.jsp">Bambino</a></li>
+                        <li><a href="bambinaProducts.jsp">Bambina</a></li>             
                    </ul>
                 </li>
                 <li><a href="checkout.jsp">Checkout</a></li>
                 <li><a href="about.html">Chi siamo</a></li>
                 <li><a href="faqs.html">FAQs</a></li>
                 <li><a href="subscribe.html">Iscriviti</a></li>
-                <li><a href="contact.html">Contattaci</a></li>
+                <li><a href="contact.jsp">Contattaci</a></li>
             </ul>
             <br style="clear: left" />
         </div> <!-- end of ddsmoothmenu -->
@@ -108,7 +108,7 @@ ddsmoothmenu.init({
 					</table>
                     <div style="float:right; width: 215px; margin-top: 20px;">
                     
-					<p><a href="checkout.html">Proceed to checkout</a></p>
+					<p><a href="checkout.jsp">Proceed to checkout</a></p>
                     <p><a href="javascript:history.back()">Continue shopping</a></p>
                     	
                     </div>
@@ -117,7 +117,7 @@ ddsmoothmenu.init({
     </div> <!-- END of templatemo_main -->
     
     <div id="templatemo_footer">
-    	<p><a href="index.jsp">Home</a> | <a href="about.html">Chi siamo</a> | <a href="faqs.html">FAQs</a> | <a href="subscribe.html">Iscriviti</a> | <a href="contact.html">Contattici</a>
+    	<p><a href="index.jsp">Home</a> | <a href="about.html">Chi siamo</a> | <a href="faqs.html">FAQs</a> | <a href="subscribe.html">Iscriviti</a> | <a href="contact.jsp">Contattaci</a>
 		</p>
 
     	Copyright © 2021 <a href="#">ScarpeDiModa</a> </div> <!-- END of templatemo_footer -->
