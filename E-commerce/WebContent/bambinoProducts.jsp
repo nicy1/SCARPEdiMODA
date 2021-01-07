@@ -74,16 +74,16 @@ ddsmoothmenu.init({
             	<h3>Categorie</h3>   
                 <div class="content"> 
                 	<ul class="sidebar_list">
-                        <li class="first"><a href="uomoProducts.html">Uomo</a></li>
-                        <li class="first"><a href="donnaProducts.html">Donna</a></li> 
-                        <li class="first"><a href="bambinoProducts.html">Bambino</a></li>
-                        <li class="last"><a href="bambinaProducts.html">Bambina</a></li>
+                        <li class="first"><a href="uomoProducts.jsp">Uomo</a></li>
+                        <li class="first"><a href="donnaProducts.jsp">Donna</a></li> 
+                        <li class="first"><a href="bambinoProducts.jsp">Bambino</a></li>
+                        <li class="last"><a href="bambinaProducts.jsp">Bambina</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="sidebar_box"><span class="bottom"></span>
-            	<h3>I piÃ¹ venduti </h3>   
+            	<h3>I più venduti </h3>   
                 <div class="content"> 
                     <div class="bs_box">
                     	<a href="#"><img src="IMAGES/piuVenduti/b06.jpg" alt="image" /></a>

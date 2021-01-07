@@ -38,6 +38,10 @@
 				   <div class="hr"></div>
 				   <div class="foot-lnk">
 					   <a href="#forgot">Hai smarrito la password?</a>
+					   <br>
+					   <br>
+					   <br>
+					   <a href="index.jsp">Torna alla HomePage</a>
 				   </div>
 			   </div>
              </form>
@@ -77,6 +81,10 @@
 				   <div class="hr"></div>
 				   <div class="foot-lnk">
 					   <a href="#registred">Già iscritto?</a>
+					   <br>
+					   <br>
+					   <br>
+					   <a href="index.jsp">Torna alla HomePage</a>
 				   </div>
 			   </div>
 			 </form>
@@ -87,7 +95,5 @@
 </body>
 
 </html>   
-   
-   
    
    
