@@ -1,43 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
+<%@ page contentType="text/html; charset=UTF-8" %>
 <title>Subscribe page</title>
 <link rel="stylesheet" type="text/css" href="CSS/subscribe.css">
 </head>
-<style>
-.button {
-  
-  background-color: #4DB7FE;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 13px;
-  margin: 50px 220px;
-  cursor: pointer;
-  
-}
-
-#hover_button:hover {
-    background: #2C3B5A;
-    color: #fff
-}
-</style>
 <body>
 
 <div class="bbb-wrapper fl-wrap">
     <div class="subcribe-form fl-wrap">
         <p class="text-center">Iscriviti ora alla nostra newsletter </p>
-        <form id="subscribe" action="index.jsp?subscription=OK" method="post"> 
+        <form id="subscribe" action="subscribe.jsp?subscription=OK" method="post"> 
            <input type="email" class="enteremail" id="subscribe-email" name="email" placeholder="Email" spellcheck="false"> 
            <button type="submit" id="subscribe-button" class="subscribe-button color-bg" value=Subscribe>Iscriviti</button> 
            <label for="subscribe-email" class="subscribe-message"></label> 
-           <a href="index.jsp" id="hover_button"class="button">HomePage</a>
         </form>
-        
     </div>
+    
+<% String access = request.getParameter("subscription"); 
+   if (access != null && access.equals("OK")) { %>
+       <script type='text/javascript'>
+          alert('Sei iscritto correttamente!')
+       </script> 
+<% } %>    
+    
 </div>
 
 </body>

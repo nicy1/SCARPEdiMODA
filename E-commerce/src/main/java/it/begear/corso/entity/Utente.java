@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 @Entity
 @Table(name = "utenti")
 
@@ -29,8 +30,12 @@ public class Utente {
 	
 	@Column(name = "indirizzo")
       private String indirizzo;
-      
+    
+	@Transient
       private Carrello carrello;
+      
+      
+      public Utente() {}
 
 	public Utente( String nome, String cognome, String email, String password, String indirizzo) {
 		super();	

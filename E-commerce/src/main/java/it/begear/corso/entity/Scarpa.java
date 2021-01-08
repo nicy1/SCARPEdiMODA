@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "scarpe")
-public abstract class Scarpa {
+public class Scarpa {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_scarpe")
@@ -39,6 +39,7 @@ public abstract class Scarpa {
 	@Column(name = "disponibilita")
 	private int disponibilita;
 
+	
 	public Scarpa() {}
 
 	public Scarpa(int id,String codice, Genere gender, String descrizione, Colore color, Misura numero, String brand, double costo, int disponibilita) {
@@ -158,5 +159,6 @@ public abstract class Scarpa {
 
 
 
-	public abstract void getTacco();
+	public void getTacco() {
+	}
 }

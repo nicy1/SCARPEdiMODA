@@ -11,15 +11,7 @@
 <link rel="stylesheet" type="text/css" href="CSS/ddsmoothmenu.css" />
 
 <script type="text/javascript" src="JAVASCRIPT/jquery.min.js"></script>
-<script type="text/javascript" src="JAVASCRIPT/ddsmoothmenu.js">
-
-/***********************************************
-* Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
-* This notice MUST stay intact for legal use
-* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
-***********************************************/
-
-</script>
+<script type="text/javascript" src="JAVASCRIPT/ddsmoothmenu.js"></script>
 
 <script type="text/javascript">
 
@@ -43,8 +35,13 @@ ddsmoothmenu.init({
 	<div id="templatemo_header">
     	<div id="site_title"><h1><a href="index.jsp"></a></h1></div>
         <div id="header_right">
-        	<p>
-	        <a href="account.jsp">Il mio account</a> | <a href="shoppingcart.jsp">Carrello</a> | <a href="loginRegister.jsp">Accedi</a></p>       
+        	<% Object nome = request.getSession(false).getAttribute("loggedIn_NOME"); 
+             if (nome == null) {
+          %> 	
+        	<p><a href="account.jsp">Il mio account</a> | <a href="shoppingcart.jsp">Carrello</a> | <a href="loginRegister.jsp">Accedi</a></p>       
+		  <% } else { %>
+            <p><a href="account.jsp"><%= nome.toString() %></a> | <a href="shoppingcart.jsp">Carrello</a></p>
+          <% } %>       
 		</div>
         <div class="cleaner"></div>
     </div> <!-- END of templatemo_header -->
@@ -62,9 +59,9 @@ ddsmoothmenu.init({
                    </ul>
                 </li>
                 <li><a href="checkout.jsp">Checkout</a></li>
-                <li><a href="about.html">Chi siamo</a></li>
-                <li><a href="faqs.html">FAQs</a></li>
-                <li><a href="subscribe.html">Iscriviti</a></li>
+                <li><a href="about.jsp">Chi siamo</a></li>
+                <li><a href="faqs.jsp">FAQs</a></li>
+                <li><a href="subscribe.jsp">Iscriviti</a></li>
                 <li><a href="contact.jsp">Contattaci</a></li>
             </ul>
             <br style="clear: left" />
@@ -146,21 +143,21 @@ ddsmoothmenu.init({
 	            <h3>Tacco01</h3>
             	<a href="#"><img src="IMAGES/scarpe/tac01.jpg" alt="Shoes 1" /></a>
               <p class="product_price">€ 100</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
+                <a href="shoppingcart.jsp" class="addtocart"></a>
                 <a href="#" class="detail"></a>
             </div>        	
             <div class="product_box">
             	<h3>Tacco02</h3>
             	<a href="#"><img src="IMAGES/scarpe/tac02.jpg" alt="Shoes 2" /></a>
             <p class="product_price">€ 80</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
+                <a href="shoppingcart.jsp" class="addtocart"></a>
                 <a href="#" class="detail"></a>
             </div>        	
             <div class="product_box no_margin_right">
             	<h3>Tacco03</h3>
             	<a href="#"><img src="IMAGES/scarpe/tac03.jpg" alt="Shoes 3" /></a>
               <p class="product_price">€ 60</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
+                <a href="shoppingcart.jsp" class="addtocart"></a>
                 <a href="#" class="detail"></a>
             </div>     
             
@@ -170,21 +167,21 @@ ddsmoothmenu.init({
             	<h3>Tacco04</h3>
             	<a href="#"><img src="IMAGES/scarpe/tac04.jpg" alt="Shoes 4" /></a>
               <p class="product_price">€ 260</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
+                <a href="shoppingcart.jsp" class="addtocart"></a>
                 <a href="#" class="detail"></a>
             </div>        	
             <div class="product_box">
 	            <h3>Tacco05</h3>
             	<a href="#"><img src="IMAGES/scarpe/tac05.jpg" alt="Shoes 5" /></a>
             <p class="product_price">€ 80</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
+                <a href="shoppingcart.jsp" class="addtocart"></a>
                 <a href="#" class="detail"></a>
             </div>        	
             <div class="product_box no_margin_right">
             	<h3>Tacco01</h3>
             	<a href="#"><img src="IMAGES/scarpe/tac01.jpg" alt="Shoes 6" /></a>
               <p class="product_price">€ 190</p>
-                <a href="shoppingcart.html" class="addtocart"></a>
+                <a href="shoppingcart.jsp" class="addtocart"></a>
                 <a href="#" class="detail"></a>
             </div>   
             </div>  
@@ -193,7 +190,7 @@ ddsmoothmenu.init({
     		</div> <!-- END of templatemo_main -->
     
     <div id="templatemo_footer">
-    	<p><a href="index.jsp">Home</a> | <a href="about.html">Chi siamo</a> | <a href="faqs.html">FAQs</a> | <a href="subscribe.html">Iscriviti</a> | <a href="contact.jsp">Contattaci</a>
+    	<p><a href="index.jsp">Home</a> | <a href="about.jsp">Chi siamo</a> | <a href="faqs.jsp">FAQs</a> | <a href="subscribe.jsp">Iscriviti</a> | <a href="contact.jsp">Contattaci</a>
 		</p>
 
 

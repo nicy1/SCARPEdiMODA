@@ -12,6 +12,7 @@ import org.hibernate.Session;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.*;
 import it.begear.corso.dao.DAOutenteImpl;
 import it.begear.corso.entity.Utente;
 
@@ -32,14 +33,22 @@ public class RegisterServlet extends HttpServlet {
         String password = request.getParameter("password");
         String indirizzo = request.getParameter("indirizzo");
         
-        Utente u = new Utente(nome,cognome,email,password,indirizzo);
+        Utente utente = new Utente(nome,cognome,email,password,indirizzo); 
+        String nonEsiste = "OK";
         
-        daoUtente.create(u);
-        System.out.println("Creazione riuscita ");
-		
+        List<Utente> utenteList = daoUtente.read();
+        for(Utente u : utenteList) {                // controlla se l'utente esiste nel DB
+        	 if (u.getEmail().equals(email)) {          // utente gia' registrato
+        		  nonEsiste = "NO";
+        		  break;
+        	 }
+        }
         
-        System.out.println("l'user è: " + nome+"-"+cognome);
+        if (nonEsiste.equals("OK")) {        // utente non esiste nel DB
+        	daoUtente.create(utente);          
+        }
         
+        response.sendRedirect("loginRegister.jsp?register=" + nonEsiste);     
 	}
 
 }

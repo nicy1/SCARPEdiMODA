@@ -57,7 +57,7 @@ public class LoginFilter implements Filter {
 	 	     DAOordineImpl daoOrdine = context.getBean(DAOordineImpl.class);
 	 		 DAOutenteImpl daoUtente = context.getBean(DAOutenteImpl.class);
 	 		 
-	    	 if (request.getPathInfo().contains("checkout.jsp")) {           
+	    	 if (request.getHeader("referer").contains("checkout.jsp")) {           
 	    		  Utente utente = (Utente) session.getAttribute("loggedIn"); 
 	    		  double prezzoCarrello = utente.getCarrello().getPrezzo();
 	    		  request.setAttribute("prezzo", prezzoCarrello);

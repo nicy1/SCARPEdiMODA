@@ -30,7 +30,7 @@
 					   <label for="check"><span class="icon"></span> Resta connesso</label>
 				   </div>
 				   <div class="group">
-				       <font color="red">${message}</font><br>
+				       <font  color="red">${message}</font><br>
 				   </div>
 				   <div class="group">
 					   <input type="submit" class="button" value="Accedi">
@@ -92,6 +92,20 @@
 		   </div>
 	   </div>
    </div>
+   
+<% String register = request.getParameter("register"); 
+   if (register != null && register.equals("OK")) { %>
+       <script type='text/javascript'>
+          alert('Sei registrato correttamente!')
+       </script> 
+<% } %>
+
+<% if (register != null && register.equals("NO")) { %>
+       <script type='text/javascript'>
+           alert("l'email risulta gia' presente nel sistema!")
+        </script> 
+<% } %>
+   
 </body>
 
 </html>   
