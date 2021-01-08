@@ -78,10 +78,10 @@ ddsmoothmenu.init({
             	<h3>Categorie</h3>   
                 <div class="content"> 
                 	<ul class="sidebar_list">
-                        <li class="first"><a href="uomoProducts.jsp">Uomo</a></li>
-                        <li class="first"><a href="donnaProducts.jsp">Donna</a></li> 
-                        <li class="first"><a href="bambinoProducts.jsp">Bambino</a></li>
-                        <li class="last"><a href="bambinaProducts.jsp">Bambina</a></li>
+                        <li class="first"><a href="GenereServlet?genereScarpa=uomo">Uomo</a></li>
+                        <li class="first"><a href="GenereServlet?genereScarpa=donna">Donna</a></li> 
+                        <li class="first"><a href="GenereServlet?genereScarpa=bambino">Bambino</a></li>
+                        <li class="last"><a href="GenereServlet?genereScarpa=bambina">Bambina</a></li>
                     </ul>
                 </div>
             </div>
