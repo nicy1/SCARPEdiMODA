@@ -71,8 +71,6 @@ ddsmoothmenu.init({
         </div>
     </div> <!-- END of templatemo_menubar -->
     
-    
-    
     <div id="templatemo_main">
     	<div id="sidebar" class="float_l">
         	<div class="sidebar_box"><span class="bottom"></span>
@@ -136,10 +134,9 @@ ddsmoothmenu.init({
         
         <div id="content" class="float_r">
         	<h1> Scarpe da Uomo</h1>
-             <% String scarpaList = request.getParameter("genere"); 
-         	   out.print(scarpaList);
-       	     %> 
+             ${scarpe}
         </div>
+        <div class="cleaner"></div>
     
     </div> <!-- END of templatemo_main -->
     

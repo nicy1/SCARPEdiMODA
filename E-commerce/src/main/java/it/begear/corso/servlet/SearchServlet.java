@@ -30,9 +30,12 @@ public class SearchServlet extends HttpServlet {
 		if (keyword != null) {
 			List<Scarpa> scarpaList = daoscarpa.findByKeyword(keyword);
 			String parameters = null;
-			int index = 1, counter = 1;
+			
+			int index = 1;      // per stampare index di ogni scarpa secondo l'ordine della visualizzazione
+			int counter = 1;     // Per rispettare il formato di ogni riga di html 
+			
 			for(Scarpa scarpa : scarpaList) {
-				if(counter != 3) {
+				if(counter < 3) {
 					parameters += "<div class='product_box'>"
 							   +      "<h3>" + scarpa.getCodice() + "</h3>"
 							   +      "<a href='#'><img src='IMAGES/scarpe/" + scarpa.getCodice() + ".jpg' alt='Shoes " + index + "'/></a>"

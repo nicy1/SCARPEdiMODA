@@ -1,5 +1,6 @@
 package it.begear.corso.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -108,7 +109,7 @@ public class DAOscarpaImpl implements DAOscarpa {
 	
 	
 	public List<Scarpa> findByGenere(Genere genereScarpa) {
-		List<Scarpa> scarpe = null;
+		List<Scarpa> scarpe = new ArrayList<Scarpa>();
 		List<Scarpa> scarpaList = read();
 		for(Scarpa scarpa : scarpaList) {
 			if(scarpa.getGender().equals(genereScarpa)) {
