@@ -41,17 +41,17 @@ public class LoginServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			utente.setCarrello(new Carrello(utente.getId()));
 			session.setAttribute("loggedIn", utente);
-			session.setAttribute("loggedIn_ID", utente);
-			session.setAttribute("loggedIn_NOME", utente);
-			session.setAttribute("loggedIn_COGNOME", utente);
-			session.setAttribute("loggedIn_EMAIL", utente);
+			session.setAttribute("loggedIn_ID", utente.getId());
+			session.setAttribute("loggedIn_NOME", utente.getNome());
+			session.setAttribute("loggedIn_COGNOME", utente.getCognome());
+			session.setAttribute("loggedIn_EMAIL", utente.getEmail());
 			
 			session.setAttribute("costo_totale", 0.0);             // prezzo iniziale del carrello
 			
 			destPage = "account.jsp";
 		}
 		else {
-			String message = "Invalid email/password";
+			String message = "email o password non valide";
 			request.setAttribute("message", message);
 		}
 		

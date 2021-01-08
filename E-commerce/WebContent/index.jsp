@@ -31,9 +31,15 @@ ddsmoothmenu.init({
 	<div id="templatemo_header">
     	<div id="site_title"><h1><a href="index.jsp"></a></h1></div>
         <div id="header_right">
-        	
-        	<p>
-	        <a href="account.jsp">Il mio account</a> | <a href="shoppingcart.jsp">Carrello</a> | <a href="loginRegister.jsp">Accedi</a></p>       
+        
+          <% Object nome = request.getSession(false).getAttribute("loggedIn_NOME"); 
+             if (nome == null) {
+          %> 	
+        	<p><a href="account.jsp">Il mio account</a> | <a href="shoppingcart.jsp">Carrello</a> | <a href="loginRegister.jsp">Accedi</a></p>       
+		  <% } else { %>
+            <p><a href="account.jsp"><%= nome.toString() %></a> | <a href="shoppingcart.jsp">Carrello</a></p>
+          <% } %>
+          
 		</div>
         <div class="cleaner"></div>
     </div> <!-- END of templatemo_header -->
@@ -44,16 +50,16 @@ ddsmoothmenu.init({
                 <li><a href="index.jsp" class="selected">Home</a></li>
                 <li><a href="#">Prodotti</a>
                     <ul>
-                        <li><a href="uomoProducts.jsp">Uomo</a></li>
-                        <li><a href="donnaProducts.jsp">Donna</a></li> 
-                        <li><a href="bambinoProducts.jsp">Bambino</a></li>
-                        <li><a href="bambinaProducts.jsp">Bambina</a></li>             
+                        <li><a href="GenereServlet?genereScarpa=uomo">Uomo</a></li>
+                        <li><a href="GenereServlet?genereScarpa=donna">Donna</a></li> 
+                        <li><a href="GenereServlet?genereScarpa=bambino">Bambino</a></li>
+                        <li><a href="GenereServlet?genereScarpa=bambina">Bambina</a></li>             
                    </ul>
                 </li>
                 <li><a href="checkout.jsp">Checkout</a></li>
-                <li><a href="about.html">Chi siamo</a></li>
-                <li><a href="faqs.html">FAQs</a></li>
-                <li><a href="subscribe.html">Iscriviti</a></li>
+                <li><a href="about.jsp">Chi siamo</a></li>
+                <li><a href="faqs.jsp">FAQs</a></li>
+                <li><a href="subscribe.jsp">Iscriviti</a></li>
                 <li><a href="contact.jsp">Contattaci</a></li>
             </ul>
             <br style="clear: left" />
@@ -196,20 +202,13 @@ ddsmoothmenu.init({
     </div> <!-- END of templatemo_main -->
     
     <div id="templatemo_footer">
-    	<p><a href="index.jsp">Home</a> | <a href="about.html">Chi siamo</a> | <a href="faqs.html">FAQs</a> | <a href="subscribe.html">Iscriviti</a> | <a href="contact.jsp">Contattaci</a>
+    	<p><a href="index.jsp">Home</a> | <a href="about.jsp">Chi siamo</a> | <a href="faqs.jsp">FAQs</a> | <a href="subscribe.jsp">Iscriviti</a> | <a href="contact.jsp">Contattaci</a>
 		</p>
 
     	Copyright © 2021 <a href="#">ScarpeDiModa</a> </div> <!-- END of templatemo_footer -->
     
 </div> <!-- END of templatemo_wrapper -->
 </div> <!-- END of templatemo_body_wrapper -->
-
-<% String access = request.getParameter("subscription"); 
-   if (access != null && access.equals("OK")) { %>
-       <script type='text/javascript'>
-          alert('Sei iscritto correttamente!')
-       </script> 
-<% } %>
 
 <% String disp = request.getParameter("disponibile"); 
    if (disp != null && disp.equals("NO")) { %>

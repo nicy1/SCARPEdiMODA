@@ -1,8 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>ScarpeDiModa - Chi siamo</title>
+<!--  commento  -->
+<%@ page contentType="text/html; charset=UTF-8" %>
+<title>ScarpeDiModa - FAQs</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 
@@ -29,8 +30,13 @@ ddsmoothmenu.init({
 	<div id="templatemo_header">
     	<div id="site_title"><h1><a href="index.jsp"></a></h1></div>
         <div id="header_right">
-        	<p>
-	        <a href="account.jsp">Il mio account</a> | <a href="shoppingcart.jsp">Carrello</a> | <a href="loginRegister.jsp">Accedi</a></p>       
+        	<% Object nome = request.getSession(false).getAttribute("loggedIn_NOME"); 
+             if (nome == null) {
+          %> 	
+        	<p><a href="account.jsp">Il mio account</a> | <a href="shoppingcart.jsp">Carrello</a> | <a href="loginRegister.jsp">Accedi</a></p>       
+		  <% } else { %>
+            <p><a href="account.jsp"><%= nome.toString() %></a> | <a href="shoppingcart.jsp">Carrello</a></p>
+          <% } %>       
 		</div>
         <div class="cleaner"></div>
     </div> <!-- END of templatemo_header -->
@@ -48,9 +54,9 @@ ddsmoothmenu.init({
                    </ul>
                 </li>
                 <li><a href="checkout.jsp">Checkout</a></li>
-                <li><a href="about.html">Chi siamo</a></li>
-                <li><a href="faqs.html">FAQs</a></li>
-                <li><a href="subscribe.html">Iscriviti</a></li>
+                <li><a href="about.jsp">Chi siamo</a></li>
+                <li><a href="faqs.jsp">FAQs</a></li>
+                <li><a href="subscribe.jsp">Iscriviti</a></li>
                 <li><a href="contact.jsp">Contattaci</a></li>
             </ul>
             <br style="clear: left" />
@@ -118,29 +124,42 @@ ddsmoothmenu.init({
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
         
-        <div id="content" class="float_r">
-        	<h1>Chi siamo</h1>
-        	<h2>ScarpeDiModa</h2>
-        <ul class="tmo_list">
-        	<li>Siamo un’azienda italiana creata dal gruppo "I FANTASTICI4" (Aurora, Gaetano, Irene e Nicy).</li>
-            <li>Un brand da sempre attento alla qualità dei prodotti e alle tendenze per rispondere alle esigenze del pubblico in maniera sempre efficace.</li>
-            <li>La varietà delle proposte, la qualità dei nostri materiali e la competitività dei prezzi che offriamo, da sempre hanno caratterizzato la nostra distribuzione.</li>
-            <li>Grazie alla nostra brand identity e all’efficacia delle strategie imprenditorial, siamo riusciti a diventare una realtà commerciale solida e vincente.</li>
-		</ul>
-        <div class="cleaner h20"></div>
+        <div id="content" class="float_r faqs">
+        	<h1>FAQs</h1>
+            <h5>Come faccio a sapere se il mio ordine è stato effettuato?</h5>
+            <p>Riceverai un'e-mail di conferma che il tuo ordine è stato ricevuto. Se non ricevi un'e-mail di conferma, effettua il login per vedere lo stato del tuo ordine.</p>
+            
+          <h5>Quando sarà  spedito il mio ordine?</h5>
+            <p>Si prega di leggere la nostra politica di spedizione. Clicca <a href="#">qui</a></p>
+            
+            <h5>Quali metodi di pagamento accetti?</h5>
+            <p>PayPal e 2Checkout (2CO)</p>
+            
+            <h5>Posso restituire o cambiare il mio acquisto se non mi piace?</h5>
+            <p>Si prega di leggere la nostra politica di cambio. Clicca <a href="#">qui</a></p>
+            
+            <h5>Come faccio a sapere se l'ordine online è protetto?</h5>
+            <p>
+            La protezione delle tue informazioni è una priorità  assoluta per questo sito. Utilizziamo Secure Sockets Layer (SSL) per crittografare il numero, il nome e l'indirizzo della tua carta di credito, quindi solo questo sito è in grado di decodificare le tue informazioni. SSL è il metodo standard del settore con cui i computer comunicano in modo sicuro senza il rischio di intercettazione, manipolazione o rappresentazione del destinatario dei dati. Per essere sicuro che la tua connessione sia sicura; quando sei nel carrello, guarda nell'angolo inferiore della finestra del browser. Se vedi una chiave ininterrotta o un lucchetto chiuso, SSL è attivo e le tue informazioni sono al sicuro. Poiché la maggior parte dei clienti è ancora a disagio nel fornire la tua carta di credito online, utilizziamo PayPal e i servizi 2CheckOut e non è necessario che forniscano i dati della carta di credito.
+            </p>
+          <p>
+			Questo sito è registrato con HackerGuardian. Certificazione HackerGuardian per un sito Web privo di hacker e un logo TrustLogo della carta di credito che conferma la tua affidabilità  nel portare online i dettagli della carta di credito.
+          </p>
+
+			
+            <h5>Qual è la nostra politica sulla privacy?</h5>
+            <p>Questo sito web rispetta la tua privacy e ti assicura di comprendere quali informazioni abbiamo bisogno per completare il tuo ordine e quali informazioni puoi scegliere di condividere con noi e con i nostri partner di marketing. Per informazioni complete sulla nostra politica sulla privacy, visita la nostra pagina sulla politica sulla privacy : <a href="#">Privacy Policy</a></p>
         </div> 
         <div class="cleaner"></div>
     </div> <!-- END of templatemo_main -->
     
     <div id="templatemo_footer">
-    	<p><a href="index.jsp">Home</a> | <a href="about.html">About</a> | <a href="faqs.html">FAQs</a> | <a href="subscribe.html">Iscriviti</a> | <a href="contact.jsp">Contattaci</a>
+    	<p><a href="index.jsp">Home</a> | <a href="about.jsp">Chi siamo</a> | <a href="faqs.jsp">FAQs</a> | <a href="subscribe.jsp">Iscriviti</a> | <a href="contact.jsp">Contattaci</a>
 		</p>
 
-    	Copyright © 2021 <a href="#">ScarpeDiModa</a> <!-- END of templatemo_footer -->
-        
-    </div> <!-- END of templatemo_footer -->
+    	Copyright © 2021 <a href="#">ScarpeDiModa</a> </div> <!-- END of templatemo_footer -->
     
 </div> <!-- END of templatemo_wrapper -->
 </div> <!-- END of templatemo_body_wrapper -->

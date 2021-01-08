@@ -32,7 +32,7 @@ public class DetailItemServlet extends HttpServlet {
                               + "&descrizione=" + scarpa.getDescrizione()
                               + "&colore=" + scarpa.getColor() + "&numero=" + scarpa.getNumero().getNum()
                               + "&genere=" + scarpa.getGender();                  // dettagli della scarpa
-			response.sendRedirect("shoppingcart.jsp?"+parameters);   
+			response.sendRedirect("productdetail.jsp?"+parameters);   
 		} else {
 			response.sendRedirect("404.html?foundProduct=NO");  // not found page and product (scarpa)
 		}     	

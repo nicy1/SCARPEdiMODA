@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -29,9 +30,12 @@ public class Ordine {
 	
 	@Column(name = "prezzo")
 	private double prezzo;
-
+    
+	@Transient
 	private Map<Integer, Integer> scarpaList;
 	
+	
+	public Ordine() {}
 	
 	public Ordine(Map<Integer, Integer> carrello, int id_Utente) {
 		setLista(carrello);

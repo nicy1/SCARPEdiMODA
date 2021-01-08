@@ -30,8 +30,13 @@ ddsmoothmenu.init({
 	<div id="templatemo_header">
     	<div id="site_title"><h1><a href="index.jsp"></a></h1></div>
         <div id="header_right">
-        	<p>
-	        <a href="account.jsp">Il mio account</a> | <a href="shoppingcart.jsp">Carrello</a> | <a href="loginRegister.jsp">Accedi</a></p>       
+        	<% Object nome = request.getSession(false).getAttribute("loggedIn_NOME"); 
+             if (nome == null) {
+          %> 	
+        	<p><a href="account.jsp">Il mio account</a> | <a href="shoppingcart.jsp">Carrello</a> | <a href="loginRegister.jsp">Accedi</a></p>       
+		  <% } else { %>
+            <p><a href="account.jsp"><%= nome.toString() %></a> | <a href="shoppingcart.jsp">Carrello</a></p>
+          <% } %>       
 		</div>
         <div class="cleaner"></div>
     </div> <!-- END of templatemo_header -->
@@ -49,10 +54,10 @@ ddsmoothmenu.init({
                    </ul>
                 </li>
                 <li><a href="checkout.jsp">Checkout</a></li>
-                <li><a href="about.html">Chi siamo</a></li>
-                <li><a href="faqs.html">FAQs</a></li>
-                <li><a href="subscribe.html">Iscriviti</a></li>
-                <li><a href="contact.html">Contattaci</a></li>
+                <li><a href="about.jsp">Chi siamo</a></li>
+                <li><a href="faqs.jsp">FAQs</a></li>
+                <li><a href="subscribe.jsp">Iscriviti</a></li>
+                <li><a href="contact.jsp">Contattaci</a></li>
             </ul>
             <br style="clear: left" />
         </div> <!-- end of ddsmoothmenu -->
@@ -119,7 +124,7 @@ ddsmoothmenu.init({
         </div>
         
         <div id="content" class="float_r">
-        	<h1> Il mio account (${sessionScope['loggedIn_EMAIL']})</h1>
+        	<h1> Benvenuto ${sessionScope['loggedIn_NOME']}</h1> <br/><br/>
             <div class="product_box">
 	            <h3>I MIEI ORDINI</h3>
             	<a href="UserOrdersServlet"><img src="IMAGES/Ilmioaccount/I miei ordini.png" alt="Shoes 1" /></a>
@@ -142,19 +147,19 @@ ddsmoothmenu.init({
             </div>        	
             <div class="product_box">
 	            <h3>CENTRO COMUNICAZIONI</h3>
-            	<a href="contact.html"><img src="IMAGES/Ilmioaccount/centro_comunicazioni.jpg" alt="Shoes 5" /></a>
+            	<a href="contact.jsp"><img src="IMAGES/Ilmioaccount/centro_comunicazioni.jpg" alt="Shoes 5" /></a>
 
             </div>        	
             <div class="product_box no_margin_right">
             	<h3>AIUTO</h3>
-            	<a href="faqs.html"><img src="IMAGES/Ilmioaccount/aiuto.jpg" alt="Shoes 6" /></a>
+            	<a href="faqs.jsp"><img src="IMAGES/Ilmioaccount/aiuto.jpg" alt="Shoes 6" /></a>
             </div>   
 		</div>
         <div class="cleaner"></div>
     </div> <!-- END of templatemo_main -->
    
     <div id="templatemo_footer">
-    	<p><a href="index.jsp">Home</a> | <a href="about.html">Chi siamo</a> | <a href="faqs.html">FAQs</a> | <a href="subscribe.html">Iscriviti</a> | <a href="contact.jsp">Contattaci</a>
+    	<p><a href="index.jsp">Home</a> | <a href="about.jsp">Chi siamo</a> | <a href="faqs.jsp">FAQs</a> | <a href="subscribe.jsp">Iscriviti</a> | <a href="contact.jsp">Contattaci</a>
 		</p>
 
     	Copyright © 2021 <a href="#">ScarpeDiModa</a> </div> <!-- END of templatemo_footer -->

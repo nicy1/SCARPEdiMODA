@@ -7,6 +7,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import it.begear.corso.entity.Genere;
 import it.begear.corso.entity.Scarpa;
 
 public class DAOscarpaImpl implements DAOscarpa {
@@ -33,8 +34,10 @@ public class DAOscarpaImpl implements DAOscarpa {
 
 	@Override
 	public List<Scarpa> read() {
-		Session session = this.sessionFactory.openSession();
+		Session session = getSessionFactory().openSession();
+		session.beginTransaction();
 		List<Scarpa> anList = session.createQuery("from Scarpa").list();
+		session.getTransaction().commit();
 		session.close();
 		return anList;
 	}
@@ -97,6 +100,18 @@ public class DAOscarpaImpl implements DAOscarpa {
 		List<Scarpa> scarpaList = read();
 		for(Scarpa scarpa : scarpaList) {
 			if(scarpa.getCodice().contains(keyword)) {
+			   scarpe.add(scarpa);
+			}
+		}
+		return scarpe;
+	}
+	
+	
+	public List<Scarpa> findByGenere(Genere genereScarpa) {
+		List<Scarpa> scarpe = null;
+		List<Scarpa> scarpaList = read();
+		for(Scarpa scarpa : scarpaList) {
+			if(scarpa.getGender().equals(genereScarpa)) {
 			   scarpe.add(scarpa);
 			}
 		}

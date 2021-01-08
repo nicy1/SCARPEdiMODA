@@ -33,7 +33,7 @@ public class LogoutServlet extends HttpServlet {
 			session.removeAttribute("loggedIn_NOME");
 			session.removeAttribute("loggedIn_COGNOME");
 			session.removeAttribute("loggedIn_EMAIL");
-			response.sendRedirect("LoginRegister.jsp");
+			response.sendRedirect("loginRegister.jsp");
 		}
 	}
 }

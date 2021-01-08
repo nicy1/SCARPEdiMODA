@@ -11,15 +11,7 @@
 <link rel="stylesheet" type="text/css" href="CSS/ddsmoothmenu.css" />
 
 <script type="text/javascript" src="JAVASCRIPT/jquery.min.js"></script>
-<script type="text/javascript" src="JAVASCRIPT/ddsmoothmenu.js">
-
-/***********************************************
-* Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
-* This notice MUST stay intact for legal use
-* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
-***********************************************/
-
-</script>
+<script type="text/javascript" src="JAVASCRIPT/ddsmoothmenu.js"></script>
 
 <script type="text/javascript">
 
@@ -40,8 +32,13 @@ ddsmoothmenu.init({
 	<div id="templatemo_header">
     	<div id="site_title"><h1><a href="index.jsp"></a></h1></div>
         <div id="header_right">
-        	<p>
-	        <a href="account.jsp">Il mio account</a> | <a href="shoppingcart.jsp">Carrello</a> | <a href="loginRegister.jsp">Accedi</a></p>       
+        	<% Object nome = request.getSession(false).getAttribute("loggedIn_NOME"); 
+             if (nome == null) {
+          %> 	
+        	<p><a href="account.jsp">Il mio account</a> | <a href="shoppingcart.jsp">Carrello</a> | <a href="loginRegister.jsp">Accedi</a></p>       
+		  <% } else { %>
+            <p><a href="account.jsp"><%= nome.toString() %></a> | <a href="shoppingcart.jsp">Carrello</a></p>
+          <% } %>       
 		</div>
         <div class="cleaner"></div>
     </div> <!-- END of templatemo_header -->
@@ -59,9 +56,9 @@ ddsmoothmenu.init({
                    </ul>
                 </li>
                 <li><a href="checkout.jsp">Checkout</a></li>
-                <li><a href="about.html">Chi siamo</a></li>
-                <li><a href="faqs.html">FAQs</a></li>
-                <li><a href="subscribe.html">Iscriviti</a></li>
+                <li><a href="about.jsp">Chi siamo</a></li>
+                <li><a href="faqs.jsp">FAQs</a></li>
+                <li><a href="subscribe.jsp">Iscriviti</a></li>
                 <li><a href="contact.jsp">Contattaci</a></li>
             </ul>
             <br style="clear: left" />
@@ -139,218 +136,15 @@ ddsmoothmenu.init({
         
         <div id="content" class="float_r">
         	<h1> Scarpe da Uomo</h1>
-            <div class="product_box">
-	            <h3>Ciabatta01</h3>
-            	<a href="#"><img src="IMAGES/scarpe/c01.jpg" alt="Shoes 1" /></a>
-              <p class="product_price">€ 100</p>
-                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
-            </div>        	
-            <div class="product_box">
-            	<h3>Ciabatta02</h3>
-            	<a href="#"><img src="IMAGES/scarpe/c02.jpg" alt="Shoes 2" /></a>
-            <p class="product_price">€ 80</p>
-               <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
-            </div>        	
-            <div class="product_box no_margin_right">
-            	<h3>Ciabatta03</h3>
-            	<a href="#"><img src="IMAGES/scarpe/c03.jpg" alt="Shoes 3" /></a>  
-              <p class="product_price">€ 60</p>
-                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
-            </div>     
-            
-            <div class="cleaner"></div>
-               	
-            <div class="product_box">
-            	<h3>Ciabatta04</h3>
-            	<a href="#"><img src="IMAGES/scarpe/c04.jpg" alt="Shoes 4" /></a>
-              <p class="product_price">€ 260</p>
-                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
-            </div>        	
-            <div class="product_box">
-	            <h3>Ciabatta05</h3>
-            	<a href="#"><img src="IMAGES/scarpe/c05.jpg" alt="Shoes 5" /></a> 
-            <p class="product_price">€ 80</p>
-              <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
-            </div>        	
-            <div class="product_box no_margin_right">
-            	<h3>Mocassino01</h3>
-            	<a href="#"><img src="IMAGES/scarpe/m01.jpg" alt="Shoes 6" /></a>
-              <p class="product_price">€ 190</p>
-               <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
-            </div>   
-            
-            <div class="cleaner"></div>
-                 	
-            <div class="product_box">
-            	<h3>Mocassino02</h3>
-            	<a href="#"><img src="IMAGES/scarpe/m02.jpg" alt="Shoes 7" /></a>
-              <p class="product_price">€ 30</p>
-                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
-            </div>        	
-            <div class="product_box">
-            	<h3>Mocassino03</h3>
-            	<a href="#"><img src="IMAGES/scarpe/m03.jpg" alt="Shoes 8" /></a>
-            <p class="product_price">€ 220</p>
-                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
-            </div>        	
-            <div class="product_box no_margin_right">
-            	 <h3>Mocassino04</h3>
-            	<a href="#"><img src="IMAGES/scarpe/m04.jpg" alt="Shoes 9" /></a>
-              <p class="product_price">€ 65</p>
-              <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
-            </div>  
-        </div> 
-        <div class="cleaner"></div>
-        
-      	<div id="content" class="float_r">
-        <div class="product_box">
-	            <h3>Mocassino05</h3>
-            	<a href="#"><img src="IMAGES/scarpe/m05.jpg" alt="Shoes 1" /></a>
-              <p class="product_price">€ 100</p>
-                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
-            </div>        	
-            <div class="product_box">
-            	<h3>Sneaker01</h3>
-            	<a href="#"><img src="IMAGES/scarpe/sneak01.jpg" alt="Shoes 2" /></a>
-            <p class="product_price">€ 80</p>
-                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
-            </div>        	
-            <div class="product_box no_margin_right">
-            	<h3>Sneaker02</h3>
-            	<a href="#"><img src="IMAGES/scarpe/sneak02.jpg" alt="Shoes 3" /></a>
-              <p class="product_price">€ 60</p>
-                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
-            </div>     
-            </div>
-            <div class="cleaner"></div>
+             <% String scarpaList = request.getParameter("genere"); 
+         	   out.print(scarpaList);
+       	     %> 
+        </div>
     
-    		<div id="content" class="float_r">
-    		<div class="product_box">
-	            <h3>Sneaker03</h3>
-            	<a href="#"><img src="IMAGES/scarpe/sneak03.jpg" alt="Shoes 1" /></a>
-              <p class="product_price">€ 100</p>
-                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
-            </div>        	
-            <div class="product_box">
-            	<h3>Sneaker04</h3>
-            	<a href="#"><img src="IMAGES/scarpe/sneak04.jpg" alt="Shoes 2" /></a>
-            <p class="product_price">€ 80</p>
-                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
-            </div>        	
-            <div class="product_box no_margin_right">
-            	<h3>Sneaker05</h3>
-            	<a href="#"><img src="IMAGES/scarpe/sneak05.jpg" alt="Shoes 3" /></a>
-              <p class="product_price">€ 60</p>
-                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
-            </div>     
-            </div>
-            <div class="cleaner"></div>
-    
-    <div id="content" class="float_r">
-    <div class="product_box">
-	            <h3>Stivali01</h3>
-            	<a href="#"><img src="IMAGES/scarpe/stiv01.jpg" alt="Shoes 1" /></a>
-              <p class="product_price">€ 100</p>
-                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
-            </div>        	
-            <div class="product_box">
-            	<h3>Stivali02</h3>
-            	<a href="#"><img src="IMAGES/scarpe/stiv02.jpg" alt="Shoes 2" /></a>
-            <p class="product_price">€ 80</p>
-                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
-            </div>        	
-            <div class="product_box no_margin_right">
-            	<h3>Stivali03</h3>
-            	<a href="#"><img src="IMAGES/scarpe/stiv03.jpg" alt="Shoes 3" /></a>
-              <p class="product_price">€ 60</p>
-                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
-            </div>     
-            </div>
-            <div class="cleaner"></div>
-    
-    <div id="content" class="float_r">
-    <div class="product_box">
-	            <h3>Stivali04</h3>
-            	<a href="#"><img src="IMAGES/scarpe/stiv04.jpg" alt="Shoes 1" /></a>
-              <p class="product_price">€ 100</p>
-                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
-            </div>        	
-            <div class="product_box">
-            	<h3>Stivali05</h3>
-            	<a href="#"><img src="IMAGES/scarpe/stiv05.jpg" alt="Shoes 2" /></a>
-            <p class="product_price">€ 80</p>
-                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
-            </div>        	
-            <div class="product_box no_margin_right">
-            	<h3>Tennis01</h3>
-            	<a href="#"><img src="IMAGES/scarpe/ten01.jpg" alt="Shoes 3" /></a>
-              <p class="product_price">€ 60</p>
-                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
-            </div>     
-            </div>
-            <div class="cleaner"></div>
-            
-            <div id="content" class="float_r">
-            <div class="product_box">
-	            <h3>Tennis02</h3>
-            	<a href="#"><img src="IMAGES/scarpe/ten02.jpg" alt="Shoes 1" /></a>
-              <p class="product_price">€ 100</p>
-                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
-            </div>        	
-            <div class="product_box">
-            	<h3>Tennis03</h3>
-            	<a href="#"><img src="IMAGES/scarpe/ten03.jpg" alt="Shoes 2" /></a>
-            <p class="product_price">€ 80</p>
-                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
-            </div>        	
-            <div class="product_box no_margin_right">
-            	<h3>Tennis04</h3>
-            	<a href="#"><img src="IMAGES/scarpe/ten04.jpg" alt="Shoes 3" /></a>
-              <p class="product_price">€ 60</p>
-                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
-            </div>     
-            </div>
-            <div class="cleaner"></div>
-            
-            <div id="content" class="float_r">
-            <div class="product_box">
-	            <h3>Tennis05</h3>
-            	<a href="#"><img src="IMAGES/scarpe/ten05.jpg" alt="Shoes 1" /></a>
-              <p class="product_price">€ 100</p>
-                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
-            </div>    
-            </div>    	
-			<div class="cleaner"></div>
-    
-    		</div> <!-- END of templatemo_main -->
+    </div> <!-- END of templatemo_main -->
     
     <div id="templatemo_footer">
-    	<p><a href="index.jsp">Home</a> | <a href="about.html">Chi siamo</a> | <a href="faqs.html">FAQs</a> | <a href="subscribe.html">Iscriviti</a> | <a href="contact.jsp">Contattaci</a>
+    	<p><a href="index.jsp">Home</a> | <a href="about.jsp">Chi siamo</a> | <a href="faqs.jsp">FAQs</a> | <a href="subscribe.jsp">Iscriviti</a> | <a href="contact.jsp">Contattaci</a>
 		</p>
 
 
