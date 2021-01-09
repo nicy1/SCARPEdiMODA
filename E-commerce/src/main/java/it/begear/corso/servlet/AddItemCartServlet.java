@@ -2,6 +2,7 @@ package it.begear.corso.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,7 +33,7 @@ public class AddItemCartServlet extends HttpServlet {
 		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 		DAOscarpaImpl daoscarpa = context.getBean(DAOscarpaImpl.class);
 		
-		Scarpa scarpa = daoscarpa.findByCode("codice");
+		Scarpa scarpa = daoscarpa.findByCode(scarpacode);
 		if(scarpa == null) {
 			// Non c'e scarpa con "codice" nel DB
 			response.sendRedirect("404.html?foundProduct=NO");  // not found page and product (scarpa)
@@ -47,6 +48,7 @@ public class AddItemCartServlet extends HttpServlet {
 				Utente utente = (Utente) session.getAttribute("loggedIn");
 				utente.getCarrello().addScarpa(scarpa.getId(), quantita);
 				session.setAttribute("loggedIn", utente);
+				response.sendRedirect("shoppingcart.jsp");
 			}
 			else {                                     // qta non disponibile  
 				String referer = request.getHeader("referer");

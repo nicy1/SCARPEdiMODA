@@ -30,12 +30,15 @@ public class Utente {
 	
 	@Column(name = "indirizzo")
       private String indirizzo;
+	
+	@Column(name = "newsletter")
+    private boolean subscribed;
     
 	@Transient
       private Carrello carrello;
       
       
-      public Utente() {}
+    public Utente() {}
 
 	public Utente( String nome, String cognome, String email, String password, String indirizzo) {
 		super();	
@@ -78,8 +81,17 @@ public class Utente {
 	public String getIndirizzo() {
 		return indirizzo;
 	}
+	
 	public void setIndirizzo(String indirizzo) {
 		this.indirizzo = indirizzo;
+	}
+
+	public boolean isSubscribed() {
+		return subscribed;
+	}
+
+	public void setSubscribed(boolean subscribed) {
+		this.subscribed = subscribed;
 	}
 
 	public Carrello getCarrello() {

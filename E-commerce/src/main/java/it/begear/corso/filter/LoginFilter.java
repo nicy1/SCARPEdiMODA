@@ -20,29 +20,21 @@ import it.begear.corso.dao.DAOordineImpl;
 import it.begear.corso.entity.Ordine;
 import it.begear.corso.entity.Utente;
 
-/**
- * Servlet Filter implementation class LoginFilter
- */
-@WebFilter(urlPatterns = { "/account.jsp", "/checkout.jsp", "/shoppingcart.jsp"})
+
+@WebFilter(urlPatterns = { "/account.jsp", "/checkout.jsp", "/shoppingcart.jsp"/*, "/subscribe.jsp"*/})
 public class LoginFilter implements Filter {
 
-    /**
-     * Default constructor. 
-     */
+   
     public LoginFilter() {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see Filter#destroy()
-	 */
+	
 	public void destroy() {
 		// TODO Auto-generated method stub
 	}
 
-	/**
-	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
-	 */
+	
 	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
 		 HttpServletRequest request = (HttpServletRequest) req;
 	     HttpServletResponse response = (HttpServletResponse) res;
@@ -50,26 +42,33 @@ public class LoginFilter implements Filter {
 	     
 	     // stiamo controllando se l'utente e' gia' loggato
 	     if (session == null || session.getAttribute("loggedIn") == null) {
-	          response.sendRedirect("loginRegister.jsp");         // se e' nulla la sessione e l'attributo loggIn, torniamo nella pagina di login 
+	          response.sendRedirect("loginRegister.jsp");         // se e' nulla la sessione o l'attributo loggIn, torniamo nella pagina di login 
 	     }
-	     else {
+	     else {    // l'utente e' gia loggato
+	    	 
 	    	 ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 	 	     DAOordineImpl daoOrdine = context.getBean(DAOordineImpl.class);
 	 		 DAOutenteImpl daoUtente = context.getBean(DAOutenteImpl.class);
 	 		 
-	    	 if (request.getHeader("referer").contains("checkout.jsp")) {           
+	 		 // richiesta per visualizzare la paggina "checkout.jsp" 
+	    	 if (request.getHeader("referer").contains("checkout.jsp")) {      
 	    		  Utente utente = (Utente) session.getAttribute("loggedIn"); 
 	    		  double prezzoCarrello = utente.getCarrello().getPrezzo();
-	    		  request.setAttribute("prezzo", prezzoCarrello);
+	    		  request.setAttribute("prezzo", prezzoCarrello);              // setta il costo totale del carrello da visualizzare in "checkout.jsp"
 	    	 }
+	    	 
+//	    	 // richiesta per l'iscrizione alla newsletter 
+//	    	 if (request.getHeader("referer").contains("subscribe.jsp")) {      
+//	    		  Utente utente = (Utente) session.getAttribute("loggedIn"); 
+//	    		  double prezzoCarrello = utente.getCarrello().getPrezzo();
+//	    		  request.setAttribute("prezzo", prezzoCarrello);              
+//	    	 }
 	    	 
 	         chain.doFilter(req, res);     // continuare il percorso della richiesta ....
 	     }
 	}
 
-	/**
-	 * @see Filter#init(FilterConfig)
-	 */
+	
 	public void init(FilterConfig fConfig) throws ServletException {
 		// TODO Auto-generated method stub
 	}
