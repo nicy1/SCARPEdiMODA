@@ -29,6 +29,20 @@ ddsmoothmenu.init({
 <style>
 body {margin:0;}
 
+.hover-img-zoom { 
+        overflow: hidden; 
+        margin: 0 auto; 
+    } 
+       
+    .hover-img-zoom img { 
+        
+        transition: 0.5s all ease-in-out; 
+    } 
+       
+    .hover-img-zoom:hover img { 
+        transform: scale(1.2); 
+    } 
+
 .icon-bar {
   position: fixed;
   top: 50%;

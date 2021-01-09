@@ -30,6 +30,20 @@ ddsmoothmenu.init({
 <style>
 body {margin:0;}
 
+.hover-img-zoom { 
+        overflow: hidden; 
+        margin: 0 auto; 
+    } 
+       
+    .hover-img-zoom img { 
+        
+        transition: 0.5s all ease-in-out; 
+    } 
+       
+    .hover-img-zoom:hover img { 
+        transform: scale(1.2); 
+    } 
+
 .icon-bar {
   position: fixed;
   top: 50%;
@@ -203,21 +217,27 @@ body {margin:0;}
         	<h1> Scarpe da Donna</h1>
             <div class="product_box">
 	            <h3>Tacco01</h3>
+	            <div class="hover-img-zoom">
             	<a href="#"><img src="IMAGES/scarpe/tac01.jpg" alt="Shoes 1" /></a>
+            	</div>
               <p class="product_price">€ 100</p>
                 <a href="shoppingcart.jsp" class="addtocart"></a>
                 <a href="#" class="detail"></a>
             </div>        	
             <div class="product_box">
             	<h3>Tacco02</h3>
+            	<div class="hover-img-zoom">
             	<a href="#"><img src="IMAGES/scarpe/tac02.jpg" alt="Shoes 2" /></a>
+            	</div>
             <p class="product_price">€ 80</p>
                 <a href="shoppingcart.jsp" class="addtocart"></a>
                 <a href="#" class="detail"></a>
             </div>        	
             <div class="product_box no_margin_right">
             	<h3>Tacco03</h3>
+            	<div class="hover-img-zoom">
             	<a href="#"><img src="IMAGES/scarpe/tac03.jpg" alt="Shoes 3" /></a>
+            	</div>
               <p class="product_price">€ 60</p>
                 <a href="shoppingcart.jsp" class="addtocart"></a>
                 <a href="#" class="detail"></a>
@@ -227,21 +247,27 @@ body {margin:0;}
                	
             <div class="product_box">
             	<h3>Tacco04</h3>
+            	<div class="hover-img-zoom">
             	<a href="#"><img src="IMAGES/scarpe/tac04.jpg" alt="Shoes 4" /></a>
+            	</div>
               <p class="product_price">€ 260</p>
                 <a href="shoppingcart.jsp" class="addtocart"></a>
                 <a href="#" class="detail"></a>
             </div>        	
             <div class="product_box">
+            <div class="hover-img-zoom">
 	            <h3>Tacco05</h3>
             	<a href="#"><img src="IMAGES/scarpe/tac05.jpg" alt="Shoes 5" /></a>
+            	</div>
             <p class="product_price">€ 80</p>
                 <a href="shoppingcart.jsp" class="addtocart"></a>
                 <a href="#" class="detail"></a>
             </div>        	
             <div class="product_box no_margin_right">
             	<h3>Tacco01</h3>
+            	<div class="hover-img-zoom">
             	<a href="#"><img src="IMAGES/scarpe/tac01.jpg" alt="Shoes 6" /></a>
+            	</div>
               <p class="product_price">€ 190</p>
                 <a href="shoppingcart.jsp" class="addtocart"></a>
                 <a href="#" class="detail"></a>
