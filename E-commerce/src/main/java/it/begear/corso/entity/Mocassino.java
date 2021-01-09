@@ -2,23 +2,15 @@ package it.begear.corso.entity;
 
 public class Mocassino extends Scarpa {
 
-	public Mocassino() {}
-	
-	
-	
-	
-	public Mocassino(int id, String codice, Genere gender, String descrizione, Colore color, Misura numero,
+	private static String descrizione="mocassino";
+	public Mocassino( String codice, Genere gender, Colore colore, Misura numero,
 			String brand, double costo, int disponibilita) {
-		super(id, codice, gender, descrizione, color, numero, brand, costo, disponibilita);
-		// TODO Auto-generated constructor stub
+		super( codice, gender, descrizione, colore, numero, brand, costo, disponibilita);
+		
 	}
 
-
-
-
-	@Override
-	public void getTacco() {
-		System.out.println("I mocassini non hanno tacco");
-	}
+	
+	
+	
 
 }

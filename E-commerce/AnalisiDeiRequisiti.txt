@@ -25,56 +25,52 @@ Glossario
 	-->ATTRIBUTI
 	
       * ID int auto increment
-      * CODICE
+      * String CODICE
       * enum GENERE {uomo,donna,bambino,bambina}
-      * DESCRIZIONE
+      * String DESCRIZIONE
       * enum COLORE {bianco,nero,blu,marrone,rosso}
       * enum NUMERO {A(28),B(29), C(30), D(31), E(32), F(33), G(34), H(35), I(36), L(37), M(38), N(39), O(40), P(41), Q(42), R(43), S(44)}
-      * BRAND
-      * COSTO
-      * DISPONIBILITà
+      * String BRAND
+      * double COSTO
+      * int DISPONIBILITà
       
 	-->METODI
 	
       * ToString
-      * getId
-      * setId
-      * getGender
-      * setGender
-      * getColor
-      * setColor
-      * getNumero
-      * setNumero
-      * getDescrizione
-      * setDescrizione
-      * getBrand
-      * setBrand
-      * getCosto
-      * setCosto
-      * getCodice
-      * setCodice
-      * getDisponibilita
-      * setDisponibilita
-      * Costruttore(genere,descrizione,colore,numero,brand,costo)
-	* abstract getTacco(){
-			
-       stampa”la misura del tacco è..”}
-	---
+      * getId / setId
+      * getGender / setGender
+      * getColor / setColor
+      * getNumero / setNumero
+      * getDescrizione / setDescrizione
+      * getBrand / setBrand
+      * getCosto / setCosto
+      * getCodice / setCodice
+      * getDisponibilita / setDisponibilita
+      * Costruttore(genere,descrizione,colore,numero,brand,costo,disponibilita)
+      
+	  * abstract getTacco(){
+			"la misura del tacco è"+tacco
+			}
+-------------------------------------------------
       
 
 Classi figlie di Scarpa (ciabatta,mocassino,sport,stivale,sneaker,decolletè)
  
-      
+ -----------------------------------------------
+    
 * Classe ORDINE 
+
 Nel carrello ci sarà un bottone con scritto acquista
 Per ogni acquisto si crea un nuovo ordine e si svuota il carrello
 
    -->ATTRIBUTI
          * ID int auto increment
+         * int ID_UTENTE
+         * double PREZZO
 
 	   L’ordine deve prendersi dal carrello:
-		-mappa scarpe, quantità
-		-id utente
+		- mappa <id scarpa, quantità>
+		- id utente
 		
 	   
 
@@ -82,10 +78,8 @@ Per ogni acquisto si crea un nuovo ordine e si svuota il carrello
    -->METODI
       * ToString()
       * getId
-	  * getIdUtente
-	  * setIdUtente
-	  * getLista
-	  * setLista
+	  * getIdUtente / setIdUtente
+	  * getLista / setLista
       * calcolaPrezzoOrdine(){
 			Uso il foreach per il calcolo
       		prezzo=Scarpa.costo*quantita;
@@ -96,26 +90,20 @@ Per ogni acquisto si crea un nuovo ordine e si svuota il carrello
 * Classe UTENTE
    * ATTRIBUTI
       * ID int auto increment
-      * NOME
-      * COGNOME
-      * EMAIL
-      * PASSWORD
-      * INDIRIZZO
+      * String NOME
+      * String COGNOME
+      * String EMAIL
+      * String PASSWORD
+      * String INDIRIZZO
       
       
    * METODI
       * getId
       * getNome
-      * getCognome
-      * setCognome
-      * getEmail
-      * setEmail
-      * getPassword
-      * setPassword
-      * getIndirizzo
-      * setIndirizzo
-      * getC
-      * setC
+      * getCognome / setCognome
+      * getEmail / setEmail
+      * getPassword / setPassword
+      * getIndirizzo / setIndirizzo
       * Costruttore{ new carrello}
       * create
       * update(email,indirizzo,password)
@@ -123,17 +111,11 @@ Per ogni acquisto si crea un nuovo ordine e si svuota il carrello
       * aggiungiAlCarrello(idScarpa,int quantita){carrello.getistanz.add(scarpa,quantita)
        }
       * getListOrdini()
-      
-
-
-classe NEGOZIO[ic3] Factory
-     *costruttore vuoto
-	*metodo getScarpa() →per inserire delle nuove scarpe nel negozio               
-
+----------------------------------------------------------      
 
 * Classe CARRELLO        
    * ATTRIBUTI
-      * HashMap<Scarpa,quantita>()
+      * HashMap<id_Scarpa,quantita>()
    * METODI
        * acquista(){
                * Crea un nuovo ordine
@@ -144,29 +126,22 @@ classe NEGOZIO[ic3] Factory
 
       
 
-
+-----------------------------------------------------------
 SCHEMA NEGOZIO
 	TABELLA scarpe (ID, CODICE, GENERE, DESCRIZIONE, COLORE, NUMERO,BRAND,COSTO, DISPONIBILITà)
 	TABELLA utenti	(id,nome,cognome,email,password,indirizzo)
 	TABELLI ordini (id, id_utente,prezzo)
-
-
-
-
-
-
+----------------------------------------------------------
 
 Account
 
 
-
-
-LOGIN
-EMAIL
-PASSWORD
-REGISTRAZIONE
-Fare un controllo se email gia esiste
-Fare controllo se è stata inserita due volte la stessa password
+*LOGIN
+	EMAIL
+	PASSWORD
+*REGISTRAZIONE
+	Fare un controllo se email gia esiste
+	Fare controllo se è stata inserita due volte la stessa password
 ________________
 Proprietà del sistema
 Sicurezza
@@ -202,33 +177,5 @@ CdU: Registrazione utenti
 
 
 
-[a]fare dei menu a tendina su modello,genere,colore,numero,brand
-[b]il carrello deve essere un singleton
-[ic1]public class Singleton {
 
-	    private static Singleton istanza;
-	    String rif;
-	    
-	    private Singleton() {
-	    }
-	    
-	    public static Singleton getInstance() {
-	        if (istanza==null) {
-	        	istanza = new Singleton();
-	        	
-	        }
-	        return istanza;
-	    }
-[ic2]È un metodo dell’utente o della scarpa?
-[ic3]public Scarpa getScarpa (String tipo){
-        Scarpa ritorno = null;
-        switch (tipo){
-            case "stivale":
-                ritorno = new Stivale();
-                break;
-            case "mocassino":
-                ritorno = new Mocassino();
-                break;
-        }
-        return ritorno;
-    }
+
