@@ -213,7 +213,7 @@ body {margin:0;}
                 <br />
                 <br />
               TELEFONO<br />
-				<span style="font-size:10px">Per favore, specifica il tuo numero di telefono raggiungibile. POTREBBE ESSERE CHIAMATA PER VERIFICARE E COMPLETARE L'ORDINE.</span>
+				<span style="font-size:10px">Per favore, specifica un tuo numero di telefono valido. POTREMMO CHIAMARTI PER VERIFICARE E COMPLETARE L'ORDINE.</span>
                 <input type="text"  style="width:300px;"  />
             </div>
             
