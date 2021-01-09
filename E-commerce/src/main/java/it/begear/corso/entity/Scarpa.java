@@ -39,22 +39,23 @@ public class Scarpa {
 	@Column(name = "disponibilita")
 	private int disponibilita;
 
-	
+
 	public Scarpa() {}
 
-	public Scarpa(int id,String codice, Genere gender, String descrizione, Colore color, Misura numero, String brand, double costo, int disponibilita) {
-		super();
-		setId(id);
-		setCodice(codice);
-		setGender(gender);
-		setDescrizione(descrizione);
-		setColor(color);
-		setNumero(numero);
-		setBrand(brand);
-		setCosto(costo);
-		setDisponibilita(disponibilita);
-	}
 
+	public Scarpa(String codice, Genere gender,String descrizione, Colore colore, Misura numero, String brand,
+			double costo, int disponibilita) {
+		super();
+		
+		this.codice = codice;
+		this.gender = gender;
+		this.descrizione = descrizione;
+		this.colore = colore;
+		this.numero = numero;
+		this.brand = brand;
+		this.costo = costo;
+		this.disponibilita = disponibilita;
+	}
 
 
 	public int getId() {
@@ -62,10 +63,20 @@ public class Scarpa {
 	}
 
 
+	public Colore getColore() {
+		return colore;
+	}
+
+
+	public void setColore(Colore colore) {
+		this.colore = colore;
+	}
+
 
 	public void setId(int id) {
 		this.id = id;
 	}
+
 
 	public Genere getGender() {
 		return gender;
@@ -158,7 +169,6 @@ public class Scarpa {
 	}
 
 
+	
 
-	public void getTacco() {
-	}
 }
