@@ -215,7 +215,7 @@ body {margin:0;}
         <div class="content_half float_r">		
             <div class="cleaner h40"></div>
 			<br/>
-			Email: assitenza_scarpedimoda@ScarpeDiModa.com
+			Email: assistenza_scarpedimoda@ScarpeDiModa.com
 			<br />
         </div>
         <div class="cleaner h40"></div>
