@@ -6,9 +6,11 @@
 <title>Scarpe donna</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <link href="templatemo_style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="CSS/ddsmoothmenu.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
 <script type="text/javascript" src="JAVASCRIPT/jquery.min.js"></script>
 <script type="text/javascript" src="JAVASCRIPT/ddsmoothmenu.js"></script>
@@ -25,9 +27,83 @@ ddsmoothmenu.init({
 
 </script>
 
+<style>
+body {margin:0;}
+
+.hover-img-zoom { 
+        overflow: hidden; 
+        margin: 0 auto; 
+    } 
+       
+    .hover-img-zoom img { 
+        
+        transition: 0.5s all ease-in-out; 
+    } 
+       
+    .hover-img-zoom:hover img { 
+        transform: scale(1.2); 
+    } 
+
+.icon-bar {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.google {
+  background: #dd4b39;
+  color: white;
+}
+
+.linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.youtube {
+  background: #bb0000;
+  color: white;
+}
+
+
+</style>
+
 </head>
 
 <body>
+
+<div class="icon-bar">
+  <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+  <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+  <a href="#" class="google"><i class="fa fa-google"></i></a>
+  <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+  <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
+</div>
 
 <div id="templatemo_body_wrapper">
 <div id="templatemo_wrapper">
@@ -141,21 +217,27 @@ ddsmoothmenu.init({
         	<h1> Scarpe da Donna</h1>
             <div class="product_box">
 	            <h3>Tacco01</h3>
+	            <div class="hover-img-zoom">
             	<a href="#"><img src="IMAGES/scarpe/tac01.jpg" alt="Shoes 1" /></a>
+            	</div>
               <p class="product_price">€ 100</p>
                 <a href="shoppingcart.jsp" class="addtocart"></a>
                 <a href="#" class="detail"></a>
             </div>        	
             <div class="product_box">
             	<h3>Tacco02</h3>
+            	<div class="hover-img-zoom">
             	<a href="#"><img src="IMAGES/scarpe/tac02.jpg" alt="Shoes 2" /></a>
+            	</div>
             <p class="product_price">€ 80</p>
                 <a href="shoppingcart.jsp" class="addtocart"></a>
                 <a href="#" class="detail"></a>
             </div>        	
             <div class="product_box no_margin_right">
             	<h3>Tacco03</h3>
+            	<div class="hover-img-zoom">
             	<a href="#"><img src="IMAGES/scarpe/tac03.jpg" alt="Shoes 3" /></a>
+            	</div>
               <p class="product_price">€ 60</p>
                 <a href="shoppingcart.jsp" class="addtocart"></a>
                 <a href="#" class="detail"></a>
@@ -165,21 +247,27 @@ ddsmoothmenu.init({
                	
             <div class="product_box">
             	<h3>Tacco04</h3>
+            	<div class="hover-img-zoom">
             	<a href="#"><img src="IMAGES/scarpe/tac04.jpg" alt="Shoes 4" /></a>
+            	</div>
               <p class="product_price">€ 260</p>
                 <a href="shoppingcart.jsp" class="addtocart"></a>
                 <a href="#" class="detail"></a>
             </div>        	
             <div class="product_box">
+            <div class="hover-img-zoom">
 	            <h3>Tacco05</h3>
             	<a href="#"><img src="IMAGES/scarpe/tac05.jpg" alt="Shoes 5" /></a>
+            	</div>
             <p class="product_price">€ 80</p>
                 <a href="shoppingcart.jsp" class="addtocart"></a>
                 <a href="#" class="detail"></a>
             </div>        	
             <div class="product_box no_margin_right">
             	<h3>Tacco01</h3>
+            	<div class="hover-img-zoom">
             	<a href="#"><img src="IMAGES/scarpe/tac01.jpg" alt="Shoes 6" /></a>
+            	</div>
               <p class="product_price">€ 190</p>
                 <a href="shoppingcart.jsp" class="addtocart"></a>
                 <a href="#" class="detail"></a>
