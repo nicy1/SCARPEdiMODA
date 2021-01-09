@@ -132,8 +132,8 @@ ddsmoothmenu.init({
         <div id="content" class="float_r">
         	<div id="slider-wrapper">
                 <div id="slider" class="nivoSlider">
-                    <img src="IMAGES/slider/s02.jpg" alt="" />
                     <img src="IMAGES/slider/s01.jpg" alt="" />
+                    <img src="IMAGES/slider/s02.jpg" alt="" />
                     <img src="IMAGES/slider/s03.jpg" alt="" />
                     <img src="IMAGES/slider/s04.jpg" alt="" />
                 </div>
