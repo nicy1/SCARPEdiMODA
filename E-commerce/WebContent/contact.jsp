@@ -108,14 +108,7 @@ body {margin:0;}
     	<div id="top_nav" class="ddsmoothmenu">
             <ul>
                 <li><a href="index.jsp" class="selected">Home</a></li>
-                <li><a href="#">Prodotti</a>
-                    <ul>
-                        <li><a href="uomoProducts.jsp">Uomo</a></li>
-                        <li><a href="donnaProducts.jsp">Donna</a></li> 
-                        <li><a href="bambinoProducts.jsp">Bambino</a></li>
-                        <li><a href="bambinaProducts.jsp">Bambina</a></li>             
-                   </ul>
-                </li>
+                <li><a href="ProductsServlet">Prodotti</a></li>
                 <li><a href="checkout.jsp">Checkout</a></li>
                 <li><a href="about.jsp">Chi siamo</a></li>
                 <li><a href="faqs.jsp">FAQs</a></li>
