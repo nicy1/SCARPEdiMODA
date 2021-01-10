@@ -1,15 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+
 <!--  commento  -->
 <%@ page contentType="text/html; charset=UTF-8" %>
 <title>Home page</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <link href="templatemo_style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="nivo-slider.css" type="text/css" media="screen" />
 <link rel="stylesheet" type="text/css" href="CSS/ddsmoothmenu.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
 <script type="text/javascript" src="JAVASCRIPT/jquery.min.js"></script>
 <script type="text/javascript" src="JAVASCRIPT/ddsmoothmenu.js"></script>
@@ -22,9 +26,71 @@ ddsmoothmenu.init({
 	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
 })
 </script>
+
+<style>
+body {margin:0;}
+
+.icon-bar {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.google {
+  background: #dd4b39;
+  color: white;
+}
+
+.linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.youtube {
+  background: #bb0000;
+  color: white;
+}
+
+
+</style>
+
 </head>
 
 <body>
+
+<div class="icon-bar">
+  <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+  <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+  <a href="#" class="google"><i class="fa fa-google"></i></a>
+  <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+  <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
+</div>
+
 <div id="templatemo_body_wrapper">
 <div id="templatemo_wrapper">
 
@@ -199,6 +265,7 @@ ddsmoothmenu.init({
             </div>        	
         </div> 
         <div class="cleaner"></div>
+        
     </div> <!-- END of templatemo_main -->
     
     <div id="templatemo_footer">

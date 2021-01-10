@@ -42,9 +42,9 @@ public class GenereServlet extends HttpServlet {
 			
 			for(Scarpa scarpa : scarpaList) {
 				if(counter < 3) {
-					parameters += "<div class='product_box'>"
+					parameters += "<div class='product_box'>"   
 							   +      "<h3>" + scarpa.getCodice() + "</h3>"
-							   +      "<a href='#'><img src='IMAGES/scarpe/" + scarpa.getCodice() + ".jpg' alt='Shoes " + index + "'/></a>"
+							   +      "<div class='hover-img-zoom'>"+"<a href='#'><img src='IMAGES/scarpe/" + scarpa.getCodice() + ".jpg' alt='Shoes "+ index + "'/></a>"+"</div>"
 							   +      "<p>" + scarpa.getDescrizione() + "</p>"
 							   +    "<p class='product_price'>" + scarpa.getCosto() + "€ </p>"
 							   +      "<a href='AddItemCartServlet?codice=" + scarpa.getCodice() + "&amp;quantita=1' class='addtocart'></a>"
