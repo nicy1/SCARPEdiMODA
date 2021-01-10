@@ -123,6 +123,9 @@ body {margin:0;}
     	<div id="top_nav" class="ddsmoothmenu">
             <ul>
                 <li><a href="index.jsp" class="selected">Home</a></li>
+<<<<<<< HEAD
+                <li><a href="ProductsServlet">Prodotti</a></li>
+=======
                 <li><a href="#">Prodotti</a>
                     <ul>
                         <li><a href="GenereServlet?genereScarpa=uomo">Uomo</a></li>
@@ -131,6 +134,7 @@ body {margin:0;}
                         <li><a href="GenereServlet?genereScarpa=bambina">Bambina</a></li>             
                    </ul>
                 </li>
+>>>>>>> branch 'master' of https://github.com/irenerosaria/ScarpeDiModa.git
                 <li><a href="checkout.jsp">Checkout</a></li>
                 <li><a href="about.jsp">Chi siamo</a></li>
                 <li><a href="faqs.jsp">FAQs</a></li>
@@ -206,9 +210,7 @@ body {margin:0;}
         
         <div id="content" class="float_r">
         	<h1> Prodotti</h1>	
-        	<% String scarpaList = request.getParameter("scarpe"); 
-        	   out.print(scarpaList);
-        	%>
+        	${scarpe} 
         </div> 
         <div class="cleaner"></div>
     </div> <!-- END of templatemo_main -->

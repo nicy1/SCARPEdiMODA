@@ -3,6 +3,7 @@ package it.begear.corso.servlet;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -60,7 +61,10 @@ public class SearchServlet extends HttpServlet {
 				}
 				index++;
 			}
-		    response.sendRedirect("products.jsp?scarpe="+parameters);
+			request.setAttribute("scarpe", parameters);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("products.jsp");
+			dispatcher.forward(request, response);
+		    
 			   
 		} else {
 			response.sendRedirect("404.html?foundProduct=NO");  // not found page and product (scarpa)

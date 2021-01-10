@@ -122,6 +122,9 @@ body {margin:0;}
     	<div id="top_nav" class="ddsmoothmenu">
             <ul>
                 <li><a href="index.jsp" class="selected">Home</a></li>
+<<<<<<< HEAD
+                <li><a href="ProductsServlet">Prodotti</a></ul>
+=======
                 <li><a href="#">Prodotti</a>
                     <ul>
                         <li><a href="GenereServlet?genereScarpa=uomo">Uomo</a></li>
@@ -129,6 +132,7 @@ body {margin:0;}
                         <li><a href="GenereServlet?genereScarpa=bambino">Bambino</a></li>
                         <li><a href="GenereServlet?genereScarpa=bambina">Bambina</a></li>             
                    </ul>
+>>>>>>> branch 'master' of https://github.com/irenerosaria/ScarpeDiModa.git
                 </li>
                 <li><a href="checkout.jsp">Checkout</a></li>
                 <li><a href="about.jsp">Chi siamo</a></li>
