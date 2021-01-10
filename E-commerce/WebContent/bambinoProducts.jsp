@@ -26,6 +26,20 @@ ddsmoothmenu.init({
 <style>
 body {margin:0;}
 
+.hover-img-zoom { 
+        overflow: hidden; 
+        margin: 0 auto; 
+    } 
+       
+    .hover-img-zoom img { 
+        
+        transition: 0.5s all ease-in-out; 
+    } 
+       
+    .hover-img-zoom:hover img { 
+        transform: scale(1.2); 
+    } 
+
 .icon-bar {
   position: fixed;
   top: 50%;
@@ -93,7 +107,7 @@ body {margin:0;}
 	<div id="templatemo_header">
     	<div id="site_title"><h1><a href="index.jsp"></a></h1></div>
         <div id="header_right">
-        	<% Object nome = request.getSession(false).getAttribute("loggedIn_NOME"); 
+          <% Object nome = request.getSession(false).getAttribute("loggedIn_NOME"); 
              if (nome == null) {
           %> 	
         	<p><a href="account.jsp">Il mio account</a> | <a href="shoppingcart.jsp">Carrello</a> | <a href="loginRegister.jsp">Accedi</a></p>       
@@ -110,10 +124,10 @@ body {margin:0;}
                 <li><a href="index.jsp" class="selected">Home</a></li>
                 <li><a href="#">Prodotti</a>
                     <ul>
-                        <li><a href="uomoProducts.jsp">Uomo</a></li>
-                        <li><a href="donnaProducts.jsp">Donna</a></li> 
-                        <li><a href="bambinoProducts.jsp">Bambino</a></li>
-                        <li><a href="bambinaProducts.jsp">Bambina</a></li>             
+                        <li><a href="GenereServlet?genereScarpa=uomo">Uomo</a></li>
+                        <li><a href="GenereServlet?genereScarpa=donna">Donna</a></li> 
+                        <li><a href="GenereServlet?genereScarpa=bambino">Bambino</a></li>
+                        <li><a href="GenereServlet?genereScarpa=bambina">Bambina</a></li>             
                    </ul>
                 </li>
                 <li><a href="checkout.jsp">Checkout</a></li>
@@ -138,10 +152,10 @@ body {margin:0;}
             	<h3>Categorie</h3>   
                 <div class="content"> 
                 	<ul class="sidebar_list">
-                        <li class="first"><a href="uomoProducts.jsp">Uomo</a></li>
-                        <li class="first"><a href="donnaProducts.jsp">Donna</a></li> 
-                        <li class="first"><a href="bambinoProducts.jsp">Bambino</a></li>
-                        <li class="last"><a href="bambinaProducts.jsp">Bambina</a></li>
+                        <li class="first"><a href="GenereServlet?genereScarpa=uomo">Uomo</a></li>
+                        <li class="first"><a href="GenereServlet?genereScarpa=donna">Donna</a></li> 
+                        <li class="first"><a href="GenereServlet?genereScarpa=bambino">Bambino</a></li>
+                        <li class="last"><a href="GenereServlet?genereScarpa=bambina">Bambina</a></li>
                     </ul>
                 </div>
             </div>
@@ -191,75 +205,7 @@ body {margin:0;}
         
         <div id="content" class="float_r">
         	<h1> Scarpe da Bambino</h1>
-            <div class="product_box">
-	            <h3>bambino01</h3>
-            	<a href="#"><img src="IMAGES/scarpe/bambino01.jpg" alt="Shoes 1" /></a>
-              <p class="product_price">100€</p>
-                <a href="AddItemCartServlet?codice=bambino01&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambino01" class="detail"></a>
-            </div>        	
-            <div class="product_box">
-            	<h3>bambino02</h3>
-            	<a href="#"><img src="IMAGES/scarpe/bambino02.jpg" alt="Shoes 2" /></a>
-            <p class="product_price">80€</p>
-                <a href="AddItemCartServlet?codice=bambino02&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambino02" class="detail"></a>
-            </div>        	
-            <div class="product_box no_margin_right">
-            	<h3>bambino03</h3>
-            	<a href="#"><img src="IMAGES/scarpe/bambino03.jpg" alt="Shoes 3" /></a>
-              <p class="product_price">60€</p>
-                <a href="AddItemCartServlet?codice=bambino03&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambino03" class="detail"></a>
-            </div>     
-            
-            <div class="cleaner"></div>
-               	
-            <div class="product_box">
-            	<h3>bambino04</h3>
-            	<a href="#"><img src="IMAGES/scarpe/bambino04.jpg" alt="Shoes 4" /></a>
-              <p class="product_price">260€</p>
-                <a href="AddItemCartServlet?codice=bambino04&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambino04" class="detail"></a>
-            </div>        	
-            <div class="product_box">
-	            <h3>bambino05</h3>
-            	<a href="#"><img src="IMAGES/scarpe/bambino05.jpg" alt="Shoes 5" /></a>
-            <p class="product_price">80€</p>
-                <a href="AddItemCartServlet?codice=bambino05&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambino05" class="detail"></a>
-            </div>        	
-            <div class="product_box no_margin_right">
-            	<h3>bambino06</h3>
-            	<a href="#"><img src="IMAGES/scarpe/bambino06.jpg" alt="Shoes 6" /></a>
-              <p class="product_price">190€</p>
-                <a href="AddItemCartServlet?codice=bambino06&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambino06" class="detail"></a>
-            </div>   
-            
-            <div class="cleaner"></div>
-                 	
-            <div class="product_box">
-            	<h3>bambino07</h3>
-            	<a href="#"><img src="IMAGES/scarpe/bambino07.jpg" alt="Shoes 7" /></a>
-              <p class="product_price">30€</p>
-                <a href="AddItemCartServlet?codice=bambino07&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambino07" class="detail"></a>
-            </div>        	
-            <div class="product_box">
-            	<h3>bambino08</h3>
-            	<a href="#"><img src="IMAGES/scarpe/bambino08.jpg" alt="Shoes 8" /></a>
-            <p class="product_price">220€</p>
-                <a href="AddItemCartServlet?codice=bambino08&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambino08" class="detail"></a>
-            </div>        	
-            <div class="product_box no_margin_right">
-            	 <h3>bambino09</h3>
-            	<a href="#"><img src="IMAGES/scarpe/bambino09.jpg" alt="Shoes 9" /></a>
-              <p class="product_price">65€</p>
-                <a href="AddItemCartServlet?codice=bambino09&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambino09" class="detail"></a>
-            </div>  
+            ${scarpe}  
         </div> 
         <div class="cleaner"></div>
     </div> <!-- END of templatemo_main -->
