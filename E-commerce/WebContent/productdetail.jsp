@@ -21,6 +21,71 @@ ddsmoothmenu.init({
 	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
 })
 </script>
+
+<style>
+body {margin:0;}
+
+.icon-bar {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.google {
+  background: #dd4b39;
+  color: white;
+}
+
+.linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.youtube {
+  background: #bb0000;
+  color: white;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<div class="icon-bar">
+  <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+  <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+  <a href="#" class="google"><i class="fa fa-google"></i></a>
+  <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+  <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
+</div>
+
 </head>
 
 <body>
@@ -47,10 +112,10 @@ ddsmoothmenu.init({
                 <li><a href="index.jsp" class="selected">Home</a></li>
                 <li><a href="#">Prodotti</a>
                     <ul>
-                        <li><a href="uomoProducts.jsp">Uomo</a></li>
-                        <li><a href="donnaProducts.jsp">Donna</a></li> 
-                        <li><a href="bambinoProducts.jsp">Bambino</a></li>
-                        <li><a href="bambinaProducts.jsp">Bambina</a></li>             
+                        <li><a href="GenereServlet?genereScarpa=uomo">Uomo</a></li>
+                        <li><a href="GenereServlet?genereScarpa=donna">Donna</a></li> 
+                        <li><a href="GenereServlet?genereScarpa=bambino">Bambino</a></li>
+                        <li><a href="GenereServlet?genereScarpa=bambina">Bambina</a></li>             
                    </ul>
                 </li>
                 <li><a href="checkout.jsp">Checkout</a></li>
@@ -75,10 +140,10 @@ ddsmoothmenu.init({
             	<h3>Categorie</h3>   
                 <div class="content"> 
                 	<ul class="sidebar_list">
-                        <li class="first"><a href="uomoProducts.jsp">Uomo</a></li>
-                        <li class="first"><a href="donnaProducts.jsp">Donna</a></li> 
-                        <li class="first"><a href="bambinoProducts.jsp">Bambino</a></li>
-                        <li class="last"><a href="bambinaProducts.jsp">Bambina</a></li>
+                        <li class="first"><a href="GenereServlet?genereScarpa=uomo">Uomo</a></li>
+                        <li class="first"><a href="GenereServlet?genereScarpa=donna">Donna</a></li> 
+                        <li class="first"><a href="GenereServlet?genereScarpa=bambino">Bambino</a></li>
+                        <li class="last"><a href="GenereServlet?genereScarpa=bambina">Bambina</a></li>
                     </ul>
                 </div>
             </div>

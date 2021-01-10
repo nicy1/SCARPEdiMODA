@@ -21,7 +21,7 @@ import it.begear.corso.entity.Ordine;
 import it.begear.corso.entity.Utente;
 
 
-@WebFilter(urlPatterns = { "/account.jsp", "/checkout.jsp", "/shoppingcart.jsp"/*, "/subscribe.jsp"*/})
+@WebFilter(urlPatterns = { "/account.jsp", "/checkout.jsp", "/shoppingcart.jsp", "/subscribe.jsp", "/AddItemCartServlet"})
 public class LoginFilter implements Filter {
 
    
@@ -55,14 +55,7 @@ public class LoginFilter implements Filter {
 	    		  Utente utente = (Utente) session.getAttribute("loggedIn"); 
 	    		  double prezzoCarrello = utente.getCarrello().getPrezzo();
 	    		  request.setAttribute("prezzo", prezzoCarrello);              // setta il costo totale del carrello da visualizzare in "checkout.jsp"
-	    	 }
-	    	 
-//	    	 // richiesta per l'iscrizione alla newsletter 
-//	    	 if (request.getHeader("referer").contains("subscribe.jsp")) {      
-//	    		  Utente utente = (Utente) session.getAttribute("loggedIn"); 
-//	    		  double prezzoCarrello = utente.getCarrello().getPrezzo();
-//	    		  request.setAttribute("prezzo", prezzoCarrello);              
-//	    	 }
+	    	 }    	 
 	    	 
 	         chain.doFilter(req, res);     // continuare il percorso della richiesta ....
 	     }

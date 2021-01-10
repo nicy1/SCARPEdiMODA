@@ -111,10 +111,10 @@ body {margin:0;}
                 <li><a href="index.jsp" class="selected">Home</a></li>
                 <li><a href="#">Prodotti</a>
                     <ul>
-                        <li><a href="uomoProducts.jsp">Uomo</a></li>
-                        <li><a href="donnaProducts.jsp">Donna</a></li> 
-                        <li><a href="bambinoProducts.jsp">Bambino</a></li>
-                        <li><a href="bambinaProducts.jsp">Bambina</a></li>             
+                        <li><a href="GenereServlet?genereScarpa=uomo">Uomo</a></li>
+                        <li><a href="GenereServlet?genereScarpa=donna">Donna</a></li> 
+                        <li><a href="GenereServlet?genereScarpa=bambino">Bambino</a></li>
+                        <li><a href="GenereServlet?genereScarpa=bambina">Bambina</a></li>             
                    </ul>
                 </li>
                 <li><a href="checkout.jsp">Checkout</a></li>
@@ -194,8 +194,8 @@ body {margin:0;}
             	<a href="UserOrdersServlet"><img src="IMAGES/Ilmioaccount/I miei ordini.png" alt="Shoes 1" /></a>
             </div>        	
             <div class="product_box">
-            	<h3>IMPOSTAZIONI DI SICUREZZA</h3>
-            	<a href="#"><img src="IMAGES/Ilmioaccount/impostazion di sicurezza.jpg" alt="Shoes 2" /></a>
+            	<h3>CANCELLAZIONE NEWSLETTER</h3>
+            	<a href="NewsletterServlet?subscribe-email=cancellato"><img src="IMAGES/Ilmioaccount/impostazion di sicurezza.jpg" alt="Shoes 2" /></a>
             </div>        	
             <div class="product_box no_margin_right">
             	<h3>INDIRIZZI</h3>
@@ -230,6 +230,19 @@ body {margin:0;}
     
 </div> <!-- END of templatemo_wrapper -->
 </div> <!-- END of templatemo_body_wrapper -->
+
+<% String cancella = request.getParameter("cancellato"); 
+   if (cancella != null && cancella.equals("OK")) { %>
+       <script type='text/javascript'>
+          alert('Sei cancellato alla newsletter!')
+       </script> 
+<% } %>
+
+<% if (cancella != null && cancella.equals("NO")) { %>
+       <script type='text/javascript'>
+          alert('Non sei iscritto alla newsletter!')
+       </script> 
+<% } %>
 
 </body>
 </html>
