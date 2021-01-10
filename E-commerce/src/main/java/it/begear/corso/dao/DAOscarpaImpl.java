@@ -89,6 +89,7 @@ public class DAOscarpaImpl implements DAOscarpa {
 		for(Scarpa sc : scarpaList) {
 			if(sc.getCodice().equals(code)) {
 			   scarpa = sc;
+			   break;
 			}
 		}
 		return scarpa;

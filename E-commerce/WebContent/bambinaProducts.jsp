@@ -1,8 +1,3 @@
-<!-- templatemo 367 shoes -->
-<!-- 
-Shoes Template 
-http://www.templatemo.com/preview/templatemo_367_shoes 
--->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -30,6 +25,20 @@ ddsmoothmenu.init({
 
 <style>
 body {margin:0;}
+
+.hover-img-zoom { 
+        overflow: hidden; 
+        margin: 0 auto; 
+    } 
+       
+    .hover-img-zoom img { 
+        
+        transition: 0.5s all ease-in-out; 
+    } 
+       
+    .hover-img-zoom:hover img { 
+        transform: scale(1.2); 
+    } 
 
 .icon-bar {
   position: fixed;
@@ -113,7 +122,17 @@ body {margin:0;}
     	<div id="top_nav" class="ddsmoothmenu">
             <ul>
                 <li><a href="index.jsp" class="selected">Home</a></li>
+<<<<<<< HEAD
                 <li><a href="ProductsServlet">Prodotti</a></ul>
+=======
+                <li><a href="#">Prodotti</a>
+                    <ul>
+                        <li><a href="GenereServlet?genereScarpa=uomo">Uomo</a></li>
+                        <li><a href="GenereServlet?genereScarpa=donna">Donna</a></li> 
+                        <li><a href="GenereServlet?genereScarpa=bambino">Bambino</a></li>
+                        <li><a href="GenereServlet?genereScarpa=bambina">Bambina</a></li>             
+                   </ul>
+>>>>>>> branch 'master' of https://github.com/irenerosaria/ScarpeDiModa.git
                 </li>
                 <li><a href="checkout.jsp">Checkout</a></li>
                 <li><a href="about.jsp">Chi siamo</a></li>
@@ -137,10 +156,10 @@ body {margin:0;}
             	<h3>Categorie</h3>   
                 <div class="content"> 
                 	<ul class="sidebar_list">
-                        <li class="first"><a href="uomoProducts.jsp">Uomo</a></li>
-                        <li class="first"><a href="donnaProducts.jsp">Donna</a></li> 
-                        <li class="first"><a href="bambinoProducts.jsp">Bambino</a></li>
-                        <li class="last"><a href="bambinaProducts.jsp">Bambina</a></li>
+                        <li class="first"><a href="GenereServlet?genereScarpa=uomo">Uomo</a></li>
+                        <li class="first"><a href="GenereServlet?genereScarpa=donna">Donna</a></li> 
+                        <li class="first"><a href="GenereServlet?genereScarpa=bambino">Bambino</a></li>
+                        <li class="last"><a href="GenereServlet?genereScarpa=bambina">Bambina</a></li>
                     </ul>
                 </div>
             </div>
@@ -190,75 +209,7 @@ body {margin:0;}
         
         <div id="content" class="float_r">
         	<h1> Scarpe da Bambina</h1>
-            <div class="product_box">
-	            <h3>bambina01</h3>
-            	<a href="#"><img src="IMAGES/scarpe/bambina01.jpg" alt="Shoes 1" /></a>
-              <p class="product_price">100€</p>
-                <a href="AddItemCartServlet?codice=bambina01&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina01" class="detail"></a>
-            </div>        	
-            <div class="product_box">
-            	<h3>bambina02</h3>
-            	<a href="#"><img src="IMAGES/scarpe/bambina02.jpg" alt="Shoes 2" /></a>
-            <p class="product_price">80€</p>
-                <a href="AddItemCartServlet?codice=bambina02&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina02" class="detail"></a>
-            </div>        	
-            <div class="product_box no_margin_right">
-            	<h3>bambina03</h3>
-            	<a href="#"><img src="IMAGES/scarpe/bambina03.jpg" alt="Shoes 3" /></a>
-              <p class="product_price">60€</p>
-                <a href="AddItemCartServlet?codice=bambina03&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina03" class="detail"></a>
-            </div>     
-            
-            <div class="cleaner"></div>
-               	
-            <div class="product_box">
-            	<h3>bambina04</h3>
-            	<a href="#"><img src="IMAGES/scarpe/bambina04.jpg" alt="Shoes 4" /></a>
-              <p class="product_price">260€</p>
-                <a href="AddItemCartServlet?codice=bambina04&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina04" class="detail"></a>
-            </div>        	
-            <div class="product_box">
-	            <h3>bambina05</h3>
-            	<a href="#"><img src="IMAGES/scarpe/bambina05.jpg" alt="Shoes 5" /></a>
-            <p class="product_price">80€</p>
-                <a href="AddItemCartServlet?codice=bambina05&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina05" class="detail"></a>
-            </div>        	
-            <div class="product_box no_margin_right">
-            	<h3>bambina06</h3>
-            	<a href="#"><img src="IMAGES/scarpe/bambina06.jpg" alt="Shoes 6" /></a>
-              <p class="product_price">190€</p>
-                <a href="AddItemCartServlet?codice=bambina06&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina06" class="detail"></a>
-            </div>   
-            
-            <div class="cleaner"></div>
-                 	
-            <div class="product_box">
-            	<h3>bambina07</h3>
-            	<a href="#"><img src="IMAGES/scarpe/bambina07.jpg" alt="Shoes 7" /></a>
-              <p class="product_price">30€</p>
-                <a href="AddItemCartServlet?codice=bambina07&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina07" class="detail"></a>
-            </div>        	
-            <div class="product_box">
-            	<h3>bambina08</h3>
-            	<a href="#"><img src="IMAGES/scarpe/bambina08.jpg" alt="Shoes 8" /></a>
-            <p class="product_price">220€</p>
-                <a href="AddItemCartServlet?codice=bambina08&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina08" class="detail"></a>
-            </div>        	
-            <div class="product_box no_margin_right">
-            	 <h3>bambina09</h3>
-            	<a href="#"><img src="IMAGES/scarpe/bambina09.jpg" alt="Shoes 9" /></a>
-              <p class="product_price">65€</p>
-                <a href="AddItemCartServlet?codice=bambina09&amp;quantita=1" class="addtocart"></a>
-                <a href="DetailItemServlet?codice=bambina09" class="detail"></a>
-            </div>  
+            ${scarpe}  
         </div> 
         <div class="cleaner"></div>
     </div> <!-- END of templatemo_main -->

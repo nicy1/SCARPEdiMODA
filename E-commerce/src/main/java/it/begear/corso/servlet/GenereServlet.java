@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.jasper.tagplugins.jstl.core.Out;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -41,8 +40,8 @@ public class GenereServlet extends HttpServlet {
 			int counter = 1;     // Per rispettare il formato di ogni riga di html           
 			
 			for(Scarpa scarpa : scarpaList) {
-				if(counter < 3) {
-					parameters += "<div class='product_box'>"   
+				if(counter <= 2) {
+					parameters += "<div class='product_box'>"
 							   +      "<h3>" + scarpa.getCodice() + "</h3>"
 							   +      "<div class='hover-img-zoom'>"+"<a href='#'><img src='IMAGES/scarpe/" + scarpa.getCodice() + ".jpg' alt='Shoes "+ index + "'/></a>"+"</div>"
 							   +      "<p>" + scarpa.getDescrizione() + "</p>"

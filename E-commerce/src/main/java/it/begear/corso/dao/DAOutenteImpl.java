@@ -50,6 +50,7 @@ public class DAOutenteImpl implements DAOutente {
 		user.setEmail(a.getEmail());
 		user.setPassword(a.getPassword());
 		user.setIndirizzo(a.getIndirizzo());
+		user.setSubscribed(a.isSubscribed());
 		session.getTransaction().commit();
 		session.close();
 		System.out.println("Update successful!");

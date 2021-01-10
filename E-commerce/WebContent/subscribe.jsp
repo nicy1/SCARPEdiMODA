@@ -28,16 +28,16 @@ a:hover, a:active {
 <div class="bbb-wrapper fl-wrap">
     <div class="subcribe-form fl-wrap">
         <p class="text-center">Iscriviti ora alla nostra newsletter </p>
-        <form id="subscribe" action="subscribe.jsp?subscription=OK" method="post"> 
-           <input type="email" class="enteremail" id="subscribe-email" name="email" placeholder="Email" spellcheck="false"> 
+        <form id="subscribe" action="NewsletterServlet" method="get"> 
+           <input type="email" class="enteremail" id="subscribe-email" name="subscribe-email" placeholder="Email" spellcheck="false"> 
            <button type="submit" id="subscribe-button" class="subscribe-button color-bg" value=Subscribe>Iscriviti</button> 
            <label for="subscribe-email" class="subscribe-message"></label>
-           <a href="index.jsp" target="_blank">HomePage</a>
+           <a href="index.jsp" >HomePage</a>
         </form>
     </div>
     
-<% String access = request.getParameter("subscription"); 
-   if (access != null && access.equals("OK")) { %>
+<% String iscriviti = request.getParameter("iscriviti"); 
+   if (iscriviti != null && iscriviti.equals("OK")) { %>
        <script type='text/javascript'>
           alert('Sei iscritto correttamente!')
        </script> 
