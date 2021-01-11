@@ -15,18 +15,18 @@ import it.begear.corso.dao.DAOscarpaImpl;
 public class Carrello {
 	private int idUtente;
 	private double prezzo;
-	private Map<Integer, Integer> carrello  = new HashMap<Integer, Integer>();
+	private Map<Integer, Integer> scarpe  = new HashMap<Integer, Integer>();
 	
 	public Carrello(int idUtente) {
 		this.idUtente = idUtente;
 	}
 
-	public Map<Integer, Integer> getCarrello() {
-		return carrello;
+	public Map<Integer, Integer> getScarpe() {
+		return scarpe;
 	}
 
 	public void setCarrello(Map<Integer, Integer> carrello) {
-		this.carrello = carrello;
+		this.scarpe = carrello;
 	}
 	
 	public double getPrezzo() {
@@ -34,19 +34,19 @@ public class Carrello {
 	}
 
 	public Ordine acquista() {
-		Ordine ordine = new Ordine(carrello, idUtente);
-		carrello.clear();                   // per svuotare il carrello
+		Ordine ordine = new Ordine(scarpe, idUtente);
+		scarpe.clear();                   // per svuotare il carrello
 		return ordine;
 	}
 	
 	public void addScarpa(Scarpa scarpa, Integer quantita) {
-		carrello.put(scarpa.getId(), quantita);
+		scarpe.put(scarpa.getId(), quantita);
 		prezzo += scarpa.getCosto() * quantita;
 	}
 	
 	
 	public void removeScarpa(Integer scarpaId) {
-		carrello.remove(scarpaId);
+		scarpe.remove(scarpaId);
 	}
 
 

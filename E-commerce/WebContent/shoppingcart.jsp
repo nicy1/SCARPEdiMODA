@@ -154,24 +154,17 @@ body {margin:0;}
                         	<th width="90"> </th>
                             
                       </tr>
-                    	<tr>
-                        	<td><img src="IMAGES/scarpe/01.jpg" alt="image 1" /></td> 
-                        	<td>Etiam in tellus (Validate <a href="http://validator.w3.org/check?uri=referer" rel="nofollow">XHTML</a> &amp; <a href="http://jigsaw.w3.org/css-validator/check/referer" rel="nofollow">CSS</a>)</td> 
-                            <td align="center"><input type="text" value="1" style="width: 20px; text-align: right" /> </td>
-                            <td align="right">€100 </td> 
-                            <td align="right">€100 </td>
-                            <td align="center"> <a href="#"><img src="images/remove_x.gif" alt="remove" /><br />Remove</a> </td>
-						</tr>
-                        	<td colspan="3" align="right"  height="30px">Have you modified your basket? Please click here to <a href="shoppingcart.jsp"><strong>Update</strong></a>&nbsp;&nbsp;</td>
-                            <td align="right" style="background:#ddd; font-weight:bold"> Total </td>
-                            <td align="right" style="background:#ddd; font-weight:bold">€240 </td>
+                      ${scarpe}
+                      <tr>
+                        	<td colspan="3" align="right"  height="30px">Hai modificato il tuo carrello? Clicca qui: <a href="shoppingcart.jsp"><strong>Aggiorna</strong></a>&nbsp;&nbsp;</td>
+                            <td align="right" style="background:#ddd; font-weight:bold">${costo_totale} </td>
                             <td style="background:#ddd; font-weight:bold"> </td>
 						</tr>
 					</table>
                     <div style="float:right; width: 215px; margin-top: 20px;">
                     
-					<p><a href="checkout.jsp">Proceed to checkout</a></p>
-                    <p><a href="javascript:history.back()">Continue shopping</a></p>
+					<p><a href="checkout.jsp">Procedi al checkout</a></p>
+                    <p><a href="javascript:history.back()">Continua lo shopping</a></p>
                     	
                     </div>
 			</div>
