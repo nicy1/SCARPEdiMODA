@@ -108,18 +108,7 @@ body {margin:0;}
     	<div id="top_nav" class="ddsmoothmenu">
             <ul>
                 <li><a href="index.jsp" class="selected">Home</a></li>
-<<<<<<< HEAD
                 <li><a href="ProductsServlet">Prodotti</a></li>
-=======
-                <li><a href="#">Prodotti</a>
-                    <ul>
-                        <li><a href="GenereServlet?genereScarpa=uomo">Uomo</a></li>
-                        <li><a href="GenereServlet?genereScarpa=donna">Donna</a></li> 
-                        <li><a href="GenereServlet?genereScarpa=bambino">Bambino</a></li>
-                        <li><a href="GenereServlet?genereScarpa=bambina">Bambina</a></li>             
-                   </ul>
-                </li>
->>>>>>> branch 'master' of https://github.com/irenerosaria/ScarpeDiModa.git
                 <li><a href="checkout.jsp">Checkout</a></li>
                 <li><a href="about.jsp">Chi siamo</a></li>
                 <li><a href="faqs.jsp">FAQs</a></li>
@@ -130,8 +119,8 @@ body {margin:0;}
         </div> <!-- end of ddsmoothmenu -->
         <div id="templatemo_search">
             <form action="SearchServlet" method="get">
-              <input type="text" value=" " name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
-              <input type="submit" name="Search" value=" " alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
+              <input type="text" value="" name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
+              <input type="submit" name="Search" value="" alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
             </form>
         </div>
     </div> <!-- END of templatemo_menubar -->
@@ -219,7 +208,7 @@ body {margin:0;}
         <div class="content_half float_r">		
             <div class="cleaner h40"></div>
 			<br/>
-			Email: assistenza_scarpedimoda@ScarpeDiModa.com
+			Email: assistenza@ScarpeDiModa.com
 			<br />
         </div>
         <div class="cleaner h40"></div>

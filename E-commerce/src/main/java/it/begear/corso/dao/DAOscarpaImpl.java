@@ -98,10 +98,10 @@ public class DAOscarpaImpl implements DAOscarpa {
 	
 	@Override
 	public List<Scarpa> findByKeyword(String keyword) {
-		List<Scarpa> scarpe = null;
+		List<Scarpa> scarpe = new ArrayList<Scarpa>();
 		List<Scarpa> scarpaList = read();
 		for(Scarpa scarpa : scarpaList) {
-			if(scarpa.getCodice().contains(keyword)) {
+			if(scarpa.getDescrizione().contains(keyword)) {
 			   scarpe.add(scarpa);
 			}
 		}
