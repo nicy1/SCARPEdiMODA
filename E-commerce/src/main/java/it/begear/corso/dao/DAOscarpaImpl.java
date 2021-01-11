@@ -101,7 +101,7 @@ public class DAOscarpaImpl implements DAOscarpa {
 		List<Scarpa> scarpe = new ArrayList<Scarpa>();
 		List<Scarpa> scarpaList = read();
 		for(Scarpa scarpa : scarpaList) {
-			if(scarpa.getDescrizione().contains(keyword)) {
+			if(scarpa.getDescrizione().equalsIgnoreCase(keyword)) {
 			   scarpe.add(scarpa);
 			}
 		}

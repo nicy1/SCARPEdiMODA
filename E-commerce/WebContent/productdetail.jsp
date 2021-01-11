@@ -241,7 +241,7 @@ body {margin:0;}
                 
                 <script type="text/javascript">
                      var quantita =  document.getElementById("quantita").value;
-                     document.write('<a href="AddItemCartServlet?codice="' + <%=codice%> + '&amp;quantita=' + quantita + '" class="addtocart"></a>');
+                     document.write('<a href="AddItemCartServlet?codice='<%=codice%>&amp;quantita=' + quantita + '" class="addtocart"></a>');
                 </script>
 
 			</div>
