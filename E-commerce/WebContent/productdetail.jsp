@@ -232,18 +232,11 @@ body {margin:0;}
                         <td>Disponibilita:</td>
                         <td> <%= dispo %> </td>
                     </tr>
-                    <tr>
-                    	<td>Quantita</td>
-                        <td><input type="text" id="quantita" name="quantita" value="1" style="width: 20px; text-align: right" /></td>
-                    </tr>
                 </table>
                 <div class="cleaner h20"></div>
                 
-                <script type="text/javascript">
-                     var quantita =  document.getElementById("quantita").value;
-                     document.write('<a href="AddItemCartServlet?codice='<%=codice%>&amp;quantita=' + quantita + '" class="addtocart"></a>');
-                </script>
-
+                <a href="AddItemCartServlet?codice=<%=codice%>&amp;quantita=1" class="addtocart"></a>
+                
 			</div>
             <div class="cleaner h30"></div>
             
