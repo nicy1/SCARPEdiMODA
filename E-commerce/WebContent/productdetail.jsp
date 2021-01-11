@@ -238,8 +238,11 @@ body {margin:0;}
                     </tr>
                 </table>
                 <div class="cleaner h20"></div>
-
-                <a href="AddItemCartServlet?codice=<%=codice%>&amp;quantita=??????????" class="addtocart"></a>
+                
+                <script type="text/javascript">
+                     var quantita =  document.getElementById("quantita").value;
+                     document.write('<a href="AddItemCartServlet?codice="' + <%=codice%> + '&amp;quantita=' + quantita + '" class="addtocart"></a>');
+                </script>
 
 			</div>
             <div class="cleaner h30"></div>
@@ -284,12 +287,6 @@ body {margin:0;}
           alert('Non disponibile!')
        </script> 
 <% } %>
-
-<script>
-  function getQuantita(){
-    
-  }
-</script>
 
 </body>
 </html>
