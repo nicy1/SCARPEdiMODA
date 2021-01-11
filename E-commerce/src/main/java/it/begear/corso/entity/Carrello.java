@@ -6,6 +6,7 @@ import java.util.Map.Entry;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.transaction.annotation.Transactional;
 
 import it.begear.corso.dao.DAOordineImpl;
 import it.begear.corso.dao.DAOscarpaImpl;
@@ -29,12 +30,6 @@ public class Carrello {
 	}
 	
 	public double getPrezzo() {
-		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
-		DAOscarpaImpl daoscarpa = context.getBean(DAOscarpaImpl.class);
-		for(Entry<Integer, Integer> entry : carrello.entrySet()) {
-			Scarpa scarpa = daoscarpa.findByID(entry.getKey());
-			prezzo += scarpa.getCosto() * entry.getValue();
-		}
 		return prezzo;
 	}
 
@@ -44,8 +39,9 @@ public class Carrello {
 		return ordine;
 	}
 	
-	public void addScarpa(Integer scarpaId, Integer quantita) {
-		carrello.put(scarpaId, quantita);
+	public void addScarpa(Scarpa scarpa, Integer quantita) {
+		carrello.put(scarpa.getId(), quantita);
+		prezzo += scarpa.getCosto() * quantita;
 	}
 	
 	

@@ -39,14 +39,14 @@ public class LoginServlet extends HttpServlet {
 		
 		if(utente != null) {
 			HttpSession session = request.getSession();
-			utente.setCarrello(new Carrello(utente.getId()));
+			utente.createCarrello();
 			session.setAttribute("loggedIn", utente);
 			session.setAttribute("loggedIn_ID", utente.getId());
 			session.setAttribute("loggedIn_NOME", utente.getNome());
 			session.setAttribute("loggedIn_COGNOME", utente.getCognome());
 			session.setAttribute("loggedIn_EMAIL", utente.getEmail());
 			
-			session.setAttribute("costo_totale", 0.0);             // prezzo iniziale del carrello
+			session.setAttribute("prezzo_totale", 0.0);             // prezzo iniziale del carrello
 			
 			destPage = "account.jsp";
 		}

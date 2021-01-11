@@ -28,9 +28,15 @@ public class SearchServlet extends HttpServlet {
 		DAOscarpaImpl daoscarpa = context.getBean(DAOscarpaImpl.class);
 		
 		String keyword = (String) request.getParameter("keyword");
-		if (keyword != null) {
-			List<Scarpa> scarpaList = daoscarpa.findByKeyword(keyword);
-			String parameters = null;
+		String parameters = "";
+		
+		List<Scarpa> scarpaList = daoscarpa.findByKeyword(keyword);
+		if (scarpaList.isEmpty()) {         // se non ci sono ordini
+			 parameters += "<br/>"
+					    +  "<h3> Non ci sono scarpe. </h3>"
+	                    +  "<br/><br/>";
+		}
+		else {
 			
 			int index = 1;      // per stampare index di ogni scarpa secondo l'ordine della visualizzazione
 			int counter = 1;     // Per rispettare il formato di ogni riga di html 
@@ -61,14 +67,11 @@ public class SearchServlet extends HttpServlet {
 				}
 				index++;
 			}
+		}
 			request.setAttribute("scarpe", parameters);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("products.jsp");
-			dispatcher.forward(request, response);
-		    
-			   
-		} else {
-			response.sendRedirect("404.html?foundProduct=NO");  // not found page and product (scarpa)
-		}     	
+			dispatcher.forward(request, response); 
+			
 	}
 
 	

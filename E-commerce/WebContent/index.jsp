@@ -125,8 +125,8 @@ body {margin:0;}
         </div> <!-- end of ddsmoothmenu -->
         <div id="templatemo_search">
             <form action="SearchServlet" method="get">
-              <input type="text" value=" " name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
-              <input type="submit" name="Search" value=" " alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
+              <input type="text" value="" name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
+              <input type="submit" name="Search" value="" alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
             </form>
         </div>
     </div> <!-- END of templatemo_menubar -->

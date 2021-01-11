@@ -47,7 +47,6 @@ public class Utente {
 		setEmail(email);
 		setPassword(password);
 		setIndirizzo(indirizzo);
-		carrello = new Carrello(id);
 	}
 	
 	
@@ -100,6 +99,10 @@ public class Utente {
 
 	public void setCarrello(Carrello carrello) {
 		this.carrello = carrello;
+	}
+	
+	public void createCarrello() {
+		this.carrello = new Carrello(id);
 	}
       
 }
