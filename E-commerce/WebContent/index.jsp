@@ -30,6 +30,20 @@ ddsmoothmenu.init({
 <style>
 body {margin:0;}
 
+.hover-img-zoom { 
+        overflow: hidden; 
+        margin: 0 auto; 
+    } 
+       
+    .hover-img-zoom img { 
+        
+        transition: 0.5s all ease-in-out; 
+    } 
+       
+    .hover-img-zoom:hover img { 
+        transform: scale(1.2); 
+    } 
+
 .icon-bar {
   position: fixed;
   top: 50%;
@@ -207,7 +221,9 @@ body {margin:0;}
         	<h1>Nuovi Prodotti</h1>
             <div class="product_box">
 	            <h3>Sneaker sn03</h3>
+	            <div class='hover-img-zoom'>
             	<a href="#"><img src="IMAGES/nuoviProdotti/n01.jpg" alt="Shoes 1" /></a>
+            	</div>
                 <p>Prodotto in Italia con materiali orignali.</p>
                 <p class="product_price">60 €</p>
                 <a href="AddItemCartServlet?codice=sneak03&amp;quantita=1" class="addtocart"></a>
@@ -215,7 +231,9 @@ body {margin:0;}
             </div>        	
             <div class="product_box">
             	<h3>Stivale stiv03</h3>
+            	<div class='hover-img-zoom'>
             	<a href="#"><img src="IMAGES/nuoviProdotti/n02.jpg" alt="Shoes 2" /></a>
+            	</div>
                 <p>Prodotto in Italia con materiali orignali.</p>
               <p class="product_price">80 €</p>
                 <a href="AddItemCartServlet?codice=stiv03&amp;quantita=1" class="addtocart"></a>
@@ -223,7 +241,9 @@ body {margin:0;}
             </div>        	
             <div class="product_box no_margin_right">
             	<h3>Ciabatta c03</h3>
+            	<div class='hover-img-zoom'>
             	<a href="#"><img src="IMAGES/nuoviProdotti/n03.jpg" alt="Shoes 3" /></a>
+            	</div> 
                 <p>Ciabatta in vera pelle (Made in Italia).</p>
               <p class="product_price">20 €</p>
                 <a href="AddItemCartServlet?codice=c03&amp;quantita=1" class="addtocart"></a>
@@ -234,7 +254,9 @@ body {margin:0;}
                  	
             <div class="product_box">
             	<h3>Mocassino m02</h3>
+            	<div class='hover-img-zoom'>
            	    <a href="#"><img src="IMAGES/nuoviProdotti/n04.jpg" alt="Shoes 4" /></a>
+           	    </div>
                 <p>Alta qualita (Made in Italia).</p>
               <p class="product_price">40 €</p>
                 <a href="AddItemCartServlet?codice=m02&amp;quantita=1" class="addtocart"></a>
@@ -242,7 +264,9 @@ body {margin:0;}
             </div>        	
             <div class="product_box">
 	            <h3>Ciabatta c02</h3>
+	            <div class='hover-img-zoom'>
             	<a href="#"><img src="IMAGES/nuoviProdotti/n05.jpg" alt="Shoes 5" /></a>
+            	</div>
                 <p>Fabricata con materiali sintetici.</p>
               <p class="product_price">15 €</p>
                 <a href="AddItemCartServlet?codice=c02&amp;quantita=1" class="addtocart"></a>
@@ -250,7 +274,9 @@ body {margin:0;}
             </div>        	
             <div class="product_box no_margin_right">
             	<h3>Ciabatta c01</h3>
+            	<div class='hover-img-zoom'>
             	<a href="#"><img src="IMAGES/nuoviProdotti/n06.jpg" alt="Shoes 6" /></a>
+            	</div> 
                 <p>Ciabatta per l'estate.</p>
                 <p class="product_price">10 €</p>
                 <a href="AddItemCartServlet?codice=c01&amp;quantita=1" class="addtocart"></a>
