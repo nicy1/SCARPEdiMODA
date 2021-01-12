@@ -1,5 +1,6 @@
 package it.begear.corso.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -62,7 +63,7 @@ public class DAOordineImpl implements DAOordine {
 	}
 	
 	public List<Ordine> getUserOrders(int idUtente) {
-		List<Ordine> result = null;
+		List<Ordine> result = new ArrayList<Ordine>();
 		List<Ordine> ordini = read();
 		for(Ordine ordine : ordini) {
 			if (ordine.getIdUtente() == idUtente) {

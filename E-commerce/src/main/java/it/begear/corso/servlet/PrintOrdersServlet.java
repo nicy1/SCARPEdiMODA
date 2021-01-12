@@ -3,6 +3,7 @@ package it.begear.corso.servlet;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,8 +21,8 @@ import it.begear.corso.entity.Utente;
 
 
 
-@WebServlet("/UserOrdersServlet")
-public class UserOrdersServlet extends HttpServlet {
+@WebServlet("/PrintOrdersServlet")
+public class PrintOrdersServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
@@ -34,7 +35,7 @@ public class UserOrdersServlet extends HttpServlet {
 			Utente utente = (Utente) session.getAttribute("loggedIn");
 			List<Ordine> ordineList = daoOrdine.getUserOrders(utente.getId());
 			
-			String parameters = null;
+			String parameters = "";
 			if (ordineList == null) {         // se non ci sono ordini
 				 parameters += "<br/>"
 						    +  "<h3> Non ci sono ordini. </h3>"
@@ -44,12 +45,15 @@ public class UserOrdersServlet extends HttpServlet {
 				for(Ordine ordine : ordineList) {     // ci sono ordini
 					 parameters += "<br/>"
 					 		    +  "<h3>" 
-			                    +       ordine.toString() + " &nbsp; <a href='trackOrder.html'><font color='red'>TrackOrder</font></a>"
+			                    +       ordine.toString() + " &nbsp; <a href='trackOrder.jsp'><font color='red'>TrackOrder</font></a>"
 				                +  "</h3>"
 				                +  "<br/><br/>";
 				}	
 			}
-			response.sendRedirect("userOrders.jsp?ordini="+parameters);    // stampare la lista degli ordini
+			
+			request.setAttribute("ordini", parameters);      // stampare la lista degli ordini
+			RequestDispatcher dispatcher = request.getRequestDispatcher("userOrders.jsp");
+			dispatcher.forward(request, response);   
 		}
 		else {  // non c'e sessione esistente
 				response.sendRedirect("loginRegister.jsp");      // tornare nel login page		

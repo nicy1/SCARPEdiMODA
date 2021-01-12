@@ -185,9 +185,7 @@ body {margin:0;}
         
         <div id="content" class="float_r">
         	<h1> Ordini (${sessionScope['loggedIn_EMAIL']})</h1>	
-        	<% String ordineList = request.getParameter("ordini"); 
-        	   out.print(ordineList);
-        	%>
+        	${ordini}
         </div> 
         <div class="cleaner"></div>
     </div> <!-- END of templatemo_main -->

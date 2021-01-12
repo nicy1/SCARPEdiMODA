@@ -26,39 +26,45 @@ public class AddItemCartServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
-		String scarpacode = request.getParameter("codice");
-		Integer quantita = Integer.parseInt(request.getParameter("quantita"));
-		
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
 		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 		DAOscarpaImpl daoscarpa = context.getBean(DAOscarpaImpl.class);
 		
+		String scarpacode = request.getParameter("codice");
+		Integer quantita = Integer.parseInt(request.getParameter("quantita"));
 		Scarpa scarpa = daoscarpa.findByCode(scarpacode);
-		if(scarpa == null) {
-			// Non c'e scarpa con "codice" nel DB
-			response.sendRedirect("404.html?foundProduct=NO");  // not found page and product (scarpa)
-		}
-		else {
+	    if(scarpa == null) {
+		   // Non c'e scarpa con "codice" nel DB
+		   response.sendRedirect("404.html?foundProduct=NO");  // not found page and product (scarpa)
+	    }
 			
-			int dispo = scarpa.getDisponibilita();
-			if(dispo >= quantita) {                   // qta disponibile
-				scarpa.setDisponibilita(dispo - quantita);        // update della disponibilita
-				daoscarpa.update(scarpa, scarpa.getId());
-				HttpSession session = request.getSession(false); // get la sessione esistente
-				Utente utente = (Utente) session.getAttribute("loggedIn");
-				utente.getCarrello().addScarpa(scarpa, quantita);
-				session.setAttribute("loggedIn", utente);
-				response.sendRedirect("ViewCartServlet");
-			}
-			else {                                     // qta non disponibile  
-				String referer = request.getHeader("referer");
-				String[] stringhe = referer.split("/");
-				String paginaDiRiferimento = stringhe[stringhe.length-1];
-				response.sendRedirect(paginaDiRiferimento+"?disponibile=NO");    	
-			}
-			
+		if (quantita == 0) {   // Cancellare una scarpa nel carrello
+			HttpSession session = request.getSession(false);      // get la sessione esistente
+			Utente utente = (Utente) session.getAttribute("loggedIn");
+			utente.getCarrello().removeScarpa(scarpa.getId());
+			scarpa.setDisponibilita(scarpa.getDisponibilita() + 1);
+			daoscarpa.update(scarpa, scarpa.getId());
+			response.sendRedirect("ViewCartServlet");
 		}
+		else {   // aggiunto di una scarpa nel carrello
 		
+		        int dispo = scarpa.getDisponibilita();
+			    if(dispo >= quantita) {                   // qta disponibile
+				   scarpa.setDisponibilita(dispo - quantita);        // update della disponibilita
+				   daoscarpa.update(scarpa, scarpa.getId());
+				   HttpSession session = request.getSession(false); // get la sessione esistente
+				   Utente utente = (Utente) session.getAttribute("loggedIn");
+				   utente.getCarrello().addScarpa(scarpa, quantita);
+				   session.setAttribute("loggedIn", utente);
+				   response.sendRedirect("ViewCartServlet");
+			    }
+			    else {                                     // qta non disponibile  
+			     	String referer = request.getHeader("referer");
+			     	String[] stringhe = referer.split("/");
+				    String paginaDiRiferimento = stringhe[stringhe.length-1];
+			     	response.sendRedirect(paginaDiRiferimento+"?disponibile=NO");    	
+			    }
+		}	
 	}
 	
 }
