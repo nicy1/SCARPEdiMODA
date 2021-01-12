@@ -244,5 +244,12 @@ body {margin:0;}
        </script> 
 <% } %>
 
+<% String ordine = request.getParameter("ordine"); 
+   if (ordine != null && ordine.equals("OK")) { %>
+       <script type='text/javascript'>
+          alert('Abbiamo ricevuto il tuo ordine!')
+       </script> 
+<% } %>
+
 </body>
 </html>
