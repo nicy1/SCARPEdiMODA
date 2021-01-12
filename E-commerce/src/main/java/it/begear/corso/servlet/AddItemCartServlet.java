@@ -48,7 +48,7 @@ public class AddItemCartServlet extends HttpServlet {
 				Utente utente = (Utente) session.getAttribute("loggedIn");
 				utente.getCarrello().addScarpa(scarpa, quantita);
 				session.setAttribute("loggedIn", utente);
-				response.sendRedirect("shoppingcart.jsp");
+				response.sendRedirect("ViewCartServlet");
 			}
 			else {                                     // qta non disponibile  
 				String referer = request.getHeader("referer");

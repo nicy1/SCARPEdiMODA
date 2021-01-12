@@ -99,9 +99,9 @@ body {margin:0;}
         	<% Object nome = request.getSession(false).getAttribute("loggedIn_NOME"); 
              if (nome == null) {
           %> 	
-        	<p><a href="account.jsp">Il mio account</a> | <a href="shoppingcart.jsp">Carrello</a> | <a href="loginRegister.jsp">Accedi</a></p>       
+        	<p><a href="account.jsp">Il mio account</a> | <a href="ViewCartServlet">Carrello</a> | <a href="loginRegister.jsp">Accedi</a></p>       
 		  <% } else { %>
-            <p><a href="account.jsp"><%= nome.toString() %></a> | <a href="shoppingcart.jsp">Carrello</a></p>
+            <p><a href="account.jsp"><%= nome.toString() %></a> | <a href="ViewCartServlet">Carrello</a></p>
           <% } %>       
 		</div>
         <div class="cleaner"></div>
@@ -151,13 +151,14 @@ body {margin:0;}
                         	<th width="180" align="left">Descrizione </th> 
                        	  	<th width="100" align="center">Quantita </th> 
                         	<th width="60" align="right">Prezzo </th> 
-                        	<th width="90"> </th>
-                            
+                        	<th width="90" align="right"> </th>                            
                       </tr>
+                      
                       ${scarpe}
+                      
                       <tr>
                         	<td colspan="3" align="right"  height="30px">Hai modificato il tuo carrello? Clicca qui: <a href="shoppingcart.jsp"><strong>Aggiorna</strong></a>&nbsp;&nbsp;</td>
-                            <td align="right" style="background:#ddd; font-weight:bold">${costo_totale} </td>
+                            <td align="right" style="background:#ddd; font-weight:bold">${costo_totale} €</td>
                             <td style="background:#ddd; font-weight:bold"> </td>
 						</tr>
 					</table>
