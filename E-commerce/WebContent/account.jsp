@@ -97,9 +97,9 @@ body {margin:0;}
         	<% Object nome = request.getSession(false).getAttribute("loggedIn_NOME"); 
              if (nome == null) {
           %> 	
-        	<p><a href="account.jsp">Il mio account</a> | <a href="shoppingcart.jsp">Carrello</a> | <a href="loginRegister.jsp">Accedi</a></p>       
+        	<p><a href="account.jsp">Il mio account</a> | <a href="ViewCartServlet">Carrello</a> | <a href="loginRegister.jsp">Accedi</a></p>       
 		  <% } else { %>
-            <p><a href="account.jsp"><%= nome.toString() %></a> | <a href="shoppingcart.jsp">Carrello</a></p>
+            <p><a href="account.jsp"><%= nome.toString() %></a> | <a href="ViewCartServlet">Carrello</a></p>
           <% } %>       
 		</div>
         <div class="cleaner"></div>
@@ -191,7 +191,7 @@ body {margin:0;}
         	<h1> Benvenuto ${sessionScope['loggedIn_NOME']}</h1> <br/><br/>
             <div class="product_box">
 	            <h3>I MIEI ORDINI</h3>
-            	<a href="UserOrdersServlet"><img src="IMAGES/Ilmioaccount/I miei ordini.png" alt="Shoes 1" /></a>
+            	<a href="PrintOrdersServlet"><img src="IMAGES/Ilmioaccount/I miei ordini.png" alt="Shoes 1" /></a>
             </div>        	
             <div class="product_box">
             	<h3>CANCELLAZIONE NEWSLETTER</h3>

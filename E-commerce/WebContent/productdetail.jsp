@@ -98,9 +98,9 @@ body {margin:0;}
         	<% Object nome = request.getSession(false).getAttribute("loggedIn_NOME"); 
              if (nome == null) {
           %> 	
-        	<p><a href="account.jsp">Il mio account</a> | <a href="shoppingcart.jsp">Carrello</a> | <a href="loginRegister.jsp">Accedi</a></p>       
+        	<p><a href="account.jsp">Il mio account</a> | <a href="ViewCartServlet">Carrello</a> | <a href="loginRegister.jsp">Accedi</a></p>       
 		  <% } else { %>
-            <p><a href="account.jsp"><%= nome.toString() %></a> | <a href="shoppingcart.jsp">Carrello</a></p>
+            <p><a href="account.jsp"><%= nome.toString() %></a> | <a href="ViewCartServlet">Carrello</a></p>
           <% } %>       
 		</div>
         <div class="cleaner"></div>
@@ -232,18 +232,11 @@ body {margin:0;}
                         <td>Disponibilita:</td>
                         <td> <%= dispo %> </td>
                     </tr>
-                    <tr>
-                    	<td>Quantita</td>
-                        <td><input type="text" id="quantita" name="quantita" value="1" style="width: 20px; text-align: right" /></td>
-                    </tr>
                 </table>
                 <div class="cleaner h20"></div>
                 
-                <script type="text/javascript">
-                     var quantita =  document.getElementById("quantita").value;
-                     document.write('<a href="AddItemCartServlet?codice='<%=codice%>&amp;quantita=' + quantita + '" class="addtocart"></a>');
-                </script>
-
+                <a href="AddItemCartServlet?codice=<%=codice%>&amp;quantita=1" class="addtocart"></a>
+                
 			</div>
             <div class="cleaner h30"></div>
             

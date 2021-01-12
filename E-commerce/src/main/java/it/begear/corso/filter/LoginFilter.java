@@ -22,7 +22,7 @@ import it.begear.corso.entity.Ordine;
 import it.begear.corso.entity.Utente;
 
 
-@WebFilter(urlPatterns = { "/account.jsp", "/checkout.jsp", "/shoppingcart.jsp", "/subscribe.jsp", "/AddItemCartServlet"})
+@WebFilter(urlPatterns = { "/account.jsp", "/checkout.jsp", "/ViewCartServlet", "/subscribe.jsp", "/AddItemCartServlet"})
 public class LoginFilter implements Filter {
 
    

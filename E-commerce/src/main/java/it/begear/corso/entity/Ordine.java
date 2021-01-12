@@ -83,7 +83,7 @@ public class Ordine {
 
 	@Override
 	public String toString() {
-		return "Ordine [id=" + id + ", idUtente=" + idUtente + ", prezzo=" + prezzo + "]";
+		return "Ordine [id=" + id + ", prezzo=" + prezzo + "]";
 	}
 	
 }
