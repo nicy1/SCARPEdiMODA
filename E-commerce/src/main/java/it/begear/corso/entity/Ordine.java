@@ -96,11 +96,8 @@ public class Ordine {
 
 	@Override
 	public String toString() {
-
 		return "Ordine [id=" + id + ", prezzo=" + prezzo + ", data=" + data + "]";
-
 	}
-
 
 	
 }
