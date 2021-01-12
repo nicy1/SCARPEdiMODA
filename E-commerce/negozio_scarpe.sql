@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.20, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.19, for Win64 (x86_64)
 --
 -- Host: localhost    Database: negozio
 -- ------------------------------------------------------
--- Server version	8.0.20
+-- Server version	8.0.19
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-01-03 15:57:07
+-- Dump completed on 2021-01-12 14:41:34

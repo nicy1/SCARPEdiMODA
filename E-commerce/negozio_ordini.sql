@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.20, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.19, for Win64 (x86_64)
 --
 -- Host: localhost    Database: negozio
 -- ------------------------------------------------------
--- Server version	8.0.20
+-- Server version	8.0.19
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,10 +26,11 @@ CREATE TABLE `ordini` (
   `id_ordini` int NOT NULL AUTO_INCREMENT,
   `id_utenti` int DEFAULT NULL,
   `prezzo` double DEFAULT NULL,
+  `data` varchar(450) DEFAULT NULL,
   PRIMARY KEY (`id_ordini`),
   KEY `id_utenti_idx` (`id_utenti`),
   CONSTRAINT `id_utenti` FOREIGN KEY (`id_utenti`) REFERENCES `utenti` (`id_utenti`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,6 +39,7 @@ CREATE TABLE `ordini` (
 
 LOCK TABLES `ordini` WRITE;
 /*!40000 ALTER TABLE `ordini` DISABLE KEYS */;
+INSERT INTO `ordini` VALUES (1,7,79.99000000000001,NULL),(2,7,60,NULL),(3,7,45,NULL),(4,7,30,NULL),(5,7,30,NULL);
 /*!40000 ALTER TABLE `ordini` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-01-03 15:57:08
+-- Dump completed on 2021-01-12 14:41:34
