@@ -97,9 +97,9 @@ body {margin:0;}
         	<% Object nome = request.getSession(false).getAttribute("loggedIn_NOME"); 
              if (nome == null) {
           %> 	
-        	<p><a href="account.jsp">Il mio account</a> | <a href="shoppingcart.jsp">Carrello</a> | <a href="loginRegister.jsp">Accedi</a></p>       
+        	<p><a href="account.jsp">Il mio account</a> | <a href="ViewCartServlet">Carrello</a> | <a href="loginRegister.jsp">Accedi</a></p>       
 		  <% } else { %>
-            <p><a href="account.jsp"><%= nome.toString() %></a> | <a href="shoppingcart.jsp">Carrello</a></p>
+            <p><a href="account.jsp"><%= nome.toString() %></a> | <a href="ViewCartServlet">Carrello</a></p>
           <% } %>       
 		</div>
         <div class="cleaner"></div>
@@ -185,9 +185,7 @@ body {margin:0;}
         
         <div id="content" class="float_r">
         	<h1> Ordini (${sessionScope['loggedIn_EMAIL']})</h1>	
-        	<% String ordineList = request.getParameter("ordini"); 
-        	   out.print(ordineList);
-        	%>
+        	${ordini}
         </div> 
         <div class="cleaner"></div>
     </div> <!-- END of templatemo_main -->
