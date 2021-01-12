@@ -50,11 +50,16 @@ public class ViewCartServlet extends HttpServlet {
 		
 			for(Integer id : idList ) {
 			    Scarpa scarpa = daoscarpa.findByID(id);
-		
+		  
 			    parameters += "<tr>" 
 		        	       + "<td><img src='IMAGES/scarpe/" + scarpa.getCodice() + ".jpg' alt='Shoes " + index + "'/></td> "
 		        	       + "<td>" + scarpa.getDescrizione() + "</td>"
-		                   + "<td align='center'><input type='text' value='1' style='width: 20px; text-align: right/> </td>"
+		                   + "<td align='center'>"
+		        	       + "<form action='AddItemCartServlet?codice="+scarpa.getCodice()+"' method='get'>"
+		                   + "   <input type='text' name='quantita' value='1' style='width: 20px; text-align: right/>"
+		        	       + "</form>"
+		                   + "<td><input type='button' style='width:100%; height:100%;' value='Aggiorna'></td>"
+		                   + "</td>"		     
 		                   + "<td align='right'> </td>"
 		                   + "<td align='right'>" + scarpa.getCosto() + " € </td> "
 		                   + "<td align='center'> <a href='AddItemCartServlet?codice="+scarpa.getCodice()+"&amp;quantita=0'><img src='IMAGES/remove_x.gif' /><br />Cancella</a> </td>"

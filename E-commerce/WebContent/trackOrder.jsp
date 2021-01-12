@@ -12,9 +12,8 @@
 <body>
 <div class="container">
   <div class="row">
-                        <% String date = request.getParameter("data"); 
-                           
-                        %>
+                        <% String date = request.getParameter("date"); %>
+                        
 						<div class="col-12 col-md-10 hh-grayBox pt45 pb20">
 							<div class="row justify-content-between">
 								<div class="order-tracking completed">

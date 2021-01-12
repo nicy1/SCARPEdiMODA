@@ -46,7 +46,8 @@ public class AddItemCartServlet extends HttpServlet {
 			daoscarpa.update(scarpa, scarpa.getId());
 			response.sendRedirect("ViewCartServlet");
 		}
-		else {   // aggiunto di una scarpa nel carrello
+		
+		if (quantita == 1)  {          // aggiunta una scarpa nel carrello
 		
 		        int dispo = scarpa.getDisponibilita();
 			    if(dispo >= quantita) {                   // qta disponibile
@@ -54,7 +55,7 @@ public class AddItemCartServlet extends HttpServlet {
 				   daoscarpa.update(scarpa, scarpa.getId());
 				   HttpSession session = request.getSession(false); // get la sessione esistente
 				   Utente utente = (Utente) session.getAttribute("loggedIn");
-				   utente.getCarrello().addScarpa(scarpa, quantita);
+				   utente.getCarrello().addScarpa(scarpa);
 				   session.setAttribute("loggedIn", utente);
 				   response.sendRedirect("ViewCartServlet");
 			    }
@@ -64,7 +65,29 @@ public class AddItemCartServlet extends HttpServlet {
 				    String paginaDiRiferimento = stringhe[stringhe.length-1];
 			     	response.sendRedirect(paginaDiRiferimento+"?disponibile=NO");    	
 			    }
-		}	
+		}
+		
+		if (quantita > 1)  {          // aggiunta una scarpa nel carrello		
+	        int dispo = scarpa.getDisponibilita();
+		    if(dispo >= quantita) {                   // qta disponibile
+		       
+			   scarpa.setDisponibilita(dispo - quantita);        // update della disponibilita
+			   daoscarpa.update(scarpa, scarpa.getId());
+			   HttpSession session = request.getSession(false); // get la sessione esistente
+			   Utente utente = (Utente) session.getAttribute("loggedIn");
+			   utente.getCarrello().updateCarrello(scarpa, quantita);
+			   session.setAttribute("loggedIn", utente);
+			   response.sendRedirect("ViewCartServlet");
+		    }
+		    else {                                     // qta non disponibile  
+		     	String referer = request.getHeader("referer");
+		     	String[] stringhe = referer.split("/");
+			    String paginaDiRiferimento = stringhe[stringhe.length-1];
+		     	response.sendRedirect(paginaDiRiferimento+"?disponibile=NO");    	
+		    }
+	}
+		
+		
 	}
 	
 }
