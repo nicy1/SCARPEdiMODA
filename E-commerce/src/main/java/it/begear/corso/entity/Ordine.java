@@ -30,6 +30,10 @@ public class Ordine {
 	
 	@Column(name = "prezzo")
 	private double prezzo;
+	
+	@Column(name = "data")
+	private String data;
+	
     
 	@Transient
 	private Map<Integer, Integer> scarpaList;
@@ -37,10 +41,11 @@ public class Ordine {
 	
 	public Ordine() {}
 	
-	public Ordine(Map<Integer, Integer> carrello, int id_Utente) {
+	public Ordine(Map<Integer, Integer> carrello, int id_Utente, String data) {
 		setLista(carrello);
 		setIdUtente(id_Utente);	
 		setPrezzo();
+		setData(data);
 	}
 
 
@@ -79,11 +84,21 @@ public class Ordine {
 	public void setLista(Map<Integer, Integer> carrello) {
 		this.scarpaList = carrello;
 	}
+	
 
+	public String getData() {
+		return data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
 
 	@Override
 	public String toString() {
-		return "Ordine [id=" + id + ", idUtente=" + idUtente + ", prezzo=" + prezzo + "]";
+		return "Ordine [id=" + id + ", prezzo=" + prezzo + ", data=" + data + "]";
 	}
+
+
 	
 }
