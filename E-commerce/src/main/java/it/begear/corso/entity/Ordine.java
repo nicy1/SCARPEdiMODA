@@ -96,11 +96,9 @@ public class Ordine {
 
 	@Override
 	public String toString() {
-<<<<<<< HEAD
+
 		return "Ordine [id=" + id + ", prezzo=" + prezzo + ", data=" + data + "]";
-=======
-		return "Ordine [id=" + id + ", prezzo=" + prezzo + "]";
->>>>>>> branch 'master' of https://github.com/irenerosaria/ScarpeDiModa.git
+
 	}
 
 
