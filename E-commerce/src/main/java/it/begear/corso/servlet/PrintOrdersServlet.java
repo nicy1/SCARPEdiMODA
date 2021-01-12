@@ -57,8 +57,7 @@ public class PrintOrdersServlet extends HttpServlet {
 		}
 		else {  // non c'e sessione esistente
 				response.sendRedirect("loginRegister.jsp");      // tornare nel login page		
-		}		
-		
+		}			
 	}
 
 	
