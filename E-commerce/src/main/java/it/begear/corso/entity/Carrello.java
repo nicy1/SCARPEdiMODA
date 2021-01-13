@@ -71,5 +71,10 @@ public class Carrello {
 		this.idUtente = idUtente;
 	}
 
+	public Integer getQuantita(Integer id) {
+		
+		return scarpe.get(id);
+	}
+
 }
 
