@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,11 +32,16 @@ public class AddItemCartServlet extends HttpServlet {
 		DAOscarpaImpl daoscarpa = context.getBean(DAOscarpaImpl.class);
 		
 		String scarpacode = request.getParameter("codice");
+		if (scarpacode == null ) {
+			RequestDispatcher dispatcher = request.getRequestDispatcher("allProducts.jsp");
+			dispatcher.forward(request, response);
+		}
+		
 		Integer quantita = Integer.parseInt(request.getParameter("quantita"));
 		Scarpa scarpa = daoscarpa.findByCode(scarpacode);
 	    if(scarpa == null) {
 		   // Non c'e scarpa con "codice" nel DB
-		   response.sendRedirect("404.html?foundProduct=NO");  // not found page and product (scarpa)
+		   response.sendRedirect("404.jsp?foundProduct=NO");  // not found page and product (scarpa)
 	    }
 			
 		if (quantita == 0) {   // Cancellare una scarpa nel carrello
