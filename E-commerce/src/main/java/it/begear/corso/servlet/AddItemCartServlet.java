@@ -47,7 +47,7 @@ public class AddItemCartServlet extends HttpServlet {
 		if (quantita == 0) {   // Cancellare una scarpa nel carrello
 			HttpSession session = request.getSession(false);      // get la sessione esistente
 			Utente utente = (Utente) session.getAttribute("loggedIn");
-			utente.getCarrello().removeScarpa(scarpa.getId());
+			utente.getCarrello().removeScarpa(scarpa);
 			scarpa.setDisponibilita(scarpa.getDisponibilita() + 1);
 			daoscarpa.update(scarpa, scarpa.getId());
 			response.sendRedirect("ViewCartServlet");

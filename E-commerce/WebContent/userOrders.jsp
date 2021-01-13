@@ -8,6 +8,7 @@
 
 <link href="templatemo_style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="CSS/ddsmoothmenu.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
 <script type="text/javascript" src="JAVASCRIPT/jquery.min.js"></script>
 <script type="text/javascript" src="JAVASCRIPT/ddsmoothmenu.js"></script>
