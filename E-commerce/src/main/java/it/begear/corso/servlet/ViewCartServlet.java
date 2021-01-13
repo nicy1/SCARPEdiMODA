@@ -57,11 +57,13 @@ public class ViewCartServlet extends HttpServlet {
 		                   + "<td align='center'>"
 		        	       + "<form action='AddItemCartServlet?codice="+scarpa.getCodice()+"' method='get'>"
 		                   + "<input type='text' name='quantita' value='1'style='width:20px; ;' text-align: right/>"
+		        	       + "<br>"
+		        	       + "<br>"
 		                   + "<input type='button' name='linkSub' value='Aggiorna' />"
 		        	       + "</form>"
 		                   + "</td>"		     
 		                   + "<td align='right'> </td>"
-		                   + "<td align='right'>" + scarpa.getCosto() + " € </td> "
+		                   + "<td text-align='center'>" + scarpa.getCosto() + " € </td> "
 		                   + "<td align='center'> <a href='AddItemCartServlet?codice="+scarpa.getCodice()+"&amp;quantita=0'><img src='IMAGES/remove_x.gif' /><br />Cancella</a> </td>"
 		                   + "</tr> \n";
 		
