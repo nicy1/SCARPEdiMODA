@@ -45,7 +45,7 @@ public class PrintOrdersServlet extends HttpServlet {
 				for(Ordine ordine : ordineList) {     // ci sono ordini
 					 parameters += "<br/>"
 					 		    +  "<h3>" 
-			                    +       ordine.toString() + " &nbsp; <a href='trackOrder.jsp'><font color='red'>TrackOrder</font></a>"
+			                    +       ordine.toString() + " &nbsp; <a href='trackOrder.jsp?date="+ordine.getData()+"'><font color='red'>TrackOrder</font></a>"
 				                +  "</h3>"
 				                +  "<br/><br/>";
 				}	
@@ -57,8 +57,7 @@ public class PrintOrdersServlet extends HttpServlet {
 		}
 		else {  // non c'e sessione esistente
 				response.sendRedirect("loginRegister.jsp");      // tornare nel login page		
-		}		
-		
+		}			
 	}
 
 	

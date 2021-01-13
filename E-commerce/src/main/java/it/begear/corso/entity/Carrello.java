@@ -46,9 +46,14 @@ public class Carrello {
 		return ordine;
 	}
 	
-	public void addScarpa(Scarpa scarpa, Integer quantita) {
+	public void addScarpa(Scarpa scarpa) {
+		scarpe.put(scarpa.getId(), 1);
+		prezzo += scarpa.getCosto();
+	}
+	
+	public void updateCarrello(Scarpa scarpa, Integer quantita) {		
 		scarpe.put(scarpa.getId(), quantita);
-		prezzo += scarpa.getCosto() * quantita;
+		prezzo += scarpa.getCosto() * (quantita-1);
 	}
 	
 	

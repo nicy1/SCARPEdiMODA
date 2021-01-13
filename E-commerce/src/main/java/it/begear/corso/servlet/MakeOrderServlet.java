@@ -39,7 +39,7 @@ public class MakeOrderServlet extends HttpServlet {
             daoOrdine.create(ordine);      // Crea l'ordine nel database
 		}
 		
-		response.sendRedirect("checkout.jsp?ordine=OK");
+		response.sendRedirect("account.jsp?ordine=OK");
 	}
 	
 	

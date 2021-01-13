@@ -12,19 +12,17 @@
 <body>
 <div class="container">
   <div class="row">
-                        <% Date date = new Date(); 
-                           DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.FULL, Locale.ITALY);
-                           String dataStringa = dateFormat.format(date);
-                        %>
+                        <% String date = request.getParameter("date"); %>
+                        
 						<div class="col-12 col-md-10 hh-grayBox pt45 pb20">
 							<div class="row justify-content-between">
 								<div class="order-tracking completed">
 									<span class="is-complete"></span>
-									<p>Ordinato<br><span><%= dataStringa %></span></p>
+									<p>Ordinato<br><span><%= date%></span></p>
 								</div>
 								<div class="order-tracking completed">
 									<span class="is-complete"></span>
-									<p>Spedito<br><span><%= dataStringa %></span></p>
+									<p>Spedito<br><span><%= date %></span></p>
 								</div>
 								<div class="order-tracking">
 									<span class="is-complete "></span>

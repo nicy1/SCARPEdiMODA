@@ -246,12 +246,7 @@ body {margin:0;}
 </div> <!-- END of templatemo_wrapper -->
 </div> <!-- END of templatemo_body_wrapper -->
 
-<% String ordine = request.getParameter("ordine"); 
-   if (ordine != null && ordine.equals("OK")) { %>
-       <script type='text/javascript'>
-          alert('Abbiamo ricevuto il tuo ordine!')
-       </script> 
-<% } %>
+
 
 </body>
 </html>
