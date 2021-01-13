@@ -157,7 +157,7 @@ body {margin:0;}
                       ${scarpe}
                       
                       <tr>
-                        	<td colspan="3" align="right"  height="30px">Hai modificato il tuo carrello? Clicca qui: <a href="shoppingcart.jsp"><strong>Aggiorna</strong></a>&nbsp;&nbsp;</td>
+                        	<td colspan="3" align="right"  height="30px">Prezzo totale: &nbsp;&nbsp;</td>
                             <td align="right" style="background:#ddd; font-weight:bold">${costo_totale} €</td>
                             <td style="background:#ddd; font-weight:bold"> </td>
 						</tr>
@@ -165,7 +165,7 @@ body {margin:0;}
                     <div style="float:right; width: 215px; margin-top: 20px;">
                     
 					<p><a href="checkout.jsp">Procedi al checkout</a></p>
-                    <p><a href="javascript:history.back()">Continua lo shopping</a></p>
+                    
                     	
                     </div>
 			</div>

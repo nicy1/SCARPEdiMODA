@@ -48,24 +48,31 @@ public class ViewCartServlet extends HttpServlet {
 			int index = 1;
 			Set <Integer> idList = scarpaList.keySet();
 		
+			Carrello c = utente.getCarrello();
+			
+			
 			for(Integer id : idList ) {
 			    Scarpa scarpa = daoscarpa.findByID(id);
 		  
 			    parameters += "<tr>" 
 		        	       + "<td><img src='IMAGES/scarpe/" + scarpa.getCodice() + ".jpg' alt='Shoes " + index + "'/></td> "
 		        	       + "<td>" + scarpa.getDescrizione() + "</td>"
-		                   + "<td align='center'>"		        
-		                   + "<input type='text' name='quantita' value='1' style='width: 20px; text-align: right/>"
-		                   + "<a href=\"javascript:;\" onclick=\"this.href='AddItemCartServlet?codice="+scarpa.getCodice()+"&amp;quantita='+document.getElementById('quantita').value \"><button type='button'>Aggiorna</button></a>"
-		                   + "</td>"	
-		                   + "<td align='right'>" + scarpa.getCosto() + " € </td> "
+		                   + "<td align='center'>"
+		        	       + "<form action='AddItemCartServlet' method='get'>"
+		                   + "<input type='text' name='quantita' value='" + c.getQuantita(id) + "' style='width:20px; ;' text-align: right/>"
+		        	       + "<br>"
+		        	       + "<br>"
+		        	       + "<input type='submit' name='codice' value='"+scarpa.getCodice()+"' />" 		                   
+		        	       + "</form>"
+		                   + "</td>"		     
+		                   + "<td text-align='center'>" + scarpa.getCosto() + " € </td> "
 		                   + "<td align='center'> <a href='AddItemCartServlet?codice="+scarpa.getCodice()+"&amp;quantita=0'><img src='IMAGES/remove_x.gif' /><br />Cancella</a> </td>"
 		                   + "</tr> \n";
 		
 			    index++;
-			    costo_totale += scarpa.getCosto();
+			    
 		    }
-			
+			costo_totale = utente.getCarrello().getPrezzo();
 		}
 		
 		request.setAttribute("scarpe", parameters);
