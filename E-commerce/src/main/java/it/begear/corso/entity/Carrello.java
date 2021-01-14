@@ -45,19 +45,24 @@ public class Carrello {
 		return ordine;
 	}
 	
-	public void addScarpa(Scarpa scarpa) {
+	public void addScarpa(Scarpa scarpa, String check) {
+		int qta = 1;
 		if (scarpe.containsKey(scarpa.getId())) {
-			double tmp = scarpe.get(scarpa.getId()) * scarpa.getCosto();
+			int vecchia_qta = scarpe.get(scarpa.getId());
+			double tmp = vecchia_qta * scarpa.getCosto();
 			prezzo -= tmp;
+			if (check == null) {	
+			    qta += vecchia_qta;
+			}
 		}		
-		prezzo += scarpa.getCosto();
-		scarpe.put(scarpa.getId(), 1);
+		prezzo += scarpa.getCosto() * qta;
+		scarpe.put(scarpa.getId(), qta);
 	}
 	
 	public void updateCarrello(Scarpa scarpa, Integer quantita) {	
 		double tmp = scarpe.get(scarpa.getId()) * scarpa.getCosto();
 		prezzo -= tmp;
-		prezzo += scarpa.getCosto() * (quantita);
+		prezzo += scarpa.getCosto() * quantita;
 		scarpe.put(scarpa.getId(), quantita);
 	}
 	

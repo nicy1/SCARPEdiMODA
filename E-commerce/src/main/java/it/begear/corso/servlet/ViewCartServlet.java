@@ -61,6 +61,7 @@ public class ViewCartServlet extends HttpServlet {
 		        	       + "<form action='AddItemCartServlet' method='get'>"
 		                   + "<input type='text' name='quantita' value='" + c.getQuantita(id) + "' style='width:20px; ;' text-align: right/>"    	  
 		        	       + "<input type='hidden' name='codice' value='"+scarpa.getCodice()+"' />" 
+		        	       + "<input type='hidden' name='check' value='ok' />"
 		        	       + "<input type='submit' name='codice' value='Aggiorna' />"
 		        	       + "</form>"
 		                   + "</td>"		     
