@@ -39,26 +39,33 @@ public class Carrello {
 	public Ordine acquista() {
 		Date date = new Date(); 
         DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.FULL, Locale.ITALY);
-        String dataStringa = dateFormat.format(date);
-        
+        String dataStringa = dateFormat.format(date);     
 		Ordine ordine = new Ordine(scarpe, idUtente,dataStringa);
 		scarpe.clear();                   // per svuotare il carrello
 		return ordine;
 	}
 	
 	public void addScarpa(Scarpa scarpa) {
-		scarpe.put(scarpa.getId(), 1);
+		if (scarpe.containsKey(scarpa.getId())) {
+			double tmp = scarpe.get(scarpa.getId()) * scarpa.getCosto();
+			prezzo -= tmp;
+		}		
 		prezzo += scarpa.getCosto();
+		scarpe.put(scarpa.getId(), 1);
 	}
 	
-	public void updateCarrello(Scarpa scarpa, Integer quantita) {		
+	public void updateCarrello(Scarpa scarpa, Integer quantita) {	
+		double tmp = scarpe.get(scarpa.getId()) * scarpa.getCosto();
+		prezzo -= tmp;
+		prezzo += scarpa.getCosto() * (quantita);
 		scarpe.put(scarpa.getId(), quantita);
-		prezzo += scarpa.getCosto() * (quantita-1);
 	}
 	
 	
-	public void removeScarpa(Integer scarpaId) {
-		scarpe.remove(scarpaId);
+	public void removeScarpa(Scarpa scarpa) {
+		double tmp = scarpe.get(scarpa.getId()) * scarpa.getCosto();
+		prezzo -= tmp;
+		scarpe.remove(scarpa.getId());
 	}
 
 
