@@ -158,51 +158,47 @@ body {margin:0;}
             </div>
             
             <div class="sidebar_box"><span class="bottom"></span>
-            	<h3>I più venduti</h3>   
+            	<h3>I più venduti </h3>   
                 <div class="content"> 
                     <div class="bs_box">
-                    	<a href="#"><img src="IMAGES/piuVenduti/b06.jpg" alt="image" /></a>
-                        <h4><a href="#">Décolleté gold d03</a></h4>
+                    	<img src="IMAGES/piuVenduti/b06.jpg" alt="image" />
+                        <h4>Décolleté gold d03</h4>
                         <p class="price">45€</p>
                         <div class="cleaner"></div>
                     </div>
                     <div class="bs_box">
-                    	<a href="#"><img src="IMAGES/piuVenduti/b04.jpg" alt="image" /></a>
-                        <h4><a href="#">Sneaker nike s04</a></h4>
+                    	<img src="IMAGES/piuVenduti/b04.jpg" alt="image" />
+                        <h4>Sneaker nike s04</h4>
                         <p class="price">70€</p>
                         <div class="cleaner"></div>
                     </div>
                     <div class="bs_box">
-                    	<a href="#"><img src="IMAGES/piuVenduti/b03.jpg" alt="image" /></a>
-                        <h4><a href="#">Tennis red t03</a></h4>
+                    	<img src="IMAGES/piuVenduti/b03.jpg" alt="image" />
+                        <h4>Tennis red t03</h4>
                         <p class="price">40€</p>
                         <div class="cleaner"></div>
                     </div>
                     <div class="bs_box">
-                    	<a href="#"><img src="IMAGES/piuVenduti/b02.jpg" alt="image" /></a>
-                        <h4><a href="#">Tennis black-white t02</a></h4>
+                    	<img src="IMAGES/piuVenduti/b02.jpg" alt="image" />
+                        <h4>Tennis black-white t02</h4>
                         <p class="price">50€</p>
                         <div class="cleaner"></div>
                     </div>
                     <div class="bs_box">
-                    	<a href="#"><img src="IMAGES/piuVenduti/b05.jpg" alt="image" /></a>
-                        <h4><a href="#">Décolleté d02</a></h4>
+                    	<img src="IMAGES/piuVenduti/b05.jpg" alt="image" />
+                        <h4>Décolleté d02</h4>
                         <p class="price">70€</p>
                         <div class="cleaner"></div>
                     </div>
                     <div class="bs_box">
-                    	<a href="#"><img src="IMAGES/piuVenduti/b01.jpg" alt="image" /></a>
-                        <h4><a href="#">Tennis nike t01</a></h4>
+                    	<img src="IMAGES/piuVenduti/b01.jpg" alt="image" />
+                        <h4>Tennis nike t01</h4>
                         <p class="price">40€</p>
                         <div class="cleaner"></div>
                     </div>
-                    <div class="bs_box">
-                        <div class="cleaner"></div>
-                        <div class="paddingSidebar"></div>
-                    </div>
                 </div>
             </div>
-        </div>
+        </div> 
         
         <div id="content" class="float_r">
         	<h1> Scarpe da Donna</h1>
