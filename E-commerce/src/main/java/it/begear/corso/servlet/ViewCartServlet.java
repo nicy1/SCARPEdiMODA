@@ -57,18 +57,17 @@ public class ViewCartServlet extends HttpServlet {
 			    parameters += "<tr>" 
 		        	       + "<td><img src='IMAGES/scarpe/" + scarpa.getCodice() + ".jpg' alt='Shoes " + index + "'/></td> "
 		        	       + "<td>" + scarpa.getDescrizione() + "</td>"
-		                   + "<td align='center'>"
+		                 + "<td align='center'>"
 		        	       + "<form action='AddItemCartServlet' method='get'>"
-		                   + "<input type='text' name='quantita' value='" + c.getQuantita(id) + "' style='width:20px; ;' text-align: right/>"    	  
-		        	       + "<input type='hidden' name='codice' value='"+scarpa.getCodice()+"' />" 
-		        	       + "<br>"
-		        	       + "<br>"
+		                 + "<input type='text' name='quantita' value='" + c.getQuantita(id) + "' style='width:20px; ;' text-align: right/>"    	  
+		        	       + "<input type='hidden' name='codice' value='"+scarpa.getCodice()+"' />"
+		        	       + "<input type='hidden' name='check' value='ok' />"
 		        	       + "<input type='submit' name='codice' value='Aggiorna' />"
 		        	       + "</form>"
-		                   + "</td>"		     
-		                   + "<td text-align='center'>" + scarpa.getCosto() + " € </td> "
-		                   + "<td align='center'> <a href='AddItemCartServlet?codice="+scarpa.getCodice()+"&amp;quantita=0'><img src='IMAGES/remove_x.gif' /><br />Cancella</a> </td>"
-		                   + "</tr> \n";
+		                 + "</td>"		     
+		                 + "<td text-align='center'>" + scarpa.getCosto() + " € </td> "
+		                 + "<td align='center'> <a href='AddItemCartServlet?codice="+scarpa.getCodice()+"&amp;quantita=0'><img src='IMAGES/remove_x.gif' /><br />Cancella</a> </td>"
+		                 + "</tr> \n";
 		
 			    index++;
 			    

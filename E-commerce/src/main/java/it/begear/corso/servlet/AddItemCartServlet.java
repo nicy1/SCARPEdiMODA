@@ -53,7 +53,7 @@ public class AddItemCartServlet extends HttpServlet {
 			response.sendRedirect("ViewCartServlet");
 		}
 		
-		if (quantita == 1)  {          // aggiunta una scarpa nel carrello
+		if (quantita == 1)  {          
 		
 		        int dispo = scarpa.getDisponibilita();
 			    if(dispo >= quantita) {                   // qta disponibile
@@ -61,7 +61,8 @@ public class AddItemCartServlet extends HttpServlet {
 				   daoscarpa.update(scarpa, scarpa.getId());
 				   HttpSession session = request.getSession(false); // get la sessione esistente
 				   Utente utente = (Utente) session.getAttribute("loggedIn");
-				   utente.getCarrello().addScarpa(scarpa);
+				   String check = request.getParameter("check");
+				   utente.getCarrello().addScarpa(scarpa, check);
 				   session.setAttribute("loggedIn", utente);
 				   response.sendRedirect("ViewCartServlet");
 			    }
@@ -73,7 +74,7 @@ public class AddItemCartServlet extends HttpServlet {
 			    }
 		}
 		
-		if (quantita > 1)  {          // aggiunta una scarpa nel carrello		
+		if (quantita > 1)  {          		
 	        int dispo = scarpa.getDisponibilita();
 		    if(dispo >= quantita) {                   // qta disponibile
 		       
