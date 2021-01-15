@@ -44,10 +44,21 @@ public class PrintOrdersServlet extends HttpServlet {
 			else {
 				for(Ordine ordine : ordineList) {     // ci sono ordini
 					 parameters += "<br/>"
-					 		    +  "<h3>" 
-			                    +       ordine.toString() + " &nbsp; <a href='trackOrder.jsp?date="+ordine.getData()+"'><font color='red'>TrackOrder</font></a>"
-				                +  "</h3>"
-				                +  "<br/><br/>";
+							 	+ "<table>"
+                                + "<tr>"
+					    + "<th>Ordine numero "+"</th>"
+					    + "<th>Prezzo</th>"
+					    + "<th>Data</th>"
+					    + "<th>Tracking</th>"
+					    + "</tr>"
+					    + "<tr>"
+					    + "<td>"+ordine.getId()+"</td>"
+					    + "<td>"+ordine.getPrezzo()+"€"+"</td>"
+					    + "<td>"+ordine.getData()+"</td>"
+					    + "<td>" + "<a href='trackOrder.jsp?date="+ordine.getData()+"'><font color='blue'>TrackOrder</font></a></td>"
+					    + "</tr>"
+					    + "</table>"
+				        + "<br/><br/>";		 
 				}	
 			}
 			

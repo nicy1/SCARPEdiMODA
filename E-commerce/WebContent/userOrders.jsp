@@ -71,6 +71,22 @@ body {margin:0;}
   color: white;
 }
 
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #dddddd;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #fff;
+}
 
 </style>
 
@@ -185,7 +201,7 @@ body {margin:0;}
         </div> 
         
         <div id="content" class="float_r">
-        	<h1> Ordini (${sessionScope['loggedIn_EMAIL']})</h1>	
+        	<h1> Ordini di <%= nome.toString() %></h1>	
         	${ordini}
         </div> 
         <div class="cleaner"></div>
