@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page import="java.util.List" %>
+<%@ page import="it.begear.corso.entity.*" %>
 <title>ScarpeDiModa - Cerca Scarpe </title>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
 
 <link href="templatemo_style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="CSS/ddsmoothmenu.css" />
@@ -200,7 +200,27 @@ body {margin:0;}
         
         <div id="content" class="float_r">
         	<h1> Prodotti</h1>	
-        	${scarpe} 
+        	<% List<Scarpa> scarpe = (List<Scarpa>) request.getAttribute("scarpe");
+        	
+        	   if(scarpe.isEmpty()) { 
+            %>
+        	     <br><h3> Non ci sono scarpe.</h3><br><br>
+        	<% } else { 
+        	
+        	     for(Scarpa scarpa : scarpe) {
+        	%>
+				   <div class='product_box'>
+				      <h3> <%=scarpa.getCodice()%> </h3>
+				      <a href='#'><img src="IMAGES/scarpe/<%=scarpa.getCodice()%>.jpg" /></a>
+				      <p> <%=scarpa.getDescrizione()%> </p>
+				      <p class='product_price'> <%=scarpa.getCosto()%> € </p>
+				      <a href="AddItemCartServlet?codice=<%=scarpa.getCodice()%>&amp;quantita=1" class='addtocart'></a>
+				      <a href="DetailItemServlet?codice=<%=scarpa.getCodice()%>" class='detail'></a>
+				   </div>
+			<%
+        	     }
+		       }
+        	%> 
         </div> 
         <div class="cleaner"></div>
     </div> <!-- END of templatemo_main -->

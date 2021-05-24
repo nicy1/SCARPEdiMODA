@@ -1,6 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<%@ page import="java.util.List" %>
+<%@ page import="it.begear.corso.entity.*" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <title>ScarpeDiModa - Tutte le Scarpe in magazzino</title>
 <meta name="keywords" content="" />
@@ -145,10 +147,10 @@ body {margin:0;}
             	<h3>Categorie</h3>   
                 <div class="content"> 
                 	<ul class="sidebar_list">
-                        <li class="first"><a href="uomoProducts.jsp">Uomo</a></li>
-                        <li class="first"><a href="donnaProducts.jsp">Donna</a></li> 
-                        <li class="first"><a href="bambinoProducts.jsp">Bambino</a></li>
-                        <li class="last"><a href="bambinaProducts.jsp">Bambina</a></li>
+                        <li class="first"><a href="GenereServlet?genereScarpa=uomo">Uomo</a></li>
+                        <li class="first"><a href="GenereServlet?genereScarpa=donna">Donna</a></li> 
+                        <li class="first"><a href="GenereServlet?genereScarpa=bambino">Bambino</a></li>
+                        <li class="last"><a href="GenereServlet?genereScarpa=bambina">Bambina</a></li>
                     </ul>
                 </div>
             </div>
@@ -198,7 +200,27 @@ body {margin:0;}
         
         <div id="content" class="float_r">
         	<h1>Tutti i Prodotti</h1>	
-        	${scarpe} 
+        	<% List<Scarpa> scarpe = (List<Scarpa>) request.getAttribute("scarpe");
+        	
+        	   if(scarpe.isEmpty()) { 
+            %>
+        	     <br><h3> Non ci sono scarpe.</h3><br><br>
+        	<% }else { 
+        	
+        	     for(Scarpa scarpa : scarpe) {
+        	%>
+				   <div class='product_box'>
+				      <h3> <%=scarpa.getCodice()%> </h3>
+				      <a href='#'><img src="IMAGES/scarpe/<%=scarpa.getCodice()%>.jpg" /></a>
+				      <p> <%=scarpa.getDescrizione()%> </p>
+				      <p class='product_price'> <%=scarpa.getCosto()%> € </p>
+				      <a href="AddItemCartServlet?codice=<%=scarpa.getCodice()%>&amp;quantita=1" class='addtocart'></a>
+				      <a href="DetailItemServlet?codice=<%=scarpa.getCodice()%>" class='detail'></a>
+				   </div>
+			<%
+        	     }
+		       }
+        	%> 
         </div> 
         <div class="cleaner"></div>
     </div> <!-- END of templatemo_main -->

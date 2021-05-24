@@ -31,45 +31,13 @@ public class GenereServlet extends HttpServlet {
 		String g = (String) request.getParameter("genereScarpa");
 		Genere genereScarpa = Genere.valueOf(g);
 		String destP = genereScarpa + "Products.jsp";  // uomoProducts.jsp, donnaProducts, ecc...
-		String parameters = "";
 		
 		if (genereScarpa != null) {
 			List<Scarpa> scarpaList = daoscarpa.findByGenere(genereScarpa);
 			
-			int index = 1;      // per stampare index di ogni scarpa secondo l'ordine della visualizzazione
-			int counter = 1;     // Per rispettare il formato di ogni riga di html           
+			request.setAttribute("scarpe", scarpaList);
+			request.getRequestDispatcher(destP).forward(request, response);
 			
-			for(Scarpa scarpa : scarpaList) {
-				if(counter <= 2) {
-					parameters += "<div class='product_box'>"
-							   +      "<h3>" + scarpa.getCodice() + "</h3>"
-							   +      "<div class='hover-img-zoom'>"+"<a href='#'><img src='IMAGES/scarpe/" + scarpa.getCodice() + ".jpg' alt='Shoes "+ index + "'/></a>"+"</div>"
-							   +      "<p>" + scarpa.getDescrizione() + "</p>"
-							   +    "<p class='product_price'>" + scarpa.getCosto() + "€ </p>"
-							   +      "<a href='AddItemCartServlet?codice=" + scarpa.getCodice() + "&amp;quantita=1' class='addtocart'></a>"
-							   +      "<a href='DetailItemServlet?codice=" + scarpa.getCodice() + "' class='detail'></a>"
-							   +  "</div> \n";
-					counter = 1;
-				} 
-				else {
-					parameters += "<div class='product_box no_margin_right'>"
-							   +      "<h3>" + scarpa.getCodice() + "</h3>"
-							   +      "<a href='#'><img src='IMAGES/scarpe/" + scarpa.getCodice() + ".jpg' alt='Shoes " + index + "'/></a>"
-							   +      "<p>" + scarpa.getDescrizione() + "</p>"
-							   +    "<p class='product_price'>" + scarpa.getCosto() + "€ </p>"
-							   +      "<a href='AddItemCartServlet?codice=" + scarpa.getCodice() + "&amp;quantita=1' class='addtocart'></a>"
-							   +      "<a href='DetailItemServlet?codice=" + scarpa.getCodice() + "' class='detail'></a>"
-							   +  "</div> \n";
-					
-					parameters += "<div class='cleaner'></div> \n";
-					counter++;
-				}
-				index++;
-			}
-			request.setAttribute("scarpe", parameters);
-			RequestDispatcher dispatcher = request.getRequestDispatcher(destP);
-			dispatcher.forward(request, response);
-			   
 		} else {
 			response.sendRedirect("404.html?foundProduct=NO");  // not found page and product (scarpa)
 		}     	

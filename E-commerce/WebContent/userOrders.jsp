@@ -1,6 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<%@ page import="java.util.List" %>
+<%@ page import="it.begear.corso.entity.*" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <title>ScarpeDiModa - Cerca Scarpe </title>
 <meta name="keywords" content="" />
@@ -202,7 +204,42 @@ tr:nth-child(even) {
         
         <div id="content" class="float_r">
         	<h1> Ordini di <%= nome.toString() %></h1>	
-        	${ordini}
+        	<% List<Ordine> ordini = (List<Ordine>) request.getAttribute("ordini");
+        	
+        	   if(ordini == null) { 
+            %>
+        	     <br><h3> Non ci sono ordini. </h3><br><br>
+        	<% }else { 
+        	
+        	%>
+        		<br>
+				<table>
+                   <tr>
+					  <th>Ordine numero</th>
+					  <th>Prezzo</th>
+					  <th>Data</th>
+					  <th>Tracking</th>
+				   </tr>
+        	<% 
+        	     for(Ordine ordine : ordini) {
+        	%>    
+        	       <tr>
+					  <td> <%=ordine.getId()%> </td>
+					  <td> <%=ordine.getPrezzo()%> €</td>
+					  <td> <%=ordine.getData()%> </td>
+					  <td>
+					     <a href='trackOrder.jsp?date=<%=ordine.getData()%>'><font color='blue'>TrackOrder</font></a>
+					  </td>
+				   </tr>
+				
+			<%
+        	     }
+        	%>
+        	   </table>
+			   <br/><br/>
+			<% 
+        	   }
+			%>
         </div> 
         <div class="cleaner"></div>
     </div> <!-- END of templatemo_main -->

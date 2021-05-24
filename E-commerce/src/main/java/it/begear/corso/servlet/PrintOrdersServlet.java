@@ -30,41 +30,13 @@ public class PrintOrdersServlet extends HttpServlet {
 		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 		DAOordineImpl daoOrdine = context.getBean(DAOordineImpl.class);
 		
-		HttpSession session = request.getSession(false);   // get la sessione esistente
+		HttpSession session = request.getSession(false);          // get la sessione esistente
 		if(session != null) {
 			Utente utente = (Utente) session.getAttribute("loggedIn");
 			List<Ordine> ordineList = daoOrdine.getUserOrders(utente.getId());
 			
-			String parameters = "";
-			if (ordineList == null) {         // se non ci sono ordini
-				 parameters += "<br/>"
-						    +  "<h3> Non ci sono ordini. </h3>"
-		                    +  "<br/><br/>";
-			}
-			else {
-				for(Ordine ordine : ordineList) {     // ci sono ordini
-					 parameters += "<br/>"
-							 	+ "<table>"
-                                + "<tr>"
-					    + "<th>Ordine numero "+"</th>"
-					    + "<th>Prezzo</th>"
-					    + "<th>Data</th>"
-					    + "<th>Tracking</th>"
-					    + "</tr>"
-					    + "<tr>"
-					    + "<td>"+ordine.getId()+"</td>"
-					    + "<td>"+ordine.getPrezzo()+"€"+"</td>"
-					    + "<td>"+ordine.getData()+"</td>"
-					    + "<td>" + "<a href='trackOrder.jsp?date="+ordine.getData()+"'><font color='blue'>TrackOrder</font></a></td>"
-					    + "</tr>"
-					    + "</table>"
-				        + "<br/><br/>";		 
-				}	
-			}
-			
-			request.setAttribute("ordini", parameters);      // stampare la lista degli ordini
-			RequestDispatcher dispatcher = request.getRequestDispatcher("userOrders.jsp");
-			dispatcher.forward(request, response);   
+			request.setAttribute("ordini", ordineList);      
+			request.getRequestDispatcher("userOrders.jsp").forward(request, response);   
 		}
 		else {  // non c'e sessione esistente
 				response.sendRedirect("loginRegister.jsp");      // tornare nel login page		

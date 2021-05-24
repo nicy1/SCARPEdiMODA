@@ -38,7 +38,7 @@ public class Carrello {
 
 	public Ordine acquista() {
 		Date date = new Date(); 
-        DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.FULL, Locale.ITALY);
+        DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.ITALY);
         String dataStringa = dateFormat.format(date);     
 		Ordine ordine = new Ordine(scarpe, idUtente,dataStringa);
 		scarpe.clear();                   // per svuotare il carrello

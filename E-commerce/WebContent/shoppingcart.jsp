@@ -1,6 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<%@ page import="java.util.List" %>
+<%@ page import="it.begear.corso.entity.*" %>
 <!--  commento  -->
 <%@ page contentType="text/html; charset=UTF-8" %>
 <title>ScarpeDiModa - Carrello</title>
@@ -146,29 +148,60 @@ body {margin:0;}
         <div id="content" class="float_r">
         	<h1>Carrello</h1>
         	<table width="680px" cellspacing="0" cellpadding="5">
-                   	  <tr bgcolor="#ddd">
-                        	<th width="220" align="left">Scarpa </th> 
-                        	<th width="180" align="left">Descrizione </th> 
-                       	  	<th width="100" align="center">Quantita </th> 
-                        	<th width="60" align="right">Prezzo </th> 
-                        	<th width="90" align="right"> </th>                            
-                      </tr>
+                <tr bgcolor="#ddd">
+                   <th width="220" align="left">Scarpa </th> 
+                   <th width="180" align="left">Descrizione </th> 
+                   <th width="100" align="center">Quantita </th> 
+                   <th width="60" align="right">Prezzo </th> 
+                   <th width="90" align="right"> </th>                            
+                </tr>
                       
-                      ${scarpe}
-                      
-                      <tr>
-                        	<td colspan="3" align="right"  height="30px">Prezzo totale: &nbsp;&nbsp;</td>
-                            <td align="right" style="background:#ddd; font-weight:bold">${costo_totale} €</td>
-                            <td style="background:#ddd; font-weight:bold"> </td>
-						</tr>
-					</table>
-                    <div style="float:right; width: 215px; margin-top: 20px;">
-                    
-					<p><a href="checkout.jsp">Procedi al checkout</a></p>
-                    
-                    	
-                    </div>
-			</div>
+            <% List<Scarpa> scarpe = (List<Scarpa>) request.getAttribute("scarpe");
+               Carrello c = (Carrello) request.getAttribute("carrello");
+               Float prezzoTot = c.getPrezzo();
+        	
+        	   if(scarpe.isEmpty()) { 
+            %>
+        	      <tr>
+					  <td> <h3>Il carrello è vuoto.</h3> </td>
+				  </tr>
+        	<% }else {    	
+        	     for(Scarpa scarpa : scarpe) {
+        	%>
+				  <tr> 
+		        	  <td> <img src="IMAGES/scarpe/<%=scarpa.getCodice()%>.jpg" /> </td>
+		        	  <td> <%=scarpa.getDescrizione()%> </td>
+		              <td align='center'>
+		        	    <form action='AddItemCartServlet' method='get'>
+		                  <input type='text' name='quantita' value='<%=c.getQuantita(id)%>' style="width:20px;text-align:right" />  	  
+		        	      <input type='hidden' name='codice' value='<%=scarpa.getCodice()%>' />
+		        	      <input type='hidden' name='check' value='ok' />
+		        	      <input type='submit' name='codice' value='Aggiorna' />
+		        	    </form>
+		              </td>		     
+		              <td text-align='center'> <%=scarpa.getCosto()%> € </td> 
+		              <td align='center'> 
+		                  <a href="AddItemCartServlet?codice=<%=scarpa.getCodice()%>&amp;quantita=0">
+		                    <img src='IMAGES/remove_x.gif' /> <br>
+		                    Cancella
+		                  </a> 
+		              </td>
+		          </tr>
+			<%
+        	     }
+		       }
+        	%>       
+                  <tr>
+                      <td colspan="3" align="right"  height="30px">Prezzo totale: &nbsp;&nbsp;</td>
+                      <td align="right" style="background:#ddd; font-weight:bold"> <%=prezzoTot%> €</td>
+                      <td style="background:#ddd; font-weight:bold"> </td>
+				  </tr>
+			</table>
+			
+            <div style="float:right; width:215px; margin-top:20px;">
+				<p><a href="checkout.jsp">Procedi al checkout</a></p>
+            </div>
+		</div>
         <div class="cleaner"></div>
     </div> <!-- END of templatemo_main -->
     
